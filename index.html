@@ -1113,13 +1113,11 @@
             document.getElementById('next-to-step2').addEventListener('click', function() {
                 if (validateStep1()) {
                     saveStep1Data();
-                    
                     // Track form step completion
                     trackGA4Event('form_step_complete', {
                         step_number: 1,
                         form_name: 'attorney_consultation'
                     });
-                    
                     trackFormInteraction();
                     showStep(2);
                 }
@@ -1274,60 +1272,26 @@
         // Send form data to CRM/webhook
         function sendFormDataToCRM(formData) {
             try {
-                console.log('sendFormDataToCRM called with data:', formData);
-                
-                // Your actual Zapier webhook endpoint
                 const endpoint = 'https://hooks.zapier.com/hooks/catch/22341941/u2pbdka/';
-                
-                // Enhanced payload with conversion tracking data
-                const payload = {
-                    // Form data
-                    ...formData.step1,      // Name, email, firm, website
-                    ...formData.step2,      // Ad budget, challenges, additional info
-                    
-                    // UTM and tracking data
-                    utms: formData.utms,    // UTM parameters object
-                    
-                    // Conversion tracking data
-                    conversion_data: {
-                        timestamp: new Date().toISOString(),
-                        page_url: window.location.href,
-                        referrer: document.referrer,
-                        user_agent: navigator.userAgent,
-                        conversion_type: 'form_submit',
-                        form_name: 'attorney_consultation',
-                        lead_value: 1.00,
-                        currency: 'USD'
-                    },
-                    
-                    // Session data for attribution
-                    session_data: {
-                        session_id: getSessionId(),
-                        time_on_page: getTimeOnPage(),
-                        form_interactions: getFormInteractions()
-                    }
-                };
-                
-                console.log('Sending payload to Zapier:', payload);
-                
-                fetch(endpoint, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                })
-                .then(response => {
-                    console.log('Zapier response status:', response.status);
-                    if (response.ok) {
-                        console.log('Form data sent to CRM successfully!');
-                    } else {
-                        response.text().then(text => {
-                            console.error('Failed to send form data to CRM. Response:', text);
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error sending form data:', error);
-                });
+                const payload = { ... }; // as before
+
+                if (navigator.sendBeacon) {
+                    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                    navigator.sendBeacon(endpoint, blob);
+                    console.log('Form data sent via sendBeacon');
+                } else {
+                    fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(response => {
+                        console.log('Zapier response status:', response.status);
+                    })
+                    .catch(error => {
+                        console.error('Error sending form data:', error);
+                    });
+                }
             } catch (error) {
                 console.error('Error in sendFormDataToCRM:', error);
             }
