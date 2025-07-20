@@ -1273,7 +1273,35 @@
         function sendFormDataToCRM(formData) {
             try {
                 const endpoint = 'https://hooks.zapier.com/hooks/catch/22341941/u2pbdka/';
-                const payload = { ... }; // as before
+                
+                // Enhanced payload with conversion tracking data
+                const payload = {
+                    // Form data
+                    ...formData.step1,      // Name, email, firm, website
+                    ...formData.step2,      // Ad budget, challenges, additional info
+                    
+                    // UTM and tracking data
+                    utms: formData.utms,    // UTM parameters object
+                    
+                    // Conversion tracking data
+                    conversion_data: {
+                        timestamp: new Date().toISOString(),
+                        page_url: window.location.href,
+                        referrer: document.referrer,
+                        user_agent: navigator.userAgent,
+                        conversion_type: 'form_submit',
+                        form_name: 'attorney_consultation',
+                        lead_value: 1.00,
+                        currency: 'USD'
+                    },
+                    
+                    // Session data for attribution
+                    session_data: {
+                        session_id: getSessionId(),
+                        time_on_page: getTimeOnPage(),
+                        form_interactions: getFormInteractions()
+                    }
+                };
 
                 if (navigator.sendBeacon) {
                     const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
