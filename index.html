@@ -209,7 +209,7 @@
                 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="#contact" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
                         Get Started
                     </a>
@@ -497,7 +497,9 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <span class="text-xs text-blue-600 font-medium">Click again to hide pricing</span>
+                        <a href="https://alchemistmind.pro/paid-ads-management/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors" onclick="event.stopPropagation()">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                         </div>
                     </div>
                     
@@ -561,7 +563,9 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <span class="text-xs text-blue-600 font-medium">Click again to hide pricing</span>
+                        <a href="https://alchemistmind.pro/lp-development/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors" onclick="event.stopPropagation()">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                         </div>
                     </div>
                     
@@ -620,7 +624,9 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <span class="text-xs text-blue-600 font-medium">Click again to hide pricing</span>
+                        <a href="https://alchemistmind.pro/crm-development/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors" onclick="event.stopPropagation()">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                         </div>
                     </div>
                     
@@ -678,7 +684,9 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <span class="text-xs text-blue-600 font-medium">Click again to hide pricing</span>
+                        <a href="https://alchemistmind.pro/training-hub/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors" onclick="event.stopPropagation()">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                         </div>
                     </div>
                     
@@ -735,11 +743,11 @@
                                 <span class="font-semibold text-blue-700">$4,000</span>
                             </div>
                         </div>
+                        <p class="mt-2 text-sm text-blue-600 font-medium">All tiers include strategy analysis, action plans & support</p>
                         <div class="mt-4 text-center">
-                            <span class="text-xs text-blue-600 font-medium">Click again to hide pricing</span>
-                            <div class="mt-2">
-                                <span class="text-sm text-blue-600 font-medium">All tiers include strategy analysis, action plans & support</span>
-                            </div>
+                        <a href="https://alchemistmind.pro/fractional-cmo/" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors" onclick="event.stopPropagation()">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
                         </div>
                     </div>
                     
@@ -759,7 +767,7 @@
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
                     Combine any of our services into custom packages tailored to your specific needs and goals. Let's discuss how we can create the perfect combination for your business.
                 </p>
-                <a href="#" onclick="openModal(event)" class="btn-primary inline-flex items-center">
+                <a href="#" id="cta-discuss-packages" class="btn-primary inline-flex items-center">
                     <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
                     Discuss Package Options
                 </a>
@@ -854,7 +862,7 @@
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
                     No matter your industry, we have the proven frameworks and systems to transform your business growth. Let's discuss how we can deliver similar results for you.
                 </p>
-                <a href="#contact" class="btn-primary inline-flex items-center">
+                <a href="#" id="cta-book-strategy" class="btn-primary inline-flex items-center">
                     <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
                     Book Your Strategy Session
                 </a>
@@ -1382,6 +1390,95 @@
         </div>
     </section>
 
+    <!-- FAQ Section (optimized for AI overviews & featured snippets) -->
+    <section id="faq" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-heading text-center mb-12">Frequently Asked Questions About Our Marketing Services</h2>
+            <div class="space-y-6">
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">How much does paid ads management cost?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $1,500/month. We've delivered 50%+ cost-per-lead reduction for clients across legal, home services, insurance, healthcare, and e-commerce.</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">How long until I see results from Google Ads or Meta Ads?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Most clients see measurable improvements within 30–45 days. We offer a risk-free guarantee: if you don't see a lift in the first 45 days, your second month is free. No long-term contracts required.</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">What is fractional CMO coaching and who is it for?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Fractional CMO coaching gives you strategic marketing leadership without a full-time hire. We provide business strategy analysis, growth opportunity identification, and actionable scaling plans. It's ideal for business owners ready to scale who want an experienced strategist in their corner. Tiers range from $1,500/month (monthly sessions) to $4,000/month (weekly meetings).</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">Does Alchemist Mind Pros work with law firms and attorneys?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. We've run ads for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We specialize in estate planning, personal injury, and legal marketing—delivering 43%+ cost-per-lead reduction and faster seminar fills.</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">What industries does Alchemist Mind Pros serve?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">We serve B2B, D2C, e-commerce, lead generation, and local service brands—including legal, home services (HVAC, plumbing), healthcare, insurance, Medicare, and professional services. We've managed over $20M in ad spend across these industries.</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">What is included in a complimentary growth strategy session?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Your free strategy session includes: a review of your current marketing, identification of growth opportunities, and a clear roadmap for lowering customer acquisition costs. There's no obligation—we'll show you exactly how we'd approach your business before you commit.</p>
+                    </div>
+                </details>
+                <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span itemprop="name">Are there long-term contracts or commitments?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">No. We don't require long-term contracts. Plus, if you don't see a lift in the first 45 days, your second month is free. Our goal is to prove value quickly so you feel confident continuing.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Schema for AI Overviews & Featured Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How much does paid ads management cost?", "acceptedAnswer": {"@type": "Answer", "text": "Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $1,500/month. We've delivered 50%+ cost-per-lead reduction for clients across legal, home services, insurance, healthcare, and e-commerce."}},
+            {"@type": "Question", "name": "How long until I see results from Google Ads or Meta Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients see measurable improvements within 30–45 days. We offer a risk-free guarantee: if you don't see a lift in the first 45 days, your second month is free. No long-term contracts required."}},
+            {"@type": "Question", "name": "What is fractional CMO coaching and who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Fractional CMO coaching gives you strategic marketing leadership without a full-time hire. We provide business strategy analysis, growth opportunity identification, and actionable scaling plans. It's ideal for business owners ready to scale who want an experienced strategist in their corner. Tiers range from $1,500/month (monthly sessions) to $4,000/month (weekly meetings)."}},
+            {"@type": "Question", "name": "Does Alchemist Mind Pros work with law firms and attorneys?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've run ads for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We specialize in estate planning, personal injury, and legal marketing—delivering 43%+ cost-per-lead reduction and faster seminar fills."}},
+            {"@type": "Question", "name": "What industries does Alchemist Mind Pros serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve B2B, D2C, e-commerce, lead generation, and local service brands—including legal, home services (HVAC, plumbing), healthcare, insurance, Medicare, and professional services. We've managed over $20M in ad spend across these industries."}},
+            {"@type": "Question", "name": "What is included in a complimentary growth strategy session?", "acceptedAnswer": {"@type": "Answer", "text": "Your free strategy session includes: a review of your current marketing, identification of growth opportunities, and a clear roadmap for lowering customer acquisition costs. There's no obligation—we'll show you exactly how we'd approach your business before you commit."}},
+            {"@type": "Question", "name": "Are there long-term contracts or commitments?", "acceptedAnswer": {"@type": "Answer", "text": "No. We don't require long-term contracts. Plus, if you don't see a lift in the first 45 days, your second month is free. Our goal is to prove value quickly so you feel confident continuing."}}
+        ]
+    }
+    </script>
+
     <!-- Final Call to Action -->
     <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-blue-800 to-indigo-900 text-white rounded-t-3xl shadow-xl">
         <div class="container mx-auto px-6 text-center">
@@ -1391,6 +1488,31 @@
             <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">
                 Imagine cutting your customer acquisition costs in half while doubling your lead quality. Having automated systems that work 24/7 to nurture prospects into paying customers. It's not just possible – it's what we deliver.
             </p>
+            <!-- What Happens Next -->
+            <div class="mb-12 max-w-4xl mx-auto">
+                <h3 class="text-lg font-semibold text-blue-200 mb-6">What happens next:</h3>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <div class="flex items-center">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">1</div>
+                        <span class="ml-2 text-left text-sm md:text-base font-medium">Book your free strategy session</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <div class="flex items-center">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">2</div>
+                        <span class="ml-2 text-left text-sm md:text-base font-medium">Discovery call & audit</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <div class="flex items-center">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">3</div>
+                        <span class="ml-2 text-left text-sm md:text-base font-medium">Custom proposal</span>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <div class="flex items-center">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">4</div>
+                        <span class="ml-2 text-left text-sm md:text-base font-medium">Onboarding & results</span>
+                    </div>
+                </div>
+            </div>
             <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-blue-700 hover:bg-gray-100">
                 <i data-lucide="calendar-plus" class="w-6 h-6 mr-2"></i> Schedule Your Complimentary Growth Strategy Session Now!
             </a>
@@ -1403,13 +1525,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
-            <p class="mt-2">
-                <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a> |
-                <a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a>
-            </p>
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-sm">&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
+                <nav class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
+                    <a href="#" id="cta-footer-contact" class="hover:text-white transition-colors duration-200">Contact</a>
+                    <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-white transition-colors duration-200">Privacy Policy</a>
+                    <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+                </nav>
+            </div>
         </div>
     </footer>
 
@@ -1766,6 +1892,10 @@
             const ctaButtonFinal = document.getElementById('cta-button-final');
             const ctaButtonCustomStrategy = document.getElementById('cta-button-custom-strategy');
             const ctaButtonSuccessStory = document.getElementById('cta-button-success-story');
+            const ctaDiscussPackages = document.getElementById('cta-discuss-packages');
+            const ctaBookStrategy = document.getElementById('cta-book-strategy');
+            const ctaHeaderGetStarted = document.getElementById('cta-header-get-started');
+            const ctaFooterContact = document.getElementById('cta-footer-contact');
             
             // Service Card Pricing Reveal Functionality
             const serviceCards = document.querySelectorAll('.service-card');
@@ -1856,6 +1986,10 @@
             ctaButtonFinal.addEventListener('click', openModal);
             if (ctaButtonCustomStrategy) ctaButtonCustomStrategy.addEventListener('click', openModal);
             if (ctaButtonSuccessStory) ctaButtonSuccessStory.addEventListener('click', openModal);
+            if (ctaDiscussPackages) ctaDiscussPackages.addEventListener('click', openModal);
+            if (ctaBookStrategy) ctaBookStrategy.addEventListener('click', openModal);
+            if (ctaHeaderGetStarted) ctaHeaderGetStarted.addEventListener('click', openModal);
+            if (ctaFooterContact) ctaFooterContact.addEventListener('click', openModal);
             
             // Close modal
             closeModal.addEventListener('click', function() {
