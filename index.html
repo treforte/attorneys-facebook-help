@@ -116,46 +116,6 @@
             color: #1d4ed8; /* Highlight key numbers */
         }
 
-        /* Comparison Chart Specific Styles */
-        .comparison-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .comparison-table th, .comparison-table td {
-            padding: 1rem 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .comparison-table th {
-            background-color: #e0f2fe; /* Light blue header */
-            font-weight: 700;
-            color: #1d4ed8; /* Dark blue text */
-            text-transform: uppercase;
-            font-size: 0.875rem;
-        }
-        .comparison-table td {
-            background-color: white;
-            color: #334155;
-            font-weight: 500;
-        }
-        .comparison-table tr:nth-child(even) td {
-            background-color: #f8fafc; /* Alternate row color */
-        }
-        .comparison-table td:last-child, .comparison-table td:nth-last-child(2) {
-            text-align: center;
-        }
-        .comparison-table .check-icon {
-            color: #22c55e; /* Green check */
-            font-weight: 900;
-        }
-        .comparison-table .x-icon {
-            color: #ef4444; /* Red X */
-            font-weight: 900;
-        }
     </style>
     
     <!-- Meta Pixel Code -->
@@ -228,7 +188,7 @@
                         Don't just get leads. Get qualified leads that convert.
                     </h1>
                     <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 drop-shadow-lg text-blue-200">
-                        We help attorneys, plumbers, and local service businesses cut customer acquisition costs by up to 60% with a proven system for Google Ads, Facebook Ads, and CRM automation.
+                        We help attorneys, plumbers, and local service businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, and CRM automation.
                     </h2>
                     <p class="text-lg md:text-xl font-light mb-8 opacity-90 max-w-xl mx-auto lg:mx-0">
                         Tired of wasting money on marketing that doesn't work? We've developed a system that focuses on what truly matters: <strong>a consistent pipeline of high-quality leads who are ready to buy.</strong>
@@ -332,9 +292,10 @@
                     <span class="text-blue-700">proven results, not promises.</span>
                 </p>
                 <p class="text-xl md:text-2xl font-bold text-blue-800 leading-relaxed">
-                    The result: <span class="text-blue-600">50%+ cost reduction</span> on customer acquisition and
+                    The result: <span class="text-blue-600">significant cost reduction</span> on customer acquisition and
                     <span class="text-blue-600 font-extrabold">scalable systems that work while you sleep.</span>
                 </p>
+                <p class="text-sm text-gray-600 mt-4 max-w-3xl mx-auto"><em>Percentage improvements cited on this site are estimates based on results we've achieved for other clients; your results may vary.</em></p>
             </div>
         </div>
     </section>
@@ -443,46 +404,42 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-white">
+    <section id="services" class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Our Services</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-8 text-gray-600">
                 Choose from our individual services or combine them into powerful packages designed to transform your marketing and accelerate your growth.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch">
                 <!-- Paid Ads Management Service -->
-                <div class="service-card card p-8 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="ad-management">
-                    <div class="icon-feature mb-6">
-                        <i data-lucide="trending-up" class="w-12 h-12 text-blue-700"></i>
+                <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="ad-management">
+                    <div class="icon-feature mb-4 p-2">
+                        <i data-lucide="trending-up" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-4 text-center">Paid Ads Management</h3>
+                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Paid Ads Management</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        <strong>Top 1% Google & Meta Ads performance</strong> with proven case studies. We deliver 50%+ cost reduction while increasing lead quality across all industries.
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        <strong>Top 1% Google & Meta Ads</strong> with significant cost reduction and higher lead quality across industries.
                     </p>
-                    <ul class="text-left text-gray-700 space-y-2 mb-6 w-full">
+                    <ul class="text-left text-gray-600 text-sm space-y-1 mb-4 w-full">
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Google & Meta Ads optimization</strong> with advanced targeting</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Google & Meta optimization & targeting</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Conversion tracking & attribution</strong> setup</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Detailed performance reporting</strong> with actionable insights</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Conversion tracking & reporting</span>
                         </li>
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
-                        <div class="text-center mb-4">
-                            <div class="text-3xl font-bold text-blue-900 mb-2">Starting at $2,000</div>
-                            <div class="text-sm text-blue-700 font-medium">per month</div>
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                        <div class="text-center mb-3">
+                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $2,000</div>
+                            <div class="text-xs text-blue-700 font-medium">per month</div>
                         </div>
-                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                        <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span><strong>Setup & Onboarding</strong> <span class="text-blue-600 text-xs">(one-time)</span></span>
                                 <span class="font-semibold text-blue-700">$1,500</span>
@@ -493,19 +450,19 @@
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Ad Spend Minimum</span>
-                                <span class="font-semibold text-blue-700">$1,500</span>
+                                <span class="font-semibold text-blue-700">$5,000</span>
                             </div>
                         </div>
-                        <div class="mt-4 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/paid-ads-management/" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
-                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        <div class="mt-3 text-center learn-more-cta">
+                        <a href="https://alchemistmind.pro/paid-ads-management/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                            Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
                     </div>
                     
                     <!-- Click to Reveal Button -->
-                    <div class="reveal-button mt-4">
-                        <button class="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                    <div class="reveal-button mt-3">
+                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -513,37 +470,33 @@
                 </div>
 
                 <!-- Landing Page Development Service -->
-                <div class="service-card card p-8 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="landing-pages">
-                    <div class="icon-feature mb-6">
-                        <i data-lucide="monitor" class="w-12 h-12 text-blue-700"></i>
+                <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="landing-pages">
+                    <div class="icon-feature mb-4 p-2">
+                        <i data-lucide="monitor" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-4 text-center">Landing Page Development</h3>
+                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Landing Page Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        <strong>High-converting landing pages delivered in 48 hours.</strong> Best-practice design, copy, and optimization that turns visitors into leads with proven frameworks.
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        <strong>High-converting pages in 48 hours.</strong> Best-practice design and optimization that turns visitors into leads.
                     </p>
-                    <ul class="text-left text-gray-700 space-y-2 mb-6 w-full">
+                    <ul class="text-left text-gray-600 text-sm space-y-1 mb-4 w-full">
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>48-hour delivery guarantee</strong> for draft pages</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>48-hour delivery • mobile-optimized</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Mobile-optimized & fast-loading</strong> design</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Conversion tracking setup</strong> included</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Conversion tracking included</span>
                         </li>
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
-                        <div class="text-center mb-4">
-                            <div class="text-3xl font-bold text-blue-900 mb-2">Starting at $699</div>
-                            <div class="text-sm text-blue-700 font-medium">for your first landing page</div>
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                        <div class="text-center mb-3">
+                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $699</div>
+                            <div class="text-xs text-blue-700 font-medium">for your first landing page</div>
                         </div>
-                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                        <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>First Landing Page</span>
                                 <span class="font-semibold text-blue-700">$699</span>
@@ -561,16 +514,16 @@
                                 <span class="font-semibold text-blue-700">$2,297</span>
                             </div>
                         </div>
-                        <div class="mt-4 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/lp-development/" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
-                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        <div class="mt-3 text-center learn-more-cta">
+                        <a href="https://alchemistmind.pro/lp-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                            Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
                     </div>
                     
                     <!-- Click to Reveal Button -->
-                    <div class="reveal-button mt-4">
-                        <button class="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                    <div class="reveal-button mt-3">
+                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -578,37 +531,33 @@
                 </div>
 
                 <!-- Simple CRM Development Service -->
-                <div class="service-card card p-8 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="crm-development">
-                    <div class="icon-feature mb-6">
-                        <i data-lucide="database" class="w-12 h-12 text-blue-700"></i>
+                <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="crm-development">
+                    <div class="icon-feature mb-4 p-2">
+                        <i data-lucide="database" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-4 text-center">Simple CRM Development</h3>
+                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Simple CRM Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        <strong>Custom branded CRM apps</strong> that automate lead nurturing and prevent revenue from slipping through the cracks. Visual sales funnels with automated follow-up sequences.
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        <strong>Custom CRM apps</strong> that automate lead nurturing with visual funnels and follow-up sequences.
                     </p>
-                    <ul class="text-left text-gray-700 space-y-2 mb-6 w-full">
+                    <ul class="text-left text-gray-600 text-sm space-y-1 mb-4 w-full">
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Automated lead nurturing sequences</strong></span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Automated nurturing & funnel mapping</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Visual sales funnel mapping</strong> & tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Custom branding & easy setup</strong></span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Custom branding & easy setup</span>
                         </li>
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
-                        <div class="text-center mb-4">
-                            <div class="text-3xl font-bold text-blue-900 mb-2">Starting at $2,997</div>
-                            <div class="text-sm text-blue-700 font-medium">setup + $197/month</div>
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                        <div class="text-center mb-3">
+                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $2,997</div>
+                            <div class="text-xs text-blue-700 font-medium">setup + $197/month</div>
                         </div>
-                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                        <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>Custom CRM Setup</span>
                                 <span class="font-semibold text-blue-700">$2,997</span>
@@ -622,16 +571,16 @@
                                 <span class="font-semibold text-blue-700">Included</span>
                             </div>
                         </div>
-                        <div class="mt-4 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/crm-development/" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
-                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        <div class="mt-3 text-center learn-more-cta">
+                        <a href="https://alchemistmind.pro/crm-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                            Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
                     </div>
                     
                     <!-- Click to Reveal Button -->
-                    <div class="reveal-button mt-4">
-                        <button class="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                    <div class="reveal-button mt-3">
+                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -639,37 +588,33 @@
                 </div>
 
                 <!-- Training Hub Development Service -->
-                <div class="service-card card p-8 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="training-hub">
-                    <div class="icon-feature mb-6">
-                        <i data-lucide="graduation-cap" class="w-12 h-12 text-blue-700"></i>
+                <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="training-hub">
+                    <div class="icon-feature mb-4 p-2">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-4 text-center">Training Hub Development</h3>
+                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Training Hub Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        <strong>Custom branded training apps</strong> that house your SOPs, training videos, and onboarding materials. Scale your team without scaling your problems.
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        <strong>Custom training apps</strong> for SOPs, videos, and onboarding. Scale your team without the chaos.
                     </p>
-                    <ul class="text-left text-gray-700 space-y-2 mb-6 w-full">
+                    <ul class="text-left text-gray-600 text-sm space-y-1 mb-4 w-full">
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Custom branded web app</strong> built for your company</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Branded web app for your company</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Department-specific customization</strong> for unique workflows</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Expert onboarding session</strong> included</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Expert onboarding included</span>
                         </li>
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
-                        <div class="text-center mb-4">
-                            <div class="text-3xl font-bold text-blue-900 mb-2">$1,750</div>
-                            <div class="text-sm text-blue-700 font-medium">setup + $75/month</div>
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                        <div class="text-center mb-3">
+                            <div class="text-2xl font-bold text-blue-900 mb-1">$1,750</div>
+                            <div class="text-xs text-blue-700 font-medium">setup + $75/month</div>
                         </div>
-                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                        <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>One-Time Setup Fee</span>
                                 <span class="font-semibold text-blue-700">$1,750</span>
@@ -683,16 +628,16 @@
                                 <span class="font-semibold text-blue-700">Included</span>
                             </div>
                         </div>
-                        <div class="mt-4 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/training-hub/" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
-                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        <div class="mt-3 text-center learn-more-cta">
+                        <a href="https://alchemistmind.pro/training-hub/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                            Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
                     </div>
                     
                     <!-- Click to Reveal Button -->
-                    <div class="reveal-button mt-4">
-                        <button class="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                    <div class="reveal-button mt-3">
+                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -700,61 +645,57 @@
                 </div>
 
                 <!-- Fractional CMO Coaching Service -->
-                <div class="service-card card p-8 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="fractional-cmo">
-                    <div class="icon-feature mb-6">
-                        <i data-lucide="users" class="w-12 h-12 text-blue-700"></i>
+                <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="fractional-cmo">
+                    <div class="icon-feature mb-4 p-2">
+                        <i data-lucide="users" class="w-10 h-10 text-blue-700"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-4 text-center">Fractional CMO Coaching</h3>
+                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Fractional CMO Coaching</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        <strong>Strategic business coaching</strong> as your fractional Chief Marketing Officer. Scale your business with proven frameworks and personalized guidance.
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        <strong>Strategic coaching</strong> as your fractional CMO. Proven frameworks and personalized guidance to scale.
                     </p>
-                    <ul class="text-left text-gray-700 space-y-2 mb-6 w-full">
+                    <ul class="text-left text-gray-600 text-sm space-y-1 mb-4 w-full">
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Business strategy analysis & audit</strong></span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Strategy analysis & growth planning</span>
                         </li>
                         <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Growth opportunity identification</strong> & planning</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Actionable scaling strategies</strong> you can implement</span>
+                            <i data-lucide="check" class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Actionable scaling strategies</span>
                         </li>
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-4 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
-                        <div class="text-center mb-4">
-                            <div class="text-3xl font-bold text-blue-900 mb-2">3 Tiers Available</div>
-                            <div class="text-sm text-blue-700 font-medium">choose your coaching frequency</div>
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                        <div class="text-center mb-3">
+                            <div class="text-2xl font-bold text-blue-900 mb-1">3 Tiers Available</div>
+                            <div class="text-xs text-blue-700 font-medium">choose your coaching frequency</div>
                         </div>
-                        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
-                            <div class="flex items-center justify-between p-2 bg-blue-50 rounded-lg">
-                                <span><strong>Tier 1:</strong> Monthly Session</span>
+                        <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
+                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
+                                <span><strong>Tier 1:</strong> Monthly</span>
                                 <span class="font-semibold text-blue-700">$1,500</span>
                             </div>
-                            <div class="flex items-center justify-between p-2 bg-blue-50 rounded-lg">
+                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
                                 <span><strong>Tier 2:</strong> Twice Monthly</span>
                                 <span class="font-semibold text-blue-700">$2,850</span>
                             </div>
-                            <div class="flex items-center justify-between p-2 bg-blue-50 rounded-lg">
-                                <span><strong>Tier 3:</strong> Weekly Meetings</span>
+                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
+                                <span><strong>Tier 3:</strong> Weekly</span>
                                 <span class="font-semibold text-blue-700">$4,000</span>
                             </div>
                         </div>
-                        <p class="mt-2 text-sm text-blue-600 font-medium">All tiers include strategy analysis, action plans & support</p>
-                        <div class="mt-4 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/fractional-cmo/" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
-                            Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        <p class="mt-1.5 text-xs text-blue-600 font-medium">All tiers include strategy analysis & support</p>
+                        <div class="mt-3 text-center learn-more-cta">
+                        <a href="https://alchemistmind.pro/fractional-cmo/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                            Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
                     </div>
                     
                     <!-- Click to Reveal Button -->
-                    <div class="reveal-button mt-4">
-                        <button class="px-6 py-3 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                    <div class="reveal-button mt-3">
+                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -763,9 +704,9 @@
             </div>
 
             <!-- Package Options -->
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Package Options</h3>
-                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Package Options</h3>
+                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
                     Combine any of our services into custom packages tailored to your specific needs and goals. Let's discuss how we can create the perfect combination for your business.
                 </p>
                 <a href="#" id="cta-discuss-packages" class="btn-primary inline-flex items-center">
@@ -857,7 +798,7 @@
                     <p class="text-xs text-gray-500 mt-3">- E-commerce Store Owner</p>
                 </div>
             </div>
-
+            <p class="text-center text-xs text-gray-500 mb-8"><em>Results and metrics shown are from past client engagements; outcomes depend on many factors and your results may vary.</em></p>
             <div class="text-center">
                 <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Ready to Join These Success Stories?</h3>
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -1023,94 +964,90 @@
 
     <!-- Comparison Chart Section -->
     <section class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="section-heading">The Difference is Clear: AMP vs. The Competition</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12 text-gray-600">
-                Don't settle for generic marketing services. See how our comprehensive, results-driven approach delivers outcomes that typical agencies or in-house teams simply can't match.
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Why Choose AMP Over an Agency or In-House?</h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto text-center mb-12 text-gray-600">
+                One partner. Full-stack marketing. Results you can see—without the bloat or the guesswork.
             </p>
-            <div class="overflow-x-auto">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Feature / Benefit</th>
-                            <th>Alchemist Mind Pros</th>
-                            <th>Typical Agency</th>
-                            <th>In-House Team</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>**Multi-Industry Expertise**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i></td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Often single-industry focus)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Limited experience)</td>
-                        </tr>
-                        <tr>
-                            <td>**Complete Infrastructure Setup**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Built from scratch)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Basic/uses existing)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Requires dev expertise)</td>
-                        </tr>
-                        <tr>
-                            <td>**Rapid Results (Days vs. Months)**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Proven speed)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Slow: 3-6 months)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Learning curve)</td>
-                        </tr>
-                        <tr>
-                            <td>**Cost Per Lead (50%+ Reduction)**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Proven efficiency)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Often inflated)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Trial & error costs)</td>
-                        </tr>
-                        <tr>
-                            <td>**Custom CRM & Automation**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Built-in service)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Extra vendor needed)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Requires dedicated hire)</td>
-                        </tr>
-                        <tr>
-                            <td>**Training Hub Development**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Specialized service)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Not typically offered)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Complex development)</td>
-                        </tr>
-                        <tr>
-                            <td>**48-Hour Landing Page Delivery**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Guaranteed)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Weeks to months)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Requires expertise)</td>
-                        </tr>
-                        <tr>
-                            <td>**Fractional CMO Coaching**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Integrated service)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Not typically offered)</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (If CMO exists)</td>
-                        </tr>
-                        <tr>
-                            <td>**Top 1% Ad Performance**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (Proven track record)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Variable results)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Learning curve)</td>
-                        </tr>
-                        <tr>
-                            <td>**Comprehensive Service Integration**</td>
-                            <td><i data-lucide="check-circle" class="check-icon w-6 h-6"></i> (All-in-one solution)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Fragmented services)</td>
-                            <td><i data-lucide="x-circle" class="x-icon w-6 h-6"></i> (Multiple specialists needed)</td>
-                        </tr>
-                        <tr>
-                            <td>**Estimated Annual Cost (for comparable services)**</td>
-                            <td>**$24,000 - $60,000**</td>
-                            <td>**$50,000 - $150,000+**</td>
-                            <td>**$100,000 - $300,000+ (Salaries + Tools)**</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- AMP Column (highlighted) -->
+                <div class="relative rounded-2xl bg-white p-6 shadow-lg border-2 border-blue-500 ring-2 ring-blue-200">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-600 text-white text-sm font-bold rounded-full">Best fit for growth</div>
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-100 mb-3">
+                            <span class="text-xl font-bold text-blue-700">AMP</span>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Alchemist Mind Pros</h3>
+                        <p class="text-sm text-gray-500 mt-1">All-in-one partner</p>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Multi-industry expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Full infrastructure built from scratch</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Results in days, not months</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Lower cost per lead (proven)</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> CRM & automation included</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Training hubs & landing pages</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> 48-hour page delivery</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Fractional CMO option</li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual investment</p>
+                        <p class="text-lg font-bold text-blue-700">$24K – $60K</p>
+                    </div>
+                </div>
+                <!-- Typical Agency -->
+                <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3">
+                            <i data-lucide="building-2" class="w-7 h-7 text-gray-500"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Typical Agency</h3>
+                        <p class="text-sm text-gray-500 mt-1">Often single-focus</p>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Single-industry focus</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Basic or existing setup only</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> 3–6 months to ramp</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Often higher CPL</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> CRM = extra vendor</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Rarely offered</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Weeks to months</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Not usually included</li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual cost</p>
+                        <p class="text-lg font-bold text-gray-600">$50K – $150K+</p>
+                    </div>
+                </div>
+                <!-- In-House -->
+                <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3">
+                            <i data-lucide="users" class="w-7 h-7 text-gray-500"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">In-House Team</h3>
+                        <p class="text-sm text-gray-500 mt-1">Salaries + tools</p>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Limited breadth</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Needs dev expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Long learning curve</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Trial & error cost</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Dedicated hire needed</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Complex to build</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Requires expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i> Only if CMO exists</li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual cost</p>
+                        <p class="text-lg font-bold text-gray-600">$100K – $300K+</p>
+                    </div>
+                </div>
             </div>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mt-12 text-gray-700 font-semibold">
-                We provide a comprehensive, results-driven partnership designed to unlock your business's full growth potential across every industry.
+            <p class="text-center text-xl font-semibold text-gray-700 mt-10 max-w-2xl mx-auto">
+                One partner. Clear accountability. No juggling agencies or hiring blind.
             </p>
+            <p class="text-center text-sm text-gray-500 mt-4"><em>Outcomes and cost comparisons are illustrative based on typical engagements; your situation may differ.</em></p>
         </div>
     </section>
 
@@ -1401,8 +1338,9 @@
                         <span itemprop="name">How much does paid ads management cost?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $1,500/month. We've delivered 50%+ cost-per-lead reduction for clients across legal, home services, insurance, healthcare, and e-commerce.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $5,000/month. That investment buys you dedicated management of your Google and Meta campaigns—audience strategy, creative testing, conversion tracking, and ongoing optimization—so you're not guessing or leaving performance on the table.</p>
+                        <p>We've driven significant cost-per-lead improvements for clients in legal, home services, insurance, healthcare, and e-commerce. Pricing is transparent: no hidden fees, and we align our work with your goals and budget. Book a free strategy session and we'll outline exactly what you'd get for your spend.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1410,8 +1348,9 @@
                         <span itemprop="name">How long until I see results from Google Ads or Meta Ads?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Most clients see measurable improvements within 30–45 days. We offer a risk-free guarantee: if you don't see a lift in the first 45 days, your second month is free. No long-term contracts required.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Most clients see measurable improvements within 30–45 days: better cost per lead, higher conversion rates, or more qualified traffic. We focus on quick wins (tracking, audiences, creative) while building toward long-term scale.</p>
+                        <p>We back that with a clear guarantee: if you don't see a meaningful lift in the first 45 days, your second month is free. No long-term contracts—you can leave at any time. Our goal is to earn your trust with results, not lock you in. Past client results have varied; we'll set realistic expectations for your situation on our strategy call.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1419,8 +1358,9 @@
                         <span itemprop="name">What is fractional CMO coaching and who is it for?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Fractional CMO coaching gives you strategic marketing leadership without a full-time hire. We provide business strategy analysis, growth opportunity identification, and actionable scaling plans. It's ideal for business owners ready to scale who want an experienced strategist in their corner. Tiers range from $1,500/month (monthly sessions) to $4,000/month (weekly meetings).</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Fractional CMO coaching is strategic marketing leadership without a full-time CMO salary. You get an experienced strategist who audits your marketing, identifies growth opportunities, and gives you actionable plans—ads, CRM, landing pages, positioning—so you can scale without the cost and commitment of a senior hire.</p>
+                        <p>It's ideal for founders and owners who are ready to grow but don't have a marketing leader in-house, or who want an outside perspective. We offer three tiers: Monthly ($1,500), Twice Monthly ($2,850), and Weekly ($4,000). All include strategy analysis, action plans, and direct access so you can make decisions with confidence.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1428,8 +1368,9 @@
                         <span itemprop="name">Does Alchemist Mind Pros work with law firms and attorneys?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Yes. We've run ads for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We specialize in estate planning, personal injury, and legal marketing—delivering 43%+ cost-per-lead reduction and faster seminar fills.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. We've run paid ads and built marketing systems for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We understand compliance, audience targeting for legal (estate planning, personal injury, family law), and how to fill seminars and consultation calendars efficiently.</p>
+                        <p>Our work for attorneys has included lower cost per lead, faster seminar fills, and CRM/automation so leads don't slip through the cracks. Results we've seen for other firms are not a guarantee for every practice; we'll assess your market and goals on a free strategy call and tell you exactly how we'd approach your firm.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1437,8 +1378,9 @@
                         <span itemprop="name">What industries does Alchemist Mind Pros serve?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">We serve B2B, D2C, e-commerce, lead generation, and local service brands—including legal, home services (HVAC, plumbing), healthcare, insurance, Medicare, and professional services. We've managed over $20M in ad spend across these industries.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">We serve B2B, D2C, e-commerce, lead generation, and local service businesses. That includes legal, home services (HVAC, plumbing, roofing), healthcare and medical practices, insurance and Medicare (e.g. Chapter), professional services, and e-commerce brands.</p>
+                        <p>We've managed over $20M in ad spend across these verticals—so we're not learning on your dime. Whether you need Google Ads, Meta, LinkedIn, or full-funnel systems (landing pages, CRM, training hubs), we've done it in your space. Not every business is a fit; our free strategy session is where we confirm we can drive the outcomes you want.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1446,8 +1388,9 @@
                         <span itemprop="name">What is included in a complimentary growth strategy session?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Your free strategy session includes: a review of your current marketing, identification of growth opportunities, and a clear roadmap for lowering customer acquisition costs. There's no obligation—we'll show you exactly how we'd approach your business before you commit.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Your free strategy session is a real working call: we review your current marketing (ads, site, follow-up), identify the biggest gaps and opportunities, and outline a clear roadmap—what we'd do first, what it would cost, and what outcomes you can realistically expect. You leave with a direction, not a sales pitch.</p>
+                        <p>There's no obligation. We'll only recommend working together if we're confident we can improve your results. Many prospects use the call as a free audit; others move forward with us. Either way, you get value. Book a time that works and we'll prepare so the session is productive.</p>
                     </div>
                 </details>
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1455,8 +1398,9 @@
                         <span itemprop="name">Are there long-term contracts or commitments?</span>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
-                    <div class="mt-4 text-gray-700 leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">No. We don't require long-term contracts. Plus, if you don't see a lift in the first 45 days, your second month is free. Our goal is to prove value quickly so you feel confident continuing.</p>
+                    <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">No. We don't use long-term contracts. You can pause or stop with notice, and we don't lock you into annual agreements. We'd rather earn your business every month with performance.</p>
+                        <p>On top of that, we offer a 45-day guarantee: if you don't see a meaningful lift in the first 45 days, your second month is free. So the risk is on us. Our goal is to prove value quickly so you feel confident continuing—and to become a long-term partner because the results speak for themselves, not because you're stuck in a contract.</p>
                     </div>
                 </details>
             </div>
@@ -1469,13 +1413,13 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "How much does paid ads management cost?", "acceptedAnswer": {"@type": "Answer", "text": "Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $1,500/month. We've delivered 50%+ cost-per-lead reduction for clients across legal, home services, insurance, healthcare, and e-commerce."}},
-            {"@type": "Question", "name": "How long until I see results from Google Ads or Meta Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients see measurable improvements within 30–45 days. We offer a risk-free guarantee: if you don't see a lift in the first 45 days, your second month is free. No long-term contracts required."}},
-            {"@type": "Question", "name": "What is fractional CMO coaching and who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Fractional CMO coaching gives you strategic marketing leadership without a full-time hire. We provide business strategy analysis, growth opportunity identification, and actionable scaling plans. It's ideal for business owners ready to scale who want an experienced strategist in their corner. Tiers range from $1,500/month (monthly sessions) to $4,000/month (weekly meetings)."}},
-            {"@type": "Question", "name": "Does Alchemist Mind Pros work with law firms and attorneys?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've run ads for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We specialize in estate planning, personal injury, and legal marketing—delivering 43%+ cost-per-lead reduction and faster seminar fills."}},
-            {"@type": "Question", "name": "What industries does Alchemist Mind Pros serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve B2B, D2C, e-commerce, lead generation, and local service brands—including legal, home services (HVAC, plumbing), healthcare, insurance, Medicare, and professional services. We've managed over $20M in ad spend across these industries."}},
-            {"@type": "Question", "name": "What is included in a complimentary growth strategy session?", "acceptedAnswer": {"@type": "Answer", "text": "Your free strategy session includes: a review of your current marketing, identification of growth opportunities, and a clear roadmap for lowering customer acquisition costs. There's no obligation—we'll show you exactly how we'd approach your business before you commit."}},
-            {"@type": "Question", "name": "Are there long-term contracts or commitments?", "acceptedAnswer": {"@type": "Answer", "text": "No. We don't require long-term contracts. Plus, if you don't see a lift in the first 45 days, your second month is free. Our goal is to prove value quickly so you feel confident continuing."}}
+            {"@type": "Question", "name": "How much does paid ads management cost?", "acceptedAnswer": {"@type": "Answer", "text": "Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $5,000/month. You get dedicated management of Google and Meta campaigns—audience strategy, creative testing, conversion tracking, and ongoing optimization. We've driven significant cost-per-lead improvements for clients in legal, home services, insurance, healthcare, and e-commerce. Pricing is transparent with no hidden fees."}},
+            {"@type": "Question", "name": "How long until I see results from Google Ads or Meta Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients see measurable improvements within 30–45 days. We offer a guarantee: if you don't see a meaningful lift in the first 45 days, your second month is free. No long-term contracts; you can leave at any time. Results vary by client; we set realistic expectations on our strategy call."}},
+            {"@type": "Question", "name": "What is fractional CMO coaching and who is it for?", "acceptedAnswer": {"@type": "Answer", "text": "Fractional CMO coaching is strategic marketing leadership without a full-time CMO. You get strategy analysis, growth opportunity identification, and actionable plans for ads, CRM, and positioning. Ideal for founders ready to scale without a senior marketing hire. Tiers: Monthly $1,500, Twice Monthly $2,850, Weekly $4,000—all include strategy, action plans, and direct access."}},
+            {"@type": "Question", "name": "Does Alchemist Mind Pros work with law firms and attorneys?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We've run ads for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We specialize in estate planning, personal injury, and legal marketing—targeting, compliance, seminar fills, and CRM so leads don't slip. We assess your firm and goals on a free strategy call and outline how we'd approach your practice."}},
+            {"@type": "Question", "name": "What industries does Alchemist Mind Pros serve?", "acceptedAnswer": {"@type": "Answer", "text": "We serve B2B, D2C, e-commerce, lead gen, and local services: legal, home services (HVAC, plumbing), healthcare, insurance, Medicare, professional services. We've managed over $20M in ad spend across these verticals and offer Google, Meta, LinkedIn, landing pages, CRM, and training hubs. Our free strategy session confirms we can drive the outcomes you want."}},
+            {"@type": "Question", "name": "What is included in a complimentary growth strategy session?", "acceptedAnswer": {"@type": "Answer", "text": "Your free session is a working call: we review your marketing, identify gaps and opportunities, and outline a roadmap—what we'd do first, cost, and realistic outcomes. No obligation; we only recommend working together if we're confident we can improve your results. Many use it as a free audit."}},
+            {"@type": "Question", "name": "Are there long-term contracts or commitments?", "acceptedAnswer": {"@type": "Answer", "text": "No. No long-term contracts; you can pause or stop with notice. We offer a 45-day guarantee: if you don't see a meaningful lift in the first 45 days, your second month is free. We prove value so you stay because of results, not contract."}}
         ]
     }
     </script>
