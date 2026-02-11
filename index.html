@@ -216,17 +216,29 @@
                     </div>
                 </div>
                 <!-- Right: Hero Image -->
-                <div class="relative z-10 order-1 lg:order-2">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-2 ring-white/20 aspect-[4/3] max-h-[400px] lg:max-h-none">
-                        <img
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=85"
-                            alt="Marketing analytics and ad performance - we turn data into more leads and lower cost per acquisition"
-                            class="w-full h-full object-cover"
-                            width="800"
-                            height="600"
-                            fetchpriority="high"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent pointer-events-none"></div>
+                <div class="relative z-10 order-1 lg:order-2 flex items-center justify-center">
+                    <div class="relative w-full max-w-xl lg:max-w-2xl">
+                        <!-- Main image: professional team collaboration / growth -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 aspect-[4/3] lg:aspect-[5/4]">
+                            <img
+                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=90"
+                                alt="Our team collaborates to turn your ad spend into measurable growth and scalable systems"
+                                class="w-full h-full object-cover"
+                                width="1000"
+                                height="750"
+                                fetchpriority="high"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent pointer-events-none"></div>
+                            <!-- Floating stat badge for visual impact -->
+                            <div class="absolute bottom-4 left-4 right-4 flex justify-center">
+                                <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur px-4 py-2.5 rounded-xl shadow-lg">
+                                    <i data-lucide="trending-up" class="w-5 h-5 text-green-600"></i>
+                                    <span class="text-sm font-bold text-gray-800">$20M+ ad spend managed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Decorative corner accent -->
+                        <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-blue-500/20 rounded-2xl -z-10 blur-xl"></div>
                     </div>
                 </div>
             </div>
@@ -279,6 +291,31 @@
                     <img src="https://logo.clearbit.com/boldermoney.com" alt="Bolder Money" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                     <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Bolder Money</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Platforms We Run -->
+    <section class="py-8 md:py-10 bg-white border-b border-gray-100" aria-label="Ad platforms we manage">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-sm md:text-base font-semibold text-gray-600 mb-6 uppercase tracking-wider">We run campaigns on</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Google Ads">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Google Ads</span>
+                </div>
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Meta (Facebook) Ads">
+                    <img src="https://logo.clearbit.com/facebook.com" alt="Meta / Facebook Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Meta Ads</span>
+                </div>
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Microsoft Ads">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Microsoft Ads</span>
+                </div>
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="LinkedIn Ads">
+                    <img src="https://logo.clearbit.com/linkedin.com" alt="LinkedIn Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-gray-700 text-sm" style="display:none;">LinkedIn Ads</span>
+                </div>
             </div>
         </div>
     </section>
@@ -347,9 +384,13 @@
     <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">The AMP Growth System: Scale, Automate, Dominate</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-10 text-gray-600">
                 We don't just manage ads – we build complete revenue-generating ecosystems that work 24/7. Here's how we transform struggling businesses into market leaders:
             </p>
+            <!-- Visual: analytics & growth -->
+            <div class="max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden shadow-xl ring-2 ring-blue-100">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=90" alt="Analytics and dashboards we use to optimize your ad performance and growth" class="w-full h-48 md:h-56 object-cover" width="900" height="350">
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div class="card p-8 text-center flex flex-col items-center">
                     <div class="icon-feature mb-6">
@@ -407,9 +448,16 @@
     <section id="services" class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Our Services</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-8 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-6 text-gray-600">
                 Choose from our individual services or combine them into powerful packages designed to transform your marketing and accelerate your growth.
             </p>
+            <!-- Ad platforms reminder: we run Google, Meta, Microsoft, LinkedIn -->
+            <div class="flex flex-wrap justify-center items-center gap-6 mb-10 opacity-90">
+                <img src="https://logo.clearbit.com/google.com" alt="Google Ads" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+                <img src="https://logo.clearbit.com/facebook.com" alt="Meta Ads" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Ads" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+                <img src="https://logo.clearbit.com/linkedin.com" alt="LinkedIn Ads" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+            </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch">
                 <!-- Paid Ads Management Service -->
