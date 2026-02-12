@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="6ombaksl8jtequrlx9x242563c7uuq" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com https://calendly.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -36,6 +36,9 @@
         }
       }
     </script>
+    <!-- Preconnect for Calendly (faster modal load) -->
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
@@ -159,6 +162,16 @@
         .results-table td:last-child {
             font-weight: 700;
             color: var(--amp-navy);
+        }
+        /* Calendly modal */
+        #calendlyModal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        #calendlyModal.is-open {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
     
@@ -1549,169 +1562,17 @@
         </div>
     </footer>
 
-    <!-- Multi-Step Modal -->
-    <div id="qualifyingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-6 border-b border-gray-200">
-                <h3 class="text-2xl font-bold text-gray-900">Schedule Your Complimentary Growth Strategy Session</h3>
-                <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+    <!-- Calendly Booking Modal (direct booking - no form friction) -->
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
+                <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your Free Strategy Session</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-
-            <!-- Progress Bar -->
-            <div class="px-6 pt-4">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold" id="step1-indicator">1</div>
-                        <div class="ml-2 text-sm font-medium text-gray-900">The Basics</div>
-                    </div>
-                    <div class="flex-1 mx-4 h-1 bg-gray-200 rounded-full">
-                        <div class="h-1 bg-amp-navy rounded-full transition-all duration-300" id="progress-bar" style="width: 33%"></div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold" id="step2-indicator">2</div>
-                        <div class="ml-2 text-sm font-medium text-gray-500">Business Context</div>
-                    </div>
-                    <div class="flex items-center ml-4">
-                        <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold" id="step3-indicator">3</div>
-                        <div class="ml-2 text-sm font-medium text-gray-500">Schedule</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal Content -->
-            <div class="p-6">
-                <!-- Step 1: The Basics -->
-                <div id="step1" class="step-content">
-                    <div class="text-center mb-8">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Excellent! Let's find a time.</h4>
-                        <p class="text-gray-600">First, tell us just a bit about your business so we can prepare for a productive and valuable strategy session for you.</p>
-                    </div>
-                    
-                    <form id="step1-form" class="space-y-6">
-                        <div>
-                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                            <input type="text" id="companyName" name="companyName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="workEmail" class="block text-sm font-medium text-gray-700 mb-2">Work Email *</label>
-                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="companyWebsite" class="block text-sm font-medium text-gray-700 mb-2">Company Website *</label>
-                            <input type="url" id="companyWebsite" name="companyWebsite" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors" placeholder="https://yourcompany.com">
-                        </div>
-                        
-                        <div class="flex justify-end pt-4">
-                            <button type="button" id="next-to-step2" class="btn-primary">
-                                Next Step
-                                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 2: Business Context -->
-                <div id="step2" class="step-content hidden">
-                    <div class="text-center mb-8">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Business Context</h4>
-                        <p class="text-gray-600">Help us understand your current situation to make our session more valuable.</p>
-                    </div>
-                    
-                    <form id="step2-form" class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">What is your current approximate monthly budget for digital advertising? *</label>
-                            <div class="space-y-3">
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$0 - $1,500" required class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">$0 - $1,500 (We're just getting started or experimenting)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$1,500 - $5,000" required class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">$1,500 - $5,000 (We're investing consistently)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$5,000 - $15,000" required class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">$5,000 - $15,000 (We're looking to scale our efforts)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$15,000+" required class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">$15,000+</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">What is your biggest marketing challenge right now? *</label>
-                            <div class="space-y-3">
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Our cost per lead is too high / we're not seeing ROI" class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">Our cost per lead is too high / we're not seeing ROI</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We're losing leads due to poor follow-up systems" class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">We're losing leads due to poor follow-up systems</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We need better automation and systems" class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">We need better automation and systems</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We're unsure if our marketing is set up correctly" class="mr-3 text-amp-navy">
-                                    <span class="text-gray-700">We're unsure if our marketing is set up correctly</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="additionalInfo" class="block text-sm font-medium text-gray-700 mb-2">Is there anything else you'd like us to know before our session? (Optional)</label>
-                            <textarea id="additionalInfo" name="additionalInfo" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors" placeholder="Tell us more about your situation..."></textarea>
-                        </div>
-                        
-                        <div class="flex justify-between pt-4">
-                            <button type="button" id="next-to-step3" class="btn-primary">
-                                Next Step
-                                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 3: Calendly Widget -->
-                <div id="step3-confirmation" class="step-content hidden">
-                    <div class="text-center mb-8">
-                        <div class="bg-green-100 rounded-full p-4 mb-6 inline-block">
-                            <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="#d1fae5"></circle>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 12l3 3 5-5" stroke="#22c55e"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Perfect! Let's Schedule Your Session</h4>
-                        <p class="text-gray-600 mb-6">We've received your information and are excited to help you transform your firm's client acquisition.</p>
-                        <p class="text-gray-700 mb-8">Select a time below that works best for you:</p>
-                    </div>
-                    
-                    <!-- Calendly inline widget -->
-                    <div id="calendly-widget-container">
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/team-alchemistmind/30min" style="min-width:320px;height:700px;"></div>
-                    </div>
-                    
-                    <div class="flex justify-between pt-4">
-                        <button type="button" id="back-to-step2" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                            <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
-                            Back
-                        </button>
-                    </div>
-                </div>
+            <div id="calendly-widget-container" class="flex-1 min-h-[600px] overflow-auto">
+                <!-- Calendly loads here -->
             </div>
         </div>
     </div>
@@ -1893,19 +1754,95 @@
         if (!window.formData) window.formData = {};
         window.formData.utms = getUTMParams();
         
-        // Simple Modal Functionality
+        // Calendly Modal - direct booking (no form friction)
         document.addEventListener('DOMContentLoaded', function() {
-            // Modal elements
-            const modal = document.getElementById('qualifyingModal');
-            const closeModal = document.getElementById('closeModal');
-            const ctaButtonHero = document.getElementById('cta-button-hero');
-            const ctaButtonFinal = document.getElementById('cta-button-final');
-            const ctaButtonCustomStrategy = document.getElementById('cta-button-custom-strategy');
-            const ctaButtonSuccessStory = document.getElementById('cta-button-success-story');
-            const ctaDiscussPackages = document.getElementById('cta-discuss-packages');
-            const ctaBookStrategy = document.getElementById('cta-book-strategy');
-            const ctaHeaderGetStarted = document.getElementById('cta-header-get-started');
-            const ctaFooterContact = document.getElementById('cta-footer-contact');
+            const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
+            const modal = document.getElementById('calendlyModal');
+            const closeBtn = document.getElementById('closeCalendlyModal');
+            const container = document.getElementById('calendly-widget-container');
+            
+            const ctaIds = [
+                'cta-button-hero', 'cta-button-final', 'cta-button-custom-strategy',
+                'cta-button-success-story', 'cta-discuss-packages', 'cta-book-strategy',
+                'cta-header-get-started', 'cta-footer-contact'
+            ];
+            
+            function openCalendlyModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.add('is-open');
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                loadCalendlyWidget();
+                // Focus close button for accessibility
+                setTimeout(() => closeBtn && closeBtn.focus(), 100);
+            }
+            
+            function closeCalendlyModal() {
+                modal.classList.remove('is-open');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            function loadCalendlyWidget() {
+                if (typeof Calendly === 'undefined') {
+                    const script = document.createElement('script');
+                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    script.onload = initCalendly;
+                } else {
+                    initCalendly();
+                }
+            }
+            
+            function initCalendly() {
+                if (window.Calendly && container && !container.querySelector('iframe')) {
+                    window.Calendly.initInlineWidget({
+                        url: CALENDLY_URL,
+                        parentElement: container,
+                        prefill: {},
+                        utm: {},
+                        hideEventTypeDetails: false,
+                        hideLandingPageDetails: false
+                    });
+                }
+            }
+            
+            // Wire all CTAs
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', openCalendlyModal);
+            });
+            
+            // Close handlers
+            if (closeBtn) closeBtn.addEventListener('click', closeCalendlyModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeCalendlyModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCalendlyModal();
+            });
+            
+            window.openCalendlyModal = openCalendlyModal;
+            window.closeCalendlyModal = closeCalendlyModal;
+            
+            // Preload Calendly script on first CTA hover/focus (faster open)
+            let calendlyPreloaded = false;
+            function preloadCalendly() {
+                if (calendlyPreloaded) return;
+                calendlyPreloaded = true;
+                const script = document.createElement('script');
+                script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                script.async = true;
+                document.head.appendChild(script);
+            }
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('mouseenter', preloadCalendly, { once: true });
+                    el.addEventListener('focus', preloadCalendly, { once: true });
+                }
+            });
             
             // Service Card Pricing Reveal Functionality
             const serviceCards = document.querySelectorAll('.service-card');
@@ -1976,212 +1913,6 @@
                 });
             });
             
-            // Form data storage
-            let formData = {
-                step1: {},
-                step2: {},
-                step3: {},
-                utms: window.formData ? window.formData.utms : getUTMParams()
-            };
-            
-            // Function to open modal
-            function openModal(e) {
-                e.preventDefault();
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            // Open modal when any of these CTAs is clicked
-            ctaButtonHero.addEventListener('click', openModal);
-            ctaButtonFinal.addEventListener('click', openModal);
-            if (ctaButtonCustomStrategy) ctaButtonCustomStrategy.addEventListener('click', openModal);
-            if (ctaButtonSuccessStory) ctaButtonSuccessStory.addEventListener('click', openModal);
-            if (ctaDiscussPackages) ctaDiscussPackages.addEventListener('click', openModal);
-            if (ctaBookStrategy) ctaBookStrategy.addEventListener('click', openModal);
-            if (ctaHeaderGetStarted) ctaHeaderGetStarted.addEventListener('click', openModal);
-            if (ctaFooterContact) ctaFooterContact.addEventListener('click', openModal);
-            
-            // Close modal
-            closeModal.addEventListener('click', function() {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-            
-            // Close modal when clicking outside
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Step navigation
-            const step1 = document.getElementById('step1');
-            const step2 = document.getElementById('step2');
-            const step3Confirmation = document.getElementById('step3-confirmation');
-            const progressBar = document.getElementById('progress-bar');
-            const step1Indicator = document.getElementById('step1-indicator');
-            const step2Indicator = document.getElementById('step2-indicator');
-            const step3Indicator = document.getElementById('step3-indicator');
-            
-            // Next to step 2
-            document.getElementById('next-to-step2').addEventListener('click', function() {
-                if (validateStep1()) {
-                    saveStep1Data();
-                    // Track form step completion
-                    trackGA4Event('form_step_complete', {
-                        step_number: 1,
-                        form_name: 'attorney_consultation'
-                    });
-                    trackFormInteraction();
-                    showStep(2);
-                }
-            });
-            
-            // Next to step 3
-            document.getElementById('next-to-step3').addEventListener('click', function() {
-                if (validateStep2()) {
-                    saveStep2Data();
-                    
-                    // Track form completion and conversion
-                    trackConversion(formData);
-                    
-                    // Track form step completion
-                    trackGA4Event('form_step_complete', {
-                        step_number: 2,
-                        form_name: 'attorney_consultation'
-                    });
-                    
-                    sendFormDataToCRM(formData);
-                    showStep(3);
-                }
-            });
-
-            // Back to step 2
-            document.getElementById('back-to-step2').addEventListener('click', function() {
-                showStep(2);
-            });
-            
-            // Back to step 1
-            document.getElementById('back-to-step1').addEventListener('click', function() {
-                showStep(1);
-            });
-            
-            function showStep(stepNumber) {
-                // Hide all steps
-                step1.classList.add('hidden');
-                step2.classList.add('hidden');
-                step3Confirmation.classList.add('hidden');
-                
-                // Show current step
-                if (stepNumber === 1) {
-                    step1.classList.remove('hidden');
-                    progressBar.style.width = '33%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                } else if (stepNumber === 2) {
-                    step2.classList.remove('hidden');
-                    progressBar.style.width = '66%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                } else if (stepNumber === 3) {
-                    step3Confirmation.classList.remove('hidden');
-                    progressBar.style.width = '100%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
-                    
-                    // Load Calendly widget when Step 3 becomes visible
-                    loadCalendlyWidget();
-                }
-            }
-            
-            function loadCalendlyWidget() {
-                // Check if Calendly script is already loaded
-                if (typeof Calendly === 'undefined') {
-                    // Load Calendly script
-                    const script = document.createElement('script');
-                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-                    script.async = true;
-                    document.head.appendChild(script);
-                    
-                    // Wait for script to load, then initialize widget
-                    script.onload = function() {
-                        if (window.Calendly) {
-                            window.Calendly.initInlineWidget({
-                                url: 'https://calendly.com/team-alchemistmind/30min',
-                                parentElement: document.getElementById('calendly-widget-container')
-                            });
-                        }
-                    };
-                } else {
-                    // Script already loaded, just initialize widget
-                    if (window.Calendly) {
-                        window.Calendly.initInlineWidget({
-                            url: 'https://calendly.com/team-alchemistmind/30min',
-                            parentElement: document.getElementById('calendly-widget-container')
-                        });
-                    }
-                }
-            }
-            
-            function validateStep1() {
-                const fullName = document.getElementById('fullName').value.trim();
-                const companyName = document.getElementById('companyName').value.trim();
-                const workEmail = document.getElementById('workEmail').value.trim();
-                const companyWebsite = document.getElementById('companyWebsite').value.trim();
-                
-                if (!fullName || !companyName || !workEmail || !companyWebsite) {
-                    alert('Please fill in all required fields.');
-                    return false;
-                }
-                
-                if (!isValidEmail(workEmail)) {
-                    alert('Please enter a valid email address.');
-                    return false;
-                }
-                
-                return true;
-            }
-            
-            function validateStep2() {
-                const adBudget = document.querySelector('input[name="adBudget"]:checked');
-                const biggestChallenges = document.querySelectorAll('input[name="biggestChallenge"]:checked');
-                
-                if (!adBudget || biggestChallenges.length === 0) {
-                    alert('Please answer all required questions.');
-                    return false;
-                }
-                
-                return true;
-            }
-            
-            function saveStep1Data() {
-                formData.step1 = {
-                    fullName: document.getElementById('fullName').value.trim(),
-                    companyName: document.getElementById('companyName').value.trim(),
-                    workEmail: document.getElementById('workEmail').value.trim(),
-                    companyWebsite: document.getElementById('companyWebsite').value.trim()
-                };
-            }
-            
-            function saveStep2Data() {
-                const selectedChallenges = Array.from(document.querySelectorAll('input[name="biggestChallenge"]:checked')).map(checkbox => checkbox.value);
-                formData.step2 = {
-                    adBudget: document.querySelector('input[name="adBudget"]:checked').value,
-                    biggestChallenge: selectedChallenges,
-                    additionalInfo: document.getElementById('additionalInfo').value.trim()
-                };
-            }
-            
-            function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            }
-            
-
         });
 
         // Send form data to CRM/webhook
@@ -2279,12 +2010,15 @@
             }
         });
         
-        // Calendly event listener
+        // Calendly event listener - when booking confirmed, close Calendly modal and show confirmation
         window.addEventListener('message', function(e) {
             try {
                 if (typeof e.data === 'object' && e.data.event && e.data.event.indexOf('calendly') === 0) {
                     if (e.data.event === 'calendly.event_scheduled') {
+                        if (typeof window.closeCalendlyModal === 'function') window.closeCalendlyModal();
                         showConfirmationModal();
+                        trackGA4Event('calendly_booking_complete', { event_label: 'strategy_session' });
+                        trackFacebookEvent('Lead', { content_name: 'Calendly Booking' });
                     }
                 }
             } catch (error) {
