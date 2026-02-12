@@ -87,16 +87,29 @@
         .btn-primary.bg-amp-gold:hover {
             background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%);
         }
+        /* Solid white buttons on dark sections (hero, contact) - override base gradient */
+        .btn-primary.bg-white {
+            background: white !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.bg-white:hover {
+            background: var(--amp-gold-light) !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Solid gold hero CTA - highly visible on navy */
         .btn-primary.btn-outline {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
         }
         .btn-primary.btn-outline:hover {
-            background: white;
-            color: var(--amp-navy);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important;
+            color: white !important;
+            border-color: white;
+            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
         }
         .section-heading {
             font-size: 2.5rem;
