@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="6ombaksl8jtequrlx9x242563c7uuq" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com https://calendly.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -19,63 +20,109 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amp': {
+                'navy': '#1e3a5f',
+                'navy-dark': '#152a47',
+                'navy-light': '#2d4a6f',
+                'gold': '#c9a227',
+                'gold-light': '#fef3c7',
+                'gold-dark': '#b8860b',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
+        :root {
+            --amp-navy: #1e3a5f;
+            --amp-navy-dark: #152a47;
+            --amp-navy-light: #2d4a6f;
+            --amp-gold: #c9a227;
+            --amp-gold-light: #fef3c7;
+            --amp-gold-dark: #b8860b;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            background-color: #fafaf9;
             color: #334155;
         }
-        .container {
-            max-width: 1200px;
-        }
+        .container { max-width: 1200px; }
         .btn-primary {
-            background-color: #1d4ed8;
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 9999px;
             font-weight: 700;
             font-size: 1.125rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
         }
         .btn-primary:hover {
-            background-color: #1e40af;
+            background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4);
+        }
+        .btn-primary.bg-white {
+            background: white !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.bg-white:hover {
+            background: var(--amp-gold-light) !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline {
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline:hover {
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important;
+            color: white !important;
+            border-color: white;
+            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
         }
         .section-heading {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #1e293b;
+            color: var(--amp-navy-dark);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
-        @media (min-width: 768px) {
-            .section-heading {
-                font-size: 3rem;
-            }
-        }
+        @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
         .sub-heading {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #475569;
+            color: var(--amp-navy);
             margin-bottom: 1rem;
         }
         .card {
             background-color: white;
             border-radius: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04);
             padding: 2rem;
         }
         .icon-feature {
-            background-color: #e0f2fe;
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%);
+            color: var(--amp-gold-dark);
             padding: 0.75rem;
             border-radius: 0.75rem;
             display: inline-flex;
@@ -88,7 +135,7 @@
             border-spacing: 0;
             overflow: hidden;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
         }
         .results-table th, .results-table td {
             padding: 1rem 1.5rem;
@@ -96,67 +143,34 @@
             border-bottom: 1px solid #e2e8f0;
         }
         .results-table th {
-            background-color: #f1f5f9;
+            background-color: var(--amp-gold-light);
             font-weight: 600;
-            color: #334155;
+            color: var(--amp-navy-dark);
             text-transform: uppercase;
             font-size: 0.875rem;
         }
-        .results-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-        .results-table tr:last-child td {
-            border-bottom: none;
-        }
-        .results-table td:first-child {
-            font-weight: 500;
-        }
-        .results-table td:last-child {
-            font-weight: 700;
-            color: #1d4ed8;
-        }
-        .dashboard-mockup {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            color: white;
-            font-family: 'Courier New', monospace;
-        }
-        .metric-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            text-align: center;
-        }
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #22c55e;
-        }
-        .metric-label {
-            font-size: 0.875rem;
-            opacity: 0.8;
-        }
+        .results-table tr:nth-child(even) { background-color: #fafaf9; }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table td:first-child { font-weight: 500; }
+        .results-table td:last-child { font-weight: 700; color: var(--amp-navy); }
         .roi-calculator {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.5) 100%);
             border-radius: 1rem;
             padding: 2rem;
+            border: 2px solid rgba(201, 162, 39, 0.2);
         }
         .calculator-input {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #0ea5e9;
+            border: 2px solid var(--amp-gold);
             border-radius: 0.5rem;
             font-size: 1.125rem;
             text-align: center;
         }
-        .calculator-result {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #1d4ed8;
-            text-align: center;
-            margin: 1rem 0;
-        }
+        #calendlyModal { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+        #calendlyModal.is-open { opacity: 1; visibility: visible; }
+        #calendly-widget-container { flex-shrink: 0; }
+        #calendly-widget-container iframe { width: 100% !important; height: 100% !important; }
     </style>
     
     <!-- Meta Pixel Code -->
@@ -180,31 +194,29 @@
 <body class="antialiased">
 
     <!-- Company Header -->
-    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="AlchemistMindHP.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
-                    <div class="w-14 h-14 flex items-center justify-center">
-                        <div class="border-2 border-amber-600 px-1 py-0.5 rounded-lg">
-                            <div class="text-lg font-bold text-amber-600 tracking-wide">
-                                AMP
-                            </div>
+                <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <div class="border-2 border-amp-gold px-1 py-0.5 rounded-lg">
+                            <div class="text-lg font-bold text-amp-gold-dark tracking-wide">AMP</div>
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <h1 class="text-xl font-bold text-gray-900">Alchemist Mind Pros</h1>
-                        <p class="text-sm text-gray-600">Digital Marketing Excellence</p>
+                        <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
+                        <p class="text-sm text-amp-navy/80">Digital Marketing Excellence</p>
                     </div>
                 </a>
                 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="AlchemistMindHP.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
+                    <a href="https://alchemistmind.pro" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Home</a>
+                    <a href="#services" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Services</a>
+                    <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
                 </nav>
                 
                 <div class="hidden md:block">
-                    <a href="#contact" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
                         Get Started
                     </a>
@@ -214,117 +226,104 @@
     </header>
 
     <!-- Hero Section -->
-    <header class="bg-gradient-to-br from-blue-700 to-indigo-800 text-white py-16 md:py-28 rounded-b-3xl shadow-xl relative overflow-hidden">
-        <!-- Animated Dashboard Background -->
+    <section class="relative rounded-b-3xl shadow-xl overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-800"></div>
-            <div class="absolute inset-0 opacity-20">
-                <!-- Mock Dashboard Elements -->
-                <div class="absolute top-10 right-10 w-40 h-24 bg-white bg-opacity-10 rounded-lg animate-pulse">
-                    <div class="p-3">
-                        <div class="text-xs text-white font-bold">Google Ads</div>
-                        <div class="text-xs text-green-300">CPA: $12.50</div>
-                        <div class="text-xs text-blue-200">↓ 43%</div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=85" alt="Analytics dashboard and paid ads performance" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy" style="opacity: 0.92;"></div>
+        </div>
+        <div class="relative z-10 py-16 md:py-24 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                            Stop Wasting Money on Paid Ads That Don't Work
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-bold leading-tight mb-6 drop-shadow-lg text-amp-gold-light/90">
+                            Get Top 1% Google & Facebook Ads Performance — Cut Costs by 20%+ While Doubling Lead Quality
+                        </h2>
+                        <p class="text-lg md:text-xl font-light mb-8 opacity-90">
+                            We've helped <strong>law firms, HVAC companies, insurance brokers, and local service businesses</strong> cut customer acquisition costs while getting more qualified leads and predictable ROI.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#" id="cta-hero-audit" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                                Get Your Free Audit
+                            </a>
+                            <a href="#roi-calculator" class="btn-primary btn-outline inline-flex items-center justify-center">
+                                <i data-lucide="calculator" class="w-6 h-6 mr-2"></i>
+                                Calculate Your Savings
+                            </a>
+                        </div>
+                        <p class="mt-4 text-amp-gold-light/80 text-sm"><a href="#case-studies" class="hover:text-white underline">See real case study results →</a></p>
                     </div>
-                </div>
-                <div class="absolute top-32 left-10 w-32 h-20 bg-white bg-opacity-10 rounded-lg animate-pulse delay-1000">
-                    <div class="p-2">
-                        <div class="text-xs text-white font-bold">Facebook Ads</div>
-                        <div class="text-xs text-green-300">ROAS: 5.2x</div>
-                    </div>
-                </div>
-                <div class="absolute bottom-20 right-20 w-28 h-16 bg-white bg-opacity-10 rounded-lg animate-pulse delay-2000">
-                    <div class="p-2">
-                        <div class="text-xs text-white font-bold">Leads</div>
-                        <div class="text-xs text-green-300">+240%</div>
+                    <div class="hidden lg:block relative">
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-2xl font-bold text-amp-gold">43%</div>
+                                    <div class="text-sm text-amp-gold-light/90">Avg. Cost Reduction</div>
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-2xl font-bold text-amp-gold">$20M+</div>
+                                    <div class="text-sm text-amp-gold-light/90">Ad Spend Managed</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <!-- Main Headlines -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                Stop Wasting Money on Paid Ads That Don't Work
-            </h1>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8 drop-shadow-lg text-blue-200">
-                Get Top 1% Google & Facebook Ads Performance with 20%+ Cost Reduction
-            </h2>
-            
-            <!-- Body Copy -->
-            <div class="max-w-4xl mx-auto mb-12">
-                <p class="text-xl md:text-2xl font-light mb-6 opacity-90">
-                    Most businesses are hemorrhaging money on poorly optimized ad campaigns. We've helped <strong>law firms, HVAC companies, insurance brokers, and local service businesses</strong> cut their customer acquisition costs by 20%+ while doubling lead quality.
-                </p>
-                <p class="text-lg md:text-xl font-medium text-blue-200">
-                    Our clients get more qualified leads, lower costs, and predictable ROI from their ad spend.
-                </p>
+    </section>
+
+    <!-- Social Proof - Trusted By -->
+    <section class="py-12 md:py-16 bg-white border-b border-amp-gold-light/60">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-amp-navy/80 font-semibold mb-6 text-lg">Trusted by brands that invest in growth</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                <img src="https://logo.clearbit.com/sweetjames.com" alt="Sweet James" class="h-10 md:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+                <img src="https://logo.clearbit.com/siegellawgroup.com" alt="Siegel Law Group" class="h-10 md:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+                <img src="https://logo.clearbit.com/askchapter.org" alt="Chapter" class="h-10 md:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
             </div>
-            
-            <!-- Trust Signals -->
-            <div class="mb-12">
-                <p class="text-sm text-blue-200 mb-6 font-medium">Proven results across industries</p>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
-                    <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg text-sm font-bold">
-                        Law Firms: 43% Cost Reduction
-                    </div>
-                    <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg text-sm font-bold">
-                        HVAC: 306% More Leads
-                    </div>
-                    <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg text-sm font-bold">
-                        Insurance: 72% Faster Response
-                    </div>
-                </div>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#case-studies" class="btn-primary inline-flex items-center bg-white text-blue-700 hover:bg-gray-100">
-                    <i data-lucide="trending-up" class="w-6 h-6 mr-2"></i> 
-                    See Real Results
-                </a>
-                <a href="#roi-calculator" id="cta-button-hero" class="btn-primary inline-flex items-center border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-700">
-                    <i data-lucide="calculator" class="w-6 h-6 mr-2"></i> 
-                    Calculate Your Savings
-                </a>
-            </div>
+            <p class="text-center text-2xl md:text-3xl font-bold text-amp-navy-dark mt-8">
+                We've managed over <span class="text-amp-gold-dark">$20M in ad spend</span> — proven results, not promises.
+            </p>
         </div>
-    </header>
+    </section>
 
     <!-- Problem Section -->
     <section class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto mt-[-2rem] relative z-10 max-w-6xl">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading">Are You Bleeding Money on Paid Ads?</h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-gray-600">
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-amp-navy/80">
                 Most businesses are throwing away thousands of dollars on ads that don't convert. Here's what's probably happening to you:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card flex flex-col items-center text-center p-6 bg-red-50">
-                    <div class="icon-feature mb-4 bg-red-100">
-                        <i data-lucide="dollar-sign" class="w-8 h-8 text-red-700"></i>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-red-900">Sky-High Ad Costs</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Sky-High Ad Costs</h3>
                     <p class="text-gray-700">Paying $50-100+ per lead when competitors are getting them for $15-25</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-red-50">
-                    <div class="icon-feature mb-4 bg-red-100">
-                        <i data-lucide="users" class="w-8 h-8 text-red-700"></i>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-red-900">Unqualified Leads</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Unqualified Leads</h3>
                     <p class="text-gray-700">Getting tons of clicks but no real prospects who are ready to buy</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-red-50">
-                    <div class="icon-feature mb-4 bg-red-100">
-                        <i data-lucide="trending-down" class="w-8 h-8 text-red-700"></i>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-red-900">Inconsistent Results</h3>
-                    <p class="text-gray-700">One month you get leads, the next month nothing - no predictability</p>
+                    <h3 class="sub-heading text-amp-navy-dark">Inconsistent Results</h3>
+                    <p class="text-gray-700">One month you get leads, the next month nothing — no predictability</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-red-50">
-                    <div class="icon-feature mb-4 bg-red-100">
-                        <i data-lucide="settings" class="w-8 h-8 text-red-700"></i>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="settings" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-red-900">Poor Tracking</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Poor Tracking</h3>
                     <p class="text-gray-700">Can't tell which ads are working or where your money is actually going</p>
                 </div>
             </div>
@@ -335,7 +334,7 @@
     </section>
 
     <!-- ROI Calculator Section -->
-    <section id="roi-calculator" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="roi-calculator" class="py-16 md:py-24 bg-gradient-to-br from-amp-gold-light/40 to-amp-gold-light/20">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Calculate Your Potential Savings</h2>
             <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-8 text-gray-600">
@@ -344,25 +343,25 @@
             
             <!-- Instructions -->
             <div class="max-w-3xl mx-auto mb-12">
-                <div class="bg-white bg-opacity-70 rounded-lg p-6 text-center">
-                    <h3 class="text-lg font-semibold text-blue-900 mb-3">How It Works</h3>
+                <div class="bg-white rounded-lg p-6 text-center border border-amp-gold/20">
+                    <h3 class="text-lg font-semibold text-amp-navy-dark mb-3">How It Works</h3>
                     <p class="text-gray-700 mb-4">Simply enter your current monthly ad spend and cost per lead below. We'll show you the potential savings based on our proven results:</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                         <div class="flex items-center justify-center">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-                                <span class="text-blue-600 font-bold">1</span>
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">1</span>
                             </div>
                             <span>Enter your current numbers</span>
                         </div>
                         <div class="flex items-center justify-center">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-                                <span class="text-blue-600 font-bold">2</span>
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">2</span>
                             </div>
                             <span>See instant calculations</span>
                         </div>
                         <div class="flex items-center justify-center">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-                                <span class="text-blue-600 font-bold">3</span>
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">3</span>
                             </div>
                             <span>Discover your savings potential</span>
                         </div>
@@ -374,7 +373,7 @@
                 <div class="roi-calculator">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900 mb-6">Your Current Situation</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">Your Current Situation</h3>
                             <div class="space-y-6">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Ad Spend *</label>
@@ -401,7 +400,7 @@
                         </div>
                         
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900 mb-6">With Our Management</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">With Our Management</h3>
                             <div class="space-y-6">
                                 <div class="bg-green-50 rounded-lg p-4 border-2 border-green-200">
                                     <label class="block text-sm font-medium text-green-800 mb-2">Improved Cost Per Lead</label>
@@ -413,47 +412,54 @@
                                     <div class="text-2xl font-bold text-green-600" id="improved-leads-display">0</div>
                                     <p class="text-xs text-green-600 mt-1">20% more leads in month 1, then 2-5% growth monthly</p>
                                 </div>
-                                <div class="bg-blue-100 rounded-lg p-4 border-2 border-blue-300">
-                                    <label class="block text-sm font-medium text-blue-800 mb-2">Monthly Savings</label>
-                                    <div class="text-3xl font-bold text-blue-600" id="monthly-savings">$0</div>
-                                    <p class="text-xs text-blue-600 mt-1">Money back in your pocket</p>
+                                <div class="bg-amp-gold-light/60 rounded-lg p-4 border-2 border-amp-gold/30">
+                                    <label class="block text-sm font-medium text-amp-navy-dark mb-2">Monthly Savings</label>
+                                    <div class="text-3xl font-bold text-amp-gold-dark" id="monthly-savings">$0</div>
+                                    <p class="text-xs text-amp-navy mt-1">Money back in your pocket</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-12 text-center">
-                        <div class="bg-white bg-opacity-50 rounded-lg p-8 border-2 border-green-300">
-                            <h4 class="text-2xl font-bold text-blue-900 mb-4">Your Annual Savings Potential</h4>
-                            <div class="text-5xl font-bold text-green-600 mb-4" id="annual-savings">$0</div>
+                        <div class="bg-white rounded-lg p-8 border-2 border-amp-gold/30">
+                            <h4 class="text-2xl font-bold text-amp-navy-dark mb-4">Your Annual Savings Potential</h4>
+                            <div class="text-5xl font-bold text-amp-gold-dark mb-4" id="annual-savings">$0</div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                                <div class="bg-green-100 rounded-lg p-4">
-                                    <div class="font-semibold text-green-800 mb-1">Additional Benefits:</div>
-                                    <div class="text-green-700">• 20% more leads in month 1</div>
-                                    <div class="text-green-700">• 2-5% month-over-month lead growth</div>
-                                    <div class="text-green-700">• 20% cost per lead reduction</div>
-                                    <div class="text-green-700">• Consistent monthly results</div>
+                                <div class="bg-amp-gold-light/50 rounded-lg p-4">
+                                    <div class="font-semibold text-amp-navy-dark mb-1">Additional Benefits:</div>
+                                    <div class="text-amp-navy/90">• 20% more leads in month 1</div>
+                                    <div class="text-amp-navy/90">• 2-5% month-over-month lead growth</div>
+                                    <div class="text-amp-navy/90">• 20% cost per lead reduction</div>
+                                    <div class="text-amp-navy/90">• Consistent monthly results</div>
                                 </div>
-                                <div class="bg-blue-100 rounded-lg p-4">
-                                    <div class="font-semibold text-blue-800 mb-1">ROI on Our Service:</div>
-                                    <div class="text-blue-700">• Our fee: $2,000/month</div>
-                                    <div class="text-blue-700">• Your savings: <span id="net-savings">$0</span>/month</div>
-                                    <div class="text-blue-700">• Net profit: <span id="net-profit" class="font-bold">$0</span>/month</div>
+                                <div class="bg-amp-gold-light/50 rounded-lg p-4">
+                                    <div class="font-semibold text-amp-navy-dark mb-1">ROI on Our Service:</div>
+                                    <div class="text-amp-navy/90">• Our fee: $2,000/month</div>
+                                    <div class="text-amp-navy/90">• Your savings: <span id="net-savings">$0</span>/month</div>
+                                    <div class="text-amp-navy/90">• Net profit: <span id="net-profit" class="font-bold">$0</span>/month</div>
                                 </div>
                             </div>
+                            <p class="mt-6 text-xs text-amp-navy/70 italic max-w-2xl mx-auto">
+                                <strong>Disclaimer:</strong> These are rough estimates based on what other clients have experienced; actual results can be more or less. Individual outcomes depend on many factors including industry, ad spend, and current setup.
+                            </p>
+                            <a href="#" id="cta-calculator-audit" class="btn-primary inline-flex mt-6">
+                                <i data-lucide="calendar-check" class="w-5 h-5 mr-2"></i>
+                                Get Your Free Audit
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </section>
+    </section>
 
         <!-- Free Audit Details Section -->
-        <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <section class="py-20 bg-gradient-to-br from-amp-gold-light/40 to-amp-gold-light/20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-                        What You Get in Your <span class="text-blue-600">Free Ad Performance Audit</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg text-amp-navy-dark">
+                        What You Get in Your <span class="text-amp-gold-dark">Free Ad Performance Audit</span>
                     </h2>
                     <p class="text-xl md:text-2xl font-light mb-8 opacity-90">
                         A comprehensive analysis of your current ad accounts with actionable insights and prioritized recommendations
@@ -462,48 +468,48 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                     <!-- Audit Process -->
-                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-100">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-amp-gold/20">
                         <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="search" class="w-6 h-6 text-blue-600"></i>
+                            <div class="w-12 h-12 bg-amp-gold-light rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="search" class="w-6 h-6 text-amp-gold-dark"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-blue-900">Comprehensive Platform Analysis</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark">Comprehensive Platform Analysis</h3>
                         </div>
                         <div class="space-y-4 text-gray-700">
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>Google Ads Audit:</strong> Account structure, keyword strategy, ad copy performance, landing page experience, and conversion tracking</p>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>Meta Ads Audit:</strong> Campaign objectives, audience targeting, creative performance, pixel implementation, and attribution setup</p>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>LinkedIn Ads Audit:</strong> B2B targeting strategies, campaign structure, lead generation forms, and professional audience optimization</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Scoring System -->
-                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-green-100">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-amp-gold/20">
                         <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="target" class="w-6 h-6 text-green-600"></i>
+                            <div class="w-12 h-12 bg-amp-gold-light rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="target" class="w-6 h-6 text-amp-gold-dark"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-green-900">Weighted Account Scoring</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark">Weighted Account Scoring</h3>
                         </div>
                         <div class="space-y-4 text-gray-700">
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>Critical Issues (40% weight):</strong> Conversion tracking, account structure, and fundamental setup problems</p>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>Performance Optimizations (35% weight):</strong> Bid strategies, audience targeting, and ad creative effectiveness</p>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                 <p><strong>Advanced Features (25% weight):</strong> Automation, advanced tracking, and scaling opportunities</p>
                             </div>
                         </div>
@@ -512,7 +518,7 @@
 
                 <!-- Deliverables -->
                 <div class="max-w-4xl mx-auto mt-16">
-                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
+                    <div class="rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
                         <h3 class="text-3xl font-bold mb-6 text-center">Your Audit Deliverables</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="text-center">
@@ -520,21 +526,21 @@
                                     <i data-lucide="file-text" class="w-8 h-8"></i>
                                 </div>
                                 <h4 class="text-xl font-bold mb-2">Detailed Report</h4>
-                                <p class="text-blue-100">Comprehensive score card with a 1-2 page analysis with screenshots, data insights, and prioritized recommendations</p>
+                                <p class="text-amp-gold-light/90">Comprehensive score card with a 1-2 page analysis with screenshots, data insights, and prioritized recommendations</p>
                             </div>
                             <div class="text-center">
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="trending-up" class="w-8 h-8"></i>
                                 </div>
                                 <h4 class="text-xl font-bold mb-2">ROI Projections</h4>
-                                <p class="text-blue-100">Specific cost savings and lead generation improvements based on your current performance</p>
+                                <p class="text-amp-gold-light/90">Specific cost savings and lead generation improvements based on your current performance</p>
                             </div>
                             <div class="text-center">
                                 <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="calendar" class="w-8 h-8"></i>
                                 </div>
                                 <h4 class="text-xl font-bold mb-2">Strategy Call</h4>
-                                <p class="text-blue-100">30-minute consultation to discuss findings and answer questions about implementation</p>
+                                <p class="text-amp-gold-light/90">30-minute consultation to discuss findings and answer questions about implementation</p>
                             </div>
                         </div>
                     </div>
@@ -542,13 +548,13 @@
 
                 <!-- CTA -->
                 <div class="text-center mt-12">
-                    <p class="text-lg text-gray-600 mb-6">
+                    <p class="text-lg text-amp-navy/80 mb-6">
                         <strong>Value:</strong> This audit typically costs $500-1,500 when done by agencies
                     </p>
-                    <button onclick="openAuditModal()" class="btn-primary text-lg px-8 py-4">
+                    <a href="#" id="cta-audit-section" class="btn-primary inline-flex text-lg px-8 py-4">
                         <i data-lucide="gift" class="w-6 h-6 mr-2"></i>
                         Get Your Free Audit Now
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -564,12 +570,12 @@
             <!-- Case Study 1: Law Firm -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="lg:pr-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Case Study: Estate Planning Law Firm</h3>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">The Challenge: $41 Per Lead & Slow Seminar Fills</h4>
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study: Estate Planning Law Firm</h3>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">The Challenge: $41 Per Lead & Slow Seminar Fills</h4>
                     <p class="text-gray-700 mb-4">
                         A successful law firm was spending $41.62 per lead and taking two weeks to fill seminars. They thought this was normal until we showed them what was possible.
                     </p>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">Our Solution & Results</h4>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">Our Solution & Results</h4>
                     <p class="text-gray-700 mb-6">
                         We rebuilt their entire ad infrastructure from scratch: new Google Ads campaigns, Facebook Pixel setup, conversion tracking, and high-converting landing pages.
                     </p>
@@ -587,22 +593,22 @@
                             <tr>
                                 <td>Time to Fill Seminars</td>
                                 <td>2 Weeks</td>
-                                <td><span class="font-bold text-blue-700">4 Days</span></td>
+                                <td><span class="font-bold text-amp-navy">4 Days</span></td>
                             </tr>
                             <tr>
                                 <td>Cost Per Lead</td>
                                 <td>$41.62</td>
-                                <td><span class="font-bold text-blue-700">$20.90</span></td>
+                                <td><span class="font-bold text-amp-navy">$20.90</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Quality</td>
                                 <td>Generic Leads</td>
-                                <td><span class="font-bold text-blue-700">Qualified Prospects</span></td>
+                                <td><span class="font-bold text-amp-navy">Qualified Prospects</span></td>
                             </tr>
                             <tr>
                                 <td>Monthly Savings</td>
                                 <td>$0</td>
-                                <td><span class="font-bold text-blue-700">$2,500+</span></td>
+                                <td><span class="font-bold text-amp-navy">$2,500+</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -612,12 +618,12 @@
             <!-- Case Study 2: HVAC Company -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="lg:order-2 lg:pl-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Case Study: HVAC Company</h3>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">The Challenge: $85 Per Lead & Poor Quality</h4>
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study: HVAC Company</h3>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">The Challenge: $85 Per Lead & Poor Quality</h4>
                     <p class="text-gray-700 mb-4">
                         An HVAC company was spending $85 per lead and getting mostly price shoppers who never converted. They needed qualified homeowners ready to buy.
                     </p>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">Our Solution & Results</h4>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">Our Solution & Results</h4>
                     <p class="text-gray-700 mb-6">
                         We implemented advanced audience targeting, improved ad copy focusing on urgency and expertise, and created landing pages that pre-qualified prospects.
                     </p>
@@ -635,22 +641,22 @@
                             <tr>
                                 <td>Cost Per Lead</td>
                                 <td>$85</td>
-                                <td><span class="font-bold text-blue-700">$28</span></td>
+                                <td><span class="font-bold text-amp-navy">$28</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Quality Score</td>
                                 <td>3/10</td>
-                                <td><span class="font-bold text-blue-700">8/10</span></td>
+                                <td><span class="font-bold text-amp-navy">8/10</span></td>
                             </tr>
                             <tr>
                                 <td>Conversion Rate</td>
                                 <td>12%</td>
-                                <td><span class="font-bold text-blue-700">34%</span></td>
+                                <td><span class="font-bold text-amp-navy">34%</span></td>
                             </tr>
                             <tr>
                                 <td>Monthly Revenue Increase</td>
                                 <td>$0</td>
-                                <td><span class="font-bold text-blue-700">+$45,000</span></td>
+                                <td><span class="font-bold text-amp-navy">+$45,000</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -660,7 +666,7 @@
     </section>
 
     <!-- Services & Pricing Section -->
-    <section id="services" class="py-16 md:py-24 bg-gray-50">
+    <section id="services" class="py-16 md:py-24 bg-amp-gold-light/20">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Our Paid Ads Management Services</h2>
             <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-gray-600">
@@ -672,7 +678,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <!-- Service Details -->
                         <div>
-                            <h3 class="text-2xl font-bold text-blue-900 mb-6">What's Included</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">What's Included</h3>
                             <ul class="space-y-4 text-gray-700">
                                 <li class="flex items-start">
                                     <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
@@ -703,32 +709,32 @@
                         
                         <!-- Pricing -->
                         <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
-                            <h3 class="text-2xl font-bold text-blue-900 mb-6">Investment</h3>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">Investment</h3>
                             <div class="text-center mb-6">
-                                <div class="text-4xl font-bold text-blue-900 mb-2">Starting at $2,000</div>
-                                <div class="text-lg text-blue-700 font-medium">per month</div>
+                                <div class="text-4xl font-bold text-amp-navy-dark mb-2">Starting at $2,000</div>
+                                <div class="text-lg text-amp-navy font-medium">per month</div>
                             </div>
                             
                             <div class="space-y-3 text-gray-700 mb-6">
                                 <div class="flex items-center justify-between p-3 bg-white rounded-lg">
                                     <span><strong>Setup & Onboarding</strong></span>
-                                    <span class="font-semibold text-blue-700">$1,500</span>
+                                    <span class="font-semibold text-amp-navy">$1,500</span>
                                 </div>
                                 <div class="flex items-center justify-between p-3 bg-white rounded-lg">
                                     <span>Monthly Management</span>
-                                    <span class="font-semibold text-blue-700">$2,000</span>
+                                    <span class="font-semibold text-amp-navy">$2,000</span>
                                 </div>
                                 <div class="flex items-center justify-between p-3 bg-white rounded-lg">
                                     <span>Minimum Ad Spend</span>
-                                    <span class="font-semibold text-blue-700">$1,500</span>
+                                    <span class="font-semibold text-amp-navy">$1,500</span>
                                 </div>
                             </div>
                             
                             <div class="text-center">
-                                <p class="text-sm text-blue-600 mb-4">
+                                <p class="text-sm text-amp-navy mb-4">
                                     <strong>ROI Promise:</strong> Most clients see 20%+ cost reduction within 90 days
                                 </p>
-                                <a href="#contact" class="btn-primary w-full">
+                                <a href="#" id="cta-services-audit" class="btn-primary w-full">
                                     <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
                                     Start Your Free Audit
                                 </a>
@@ -749,227 +755,40 @@
             <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">
                 Stop wasting money on ads that don't work. Let's audit your current campaigns and show you exactly how much you could be saving.
             </p>
-            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-blue-700 hover:bg-gray-100">
+            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-gray-100">
                 <i data-lucide="calculator" class="w-6 h-6 mr-2"></i> 
                 Get Your Free Ad Audit
             </a>
             <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> Free analysis of your current ad performance</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> Detailed report showing potential savings</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> Custom strategy for your industry and goals</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Free analysis of your current ad performance</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Detailed report showing potential savings</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Custom strategy for your industry and goals</li>
             </ul>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
             <p class="mt-2">
-                <a href="AlchemistMindHP.html" class="hover:text-white transition-colors duration-200">Home</a> |
-                <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a> |
-                <a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+                <a href="https://alchemistmind.pro" class="hover:text-amp-gold transition-colors duration-200">Home</a> |
+                <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-amp-gold transition-colors duration-200">Privacy Policy</a> |
+                <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-amp-gold transition-colors duration-200">Terms of Service</a>
             </p>
         </div>
     </footer>
 
-    <!-- Free Audit Modal -->
-    <div id="auditModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-6 border-b border-gray-200">
-                <h3 class="text-2xl font-bold text-gray-900">Get Your Free Ad Performance Audit</h3>
-                <button id="closeAuditModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+    <!-- Calendly Booking Modal (direct booking - no form friction) -->
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
+                <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your Free Ad Performance Audit</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-
-            <!-- Progress Bar -->
-            <div class="px-6 pt-4">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold" id="step1-indicator">1</div>
-                        <div class="ml-2 text-sm font-medium text-gray-900">Business Info</div>
-                    </div>
-                    <div class="flex-1 mx-4 h-1 bg-gray-200 rounded-full">
-                        <div class="h-1 bg-blue-600 rounded-full transition-all duration-300" id="progress-bar" style="width: 33%"></div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold" id="step2-indicator">2</div>
-                        <div class="ml-2 text-sm font-medium text-gray-500">Ad Performance</div>
-                    </div>
-                    <div class="flex items-center ml-4">
-                        <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold" id="step3-indicator">3</div>
-                        <div class="ml-2 text-sm font-medium text-gray-500">Schedule</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal Content -->
-            <div class="p-6">
-                <!-- Step 1: Business Info -->
-                <div id="step1" class="step-content">
-                    <div class="text-center mb-8">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Let's Start Your Free Audit</h4>
-                        <p class="text-gray-600">Tell us about your business so we can provide the most relevant audit for your industry.</p>
-                    </div>
-                    
-                    <form id="step1-form" class="space-y-6">
-                        <div>
-                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                            <input type="text" id="companyName" name="companyName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label for="workEmail" class="block text-sm font-medium text-gray-700 mb-2">Work Email *</label>
-                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">What industry are you in? *</label>
-                            <div class="space-y-3">
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Legal Services" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Legal Services (Law Firms, Attorneys)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Home Services" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Home Services (HVAC, Plumbing, Electrical)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Insurance" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Insurance (Brokers, Agencies)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Healthcare" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Healthcare (Medical Practices, Dental)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Professional Services" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Professional Services (Consulting, Real Estate)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="industry" value="Other" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Other</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-end pt-4">
-                            <button type="button" id="next-to-step2" class="btn-primary">
-                                Next Step
-                                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 2: Ad Performance -->
-                <div id="step2" class="step-content hidden">
-                    <div class="text-center mb-8">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Your Current Ad Performance</h4>
-                        <p class="text-gray-600">Help us understand your current situation so we can show you exactly where you're losing money.</p>
-                    </div>
-                    
-                    <form id="step2-form" class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">What is your current monthly ad spend? *</label>
-                            <div class="space-y-3">
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adSpend" value="$0 - $2,000" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">$0 - $2,000 (Just getting started)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adSpend" value="$2,000 - $5,000" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">$2,000 - $5,000 (Consistent spending)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adSpend" value="$5,000 - $15,000" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">$5,000 - $15,000 (Scaling up)</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adSpend" value="$15,000+" required class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">$15,000+ (Heavy investment)</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">What's your biggest challenge with paid ads right now? *</label>
-                            <div class="space-y-3">
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Our cost per lead is too high" class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Our cost per lead is too high</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We're getting unqualified leads" class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">We're getting unqualified leads</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Results are inconsistent" class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Results are inconsistent from month to month</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Poor tracking and attribution" class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Poor tracking and attribution</span>
-                                </label>
-                                <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Not sure if ads are set up correctly" class="mr-3 text-blue-600">
-                                    <span class="text-gray-700">Not sure if our ads are set up correctly</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="additionalInfo" class="block text-sm font-medium text-gray-700 mb-2">Anything else you'd like us to know about your current ad situation? (Optional)</label>
-                            <textarea id="additionalInfo" name="additionalInfo" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Tell us about your current ad challenges..."></textarea>
-                        </div>
-                        
-                        <div class="flex justify-between pt-4">
-                            <button type="button" id="back-to-step1" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                                <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
-                                Back
-                            </button>
-                            <button type="button" id="next-to-step3" class="btn-primary">
-                                Next Step
-                                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 3: Schedule -->
-                <div id="step3-confirmation" class="step-content hidden">
-                    <div class="text-center mb-8">
-                        <div class="bg-green-100 rounded-full p-4 mb-6 inline-block">
-                            <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="#d1fae5"></circle>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 12l3 3 5-5" stroke="#22c55e"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Perfect! Let's Schedule Your Free Audit</h4>
-                        <p class="text-gray-600 mb-6">We've received your information and are excited to analyze your ad performance.</p>
-                        <p class="text-gray-700 mb-8">Select a time below for your complimentary 30-minute audit call:</p>
-                    </div>
-                    
-                    <!-- Calendly inline widget -->
-                    <div id="calendly-widget-container">
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/alchemist-mind-pros/30min" style="min-width:320px;height:700px;"></div>
-                    </div>
-                    
-                    <div class="flex justify-end pt-4">
-                        <button type="button" id="back-to-step2" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                            <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
-                            Back
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
         </div>
     </div>
 
@@ -1067,241 +886,74 @@
             }
         }
         
-        // Modal functionality
+        // Calendly Modal - direct booking (no form friction)
         document.addEventListener('DOMContentLoaded', function() {
-            const auditModal = document.getElementById('auditModal');
-            const closeAuditModal = document.getElementById('closeAuditModal');
-            const ctaButtons = document.querySelectorAll('[id*="cta-button"]');
+            const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
+            const modal = document.getElementById('calendlyModal');
+            const closeBtn = document.getElementById('closeCalendlyModal');
+            const container = document.getElementById('calendly-widget-container');
             
-            // Form data storage
-            let formData = {
-                step1: {},
-                step2: {},
-                step3: {}
-            };
+            const ctaIds = [
+                'cta-header-get-started', 'cta-hero-audit', 'cta-calculator-audit',
+                'cta-audit-section', 'cta-services-audit', 'cta-button-final'
+            ];
             
-            // Function to open modal
-            function openAuditModal(e) {
-                e.preventDefault();
-                auditModal.classList.remove('hidden');
+            function openCalendlyModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.add('is-open');
+                modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => {
+                    setTimeout(() => loadCalendlyWidget(), 150);
+                });
+                setTimeout(() => closeBtn && closeBtn.focus(), 200);
             }
             
-            // Open modal when CTA buttons are clicked
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', openAuditModal);
-            });
-            
-            // Close modal
-            closeAuditModal.addEventListener('click', function() {
-                auditModal.classList.add('hidden');
+            function closeCalendlyModal() {
+                modal.classList.remove('is-open');
+                modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
-            });
-            
-            // Close modal when clicking outside
-            auditModal.addEventListener('click', function(e) {
-                if (e.target === auditModal) {
-                    auditModal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Step navigation
-            const step1 = document.getElementById('step1');
-            const step2 = document.getElementById('step2');
-            const step3Confirmation = document.getElementById('step3-confirmation');
-            const progressBar = document.getElementById('progress-bar');
-            const step1Indicator = document.getElementById('step1-indicator');
-            const step2Indicator = document.getElementById('step2-indicator');
-            const step3Indicator = document.getElementById('step3-indicator');
-            
-            // Next to step 2
-            document.getElementById('next-to-step2').addEventListener('click', function() {
-                if (validateStep1()) {
-                    saveStep1Data();
-                    showStep(2);
-                }
-            });
-            
-            // Next to step 3
-            document.getElementById('next-to-step3').addEventListener('click', function() {
-                if (validateStep2()) {
-                    saveStep2Data();
-                    sendFormDataToCRM(formData);
-                    showStep(3);
-                }
-            });
-            
-            // Back to step 2
-            document.getElementById('back-to-step2').addEventListener('click', function() {
-                showStep(2);
-            });
-            
-            // Back to step 1
-            document.getElementById('back-to-step1').addEventListener('click', function() {
-                showStep(1);
-            });
-            
-            function showStep(stepNumber) {
-                // Hide all steps
-                step1.classList.add('hidden');
-                step2.classList.add('hidden');
-                step3Confirmation.classList.add('hidden');
-                
-                // Show current step
-                if (stepNumber === 1) {
-                    step1.classList.remove('hidden');
-                    progressBar.style.width = '33%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                } else if (stepNumber === 2) {
-                    step2.classList.remove('hidden');
-                    progressBar.style.width = '66%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
-                } else if (stepNumber === 3) {
-                    step3Confirmation.classList.remove('hidden');
-                    progressBar.style.width = '100%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
-                    
-                    // Load Calendly widget when Step 3 becomes visible
-                    loadCalendlyWidget();
-                }
             }
             
             function loadCalendlyWidget() {
-                // Check if Calendly script is already loaded
                 if (typeof Calendly === 'undefined') {
-                    // Load Calendly script
                     const script = document.createElement('script');
                     script.src = 'https://assets.calendly.com/assets/external/widget.js';
                     script.async = true;
                     document.head.appendChild(script);
-                    
-                    // Wait for script to load, then initialize widget
-                    script.onload = function() {
-                        if (window.Calendly) {
-                            window.Calendly.initInlineWidget({
-                                url: 'https://calendly.com/alchemist-mind-pros/30min',
-                                parentElement: document.getElementById('calendly-widget-container')
-                            });
-                        }
-                    };
+                    script.onload = initCalendly;
                 } else {
-                    // Script already loaded, just initialize widget
-                    if (window.Calendly) {
-                        window.Calendly.initInlineWidget({
-                            url: 'https://calendly.com/alchemist-mind-pros/30min',
-                            parentElement: document.getElementById('calendly-widget-container')
-                        });
-                    }
+                    initCalendly();
                 }
             }
             
-            function validateStep1() {
-                const fullName = document.getElementById('fullName').value.trim();
-                const companyName = document.getElementById('companyName').value.trim();
-                const workEmail = document.getElementById('workEmail').value.trim();
-                const industry = document.querySelector('input[name="industry"]:checked');
-                
-                if (!fullName || !companyName || !workEmail || !industry) {
-                    alert('Please fill in all required fields.');
-                    return false;
-                }
-                
-                if (!isValidEmail(workEmail)) {
-                    alert('Please enter a valid email address.');
-                    return false;
-                }
-                
-                return true;
+            function initCalendly() {
+                if (!window.Calendly || !container || container.children.length > 0) return;
+                window.Calendly.initInlineWidget({
+                    url: CALENDLY_URL,
+                    parentElement: container,
+                    prefill: {},
+                    utm: {},
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false
+                });
             }
             
-            function validateStep2() {
-                const adSpend = document.querySelector('input[name="adSpend"]:checked');
-                const biggestChallenges = document.querySelectorAll('input[name="biggestChallenge"]:checked');
-                
-                if (!adSpend || biggestChallenges.length === 0) {
-                    alert('Please answer all required questions.');
-                    return false;
-                }
-                
-                return true;
-            }
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', openCalendlyModal);
+            });
             
-            function saveStep1Data() {
-                const selectedIndustry = document.querySelector('input[name="industry"]:checked');
-                formData.step1 = {
-                    fullName: document.getElementById('fullName').value.trim(),
-                    companyName: document.getElementById('companyName').value.trim(),
-                    workEmail: document.getElementById('workEmail').value.trim(),
-                    industry: selectedIndustry ? selectedIndustry.value : ''
-                };
-            }
+            if (closeBtn) closeBtn.addEventListener('click', closeCalendlyModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeCalendlyModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCalendlyModal();
+            });
             
-            function saveStep2Data() {
-                const selectedAdSpend = document.querySelector('input[name="adSpend"]:checked');
-                const selectedChallenges = Array.from(document.querySelectorAll('input[name="biggestChallenge"]:checked')).map(checkbox => checkbox.value);
-                formData.step2 = {
-                    adSpend: selectedAdSpend ? selectedAdSpend.value : '',
-                    biggestChallenge: selectedChallenges,
-                    additionalInfo: document.getElementById('additionalInfo').value.trim()
-                };
-            }
-            
-            function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            }
-            
-            // Send form data to CRM/webhook
-            function sendFormDataToCRM(formData) {
-                try {
-                    const endpoint = 'https://hooks.zapier.com/hooks/catch/22341941/u2pbdka/';
-                    
-                    const payload = {
-                        // Form data
-                        ...formData.step1,
-                        ...formData.step2,
-                        
-                        // Conversion tracking data
-                        conversion_data: {
-                            timestamp: new Date().toISOString(),
-                            page_url: window.location.href,
-                            referrer: document.referrer,
-                            user_agent: navigator.userAgent,
-                            conversion_type: 'form_submit',
-                            form_name: 'paid_ads_audit',
-                            lead_value: 1.00,
-                            currency: 'USD'
-                        }
-                    };
-
-                    if (navigator.sendBeacon) {
-                        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-                        navigator.sendBeacon(endpoint, blob);
-                        console.log('Form data sent via sendBeacon');
-                    } else {
-                        fetch(endpoint, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        })
-                        .then(response => {
-                            console.log('Zapier response status:', response.status);
-                        })
-                        .catch(error => {
-                            console.error('Error sending form data:', error);
-                        });
-                    }
-                } catch (error) {
-                    console.error('Error in sendFormDataToCRM:', error);
-                }
-            }
+            window.openCalendlyModal = openCalendlyModal;
+            window.closeCalendlyModal = closeCalendlyModal;
             
             // Add event listeners to calculator inputs with formatting
             const monthlySpendInput = document.getElementById('monthly-spend');
@@ -1335,19 +987,19 @@
             
             // Add focus/blur events for better visual feedback
             monthlySpendInput.addEventListener('focus', function() {
-                this.parentElement.classList.add('ring-2', 'ring-blue-500');
+                this.parentElement.classList.add('ring-2', 'ring-amp-gold');
             });
             
             monthlySpendInput.addEventListener('blur', function() {
-                this.parentElement.classList.remove('ring-2', 'ring-blue-500');
+                this.parentElement.classList.remove('ring-2', 'ring-amp-gold');
             });
             
             currentCPLInput.addEventListener('focus', function() {
-                this.parentElement.classList.add('ring-2', 'ring-blue-500');
+                this.parentElement.classList.add('ring-2', 'ring-amp-gold');
             });
             
             currentCPLInput.addEventListener('blur', function() {
-                this.parentElement.classList.remove('ring-2', 'ring-blue-500');
+                this.parentElement.classList.remove('ring-2', 'ring-amp-gold');
             });
             
             // Initial calculation (will show zeros until inputs are filled)
