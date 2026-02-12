@@ -178,7 +178,7 @@
             font-weight: 700;
             color: var(--amp-navy);
         }
-        /* Calendly modal */
+        /* Calendly modal - ensure clean load */
         #calendlyModal {
             opacity: 0;
             visibility: hidden;
@@ -187,6 +187,13 @@
         #calendlyModal.is-open {
             opacity: 1;
             visibility: visible;
+        }
+        #calendly-widget-container {
+            flex-shrink: 0;
+        }
+        #calendly-widget-container iframe {
+            width: 100% !important;
+            height: 100% !important;
         }
     </style>
     
@@ -1579,16 +1586,14 @@
 
     <!-- Calendly Booking Modal (direct booking - no form friction) -->
     <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
                 <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your Free Strategy Session</h2>
                 <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <div id="calendly-widget-container" class="flex-1 min-h-[600px] overflow-auto">
-                <!-- Calendly loads here -->
-            </div>
+            <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
         </div>
     </div>
 
@@ -1787,9 +1792,11 @@
                 modal.classList.add('is-open');
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
-                loadCalendlyWidget();
-                // Focus close button for accessibility
-                setTimeout(() => closeBtn && closeBtn.focus(), 100);
+                // Wait for modal to be visible and laid out before loading Calendly (fixes partial render)
+                requestAnimationFrame(() => {
+                    setTimeout(() => loadCalendlyWidget(), 150);
+                });
+                setTimeout(() => closeBtn && closeBtn.focus(), 200);
             }
             
             function closeCalendlyModal() {
@@ -1811,16 +1818,17 @@
             }
             
             function initCalendly() {
-                if (window.Calendly && container && !container.querySelector('iframe')) {
-                    window.Calendly.initInlineWidget({
-                        url: CALENDLY_URL,
-                        parentElement: container,
-                        prefill: {},
-                        utm: {},
-                        hideEventTypeDetails: false,
-                        hideLandingPageDetails: false
-                    });
-                }
+                if (!window.Calendly || !container) return;
+                // Only init if container is empty (avoids duplicate widgets)
+                if (container.children.length > 0) return;
+                window.Calendly.initInlineWidget({
+                    url: CALENDLY_URL,
+                    parentElement: container,
+                    prefill: {},
+                    utm: {},
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false
+                });
             }
             
             // Wire all CTAs
