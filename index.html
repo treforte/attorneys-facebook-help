@@ -88,13 +88,15 @@
             background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%);
         }
         .btn-primary.btn-outline {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.2);
             border: 2px solid white;
-            box-shadow: none;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
         .btn-primary.btn-outline:hover {
             background: white;
             color: var(--amp-navy);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
         }
         .section-heading {
             font-size: 2.5rem;
@@ -248,7 +250,7 @@
                         Don't just get leads. Get qualified leads that convert.
                     </h1>
                     <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 drop-shadow-lg text-amp-gold-light/90">
-                        We help attorneys and other lead-generation reliant businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, and CRM automation.
+                        We help attorneys and other lead-generation reliant businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, CRM automation and more.
                     </h2>
                     <p class="text-lg md:text-xl font-light mb-8 opacity-90 max-w-xl mx-auto lg:mx-0">
                         Tired of wasting money on marketing that doesn't work? We've developed a system that focuses on what truly matters: <strong>a consistent pipeline of high-quality leads who are ready to buy.</strong>
@@ -556,7 +558,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light hover:bg-amp-gold/20 text-amp-navy-dark font-semibold rounded-full border border-amp-gold/40 transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -613,7 +615,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light hover:bg-amp-gold/20 text-amp-navy-dark font-semibold rounded-full border border-amp-gold/40 transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -666,7 +668,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light hover:bg-amp-gold/20 text-amp-navy-dark font-semibold rounded-full border border-amp-gold/40 transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -719,7 +721,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light hover:bg-amp-gold/20 text-amp-navy-dark font-semibold rounded-full border border-amp-gold/40 transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -773,7 +775,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light hover:bg-amp-gold/20 text-amp-navy-dark font-semibold rounded-full border border-amp-gold/40 transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -1548,7 +1550,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 text-amp-gold-light/80" style="background-color: var(--amp-navy-dark);">
+    <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-sm">&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
@@ -1874,8 +1876,8 @@
                         // Update button
                         revealButtonText.setAttribute('data-lucide', 'eye-off');
                         revealButtonSpan.textContent = 'Hide Pricing';
-                        revealButton.classList.remove('bg-amp-gold-light/60', 'hover:bg-amp-gold-light');
-                        revealButton.classList.add('bg-amp-gold-light', 'hover:bg-amp-gold/20');
+                        revealButton.classList.remove('bg-amp-gold-light', 'hover:bg-amp-gold/20', 'border', 'border-amp-gold/40');
+                        revealButton.classList.add('bg-amp-gold/20', 'hover:bg-amp-gold/30', 'border', 'border-amp-gold');
                         
                         // Track pricing reveal
                         trackGA4Event('pricing_reveal', {
@@ -1896,8 +1898,8 @@
                         // Update button
                         revealButtonText.setAttribute('data-lucide', 'eye');
                         revealButtonSpan.textContent = 'Click to Reveal Pricing';
-                        revealButton.classList.remove('bg-amp-gold-light', 'hover:bg-amp-gold/20');
-                        revealButton.classList.add('bg-amp-gold-light/60', 'hover:bg-amp-gold-light');
+                        revealButton.classList.remove('bg-amp-gold/20', 'hover:bg-amp-gold/30', 'border', 'border-amp-gold');
+                        revealButton.classList.add('bg-amp-gold-light', 'hover:bg-amp-gold/20', 'border', 'border-amp-gold/40');
                         
                         // Track pricing hide
                         trackGA4Event('pricing_reveal', {
