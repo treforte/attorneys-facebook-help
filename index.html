@@ -18,41 +18,85 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amp': {
+                'navy': '#1e3a5f',
+                'navy-dark': '#152a47',
+                'navy-light': '#2d4a6f',
+                'gold': '#c9a227',
+                'gold-light': '#fef3c7',
+                'gold-dark': '#b8860b',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
+        :root {
+            /* AMP Brand Colors - from logo (navy + gold alchemy palette) */
+            --amp-navy: #1e3a5f;
+            --amp-navy-dark: #152a47;
+            --amp-navy-light: #2d4a6f;
+            --amp-gold: #c9a227;
+            --amp-gold-light: #fef3c7;
+            --amp-gold-dark: #b8860b;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light blue-gray background */
-            color: #334155; /* Dark slate gray text */
+            background-color: #fafaf9; /* Warm off-white - cleaner feel */
+            color: #334155;
         }
         .container {
             max-width: 1200px;
         }
         .btn-primary {
-            background-color: #1d4ed8; /* Darker blue */
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
             color: white;
             padding: 1rem 2.5rem;
-            border-radius: 9999px; /* Fully rounded */
+            border-radius: 9999px;
             font-weight: 700;
-            font-size: 1.125rem; /* lg text */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
         }
         .btn-primary:hover {
-            background-color: #1e40af; /* Even darker blue on hover */
-            transform: translateY(-2px); /* Slight lift effect */
+            background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4);
+        }
+        .btn-primary.bg-amp-gold {
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%);
+            box-shadow: 0 4px 14px 0 rgba(201, 162, 39, 0.4);
+        }
+        .btn-primary.bg-amp-gold:hover {
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%);
+        }
+        .btn-primary.btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        .btn-primary.btn-outline:hover {
+            background: white;
+            color: var(--amp-navy);
         }
         .section-heading {
-            font-size: 2.5rem; /* H2 size */
-            font-weight: 800; /* Extra bold */
-            color: #1e293b; /* Very dark slate gray */
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--amp-navy-dark);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
@@ -62,19 +106,20 @@
             }
         }
         .sub-heading {
-            font-size: 1.25rem; /* H3 size */
-            font-weight: 600; /* Semi-bold */
-            color: #475569; /* Medium slate gray */
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--amp-navy);
             margin-bottom: 1rem;
         }
         .card {
             background-color: white;
-            border-radius: 1.5rem; /* More rounded corners */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04);
             padding: 2rem;
         }
         .icon-feature {
-            background-color: #e0f2fe; /* Light blue for icons */
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%);
+            color: var(--amp-gold-dark);
             padding: 0.75rem;
             border-radius: 0.75rem;
             display: inline-flex;
@@ -86,24 +131,24 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            overflow: hidden; /* For rounded corners */
-            border-radius: 1rem; /* Rounded table corners */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
         }
         .results-table th, .results-table td {
             padding: 1rem 1.5rem;
             text-align: left;
-            border-bottom: 1px solid #e2e8f0; /* Light gray border */
+            border-bottom: 1px solid #e2e8f0;
         }
         .results-table th {
-            background-color: #f1f5f9; /* Lighter gray header */
+            background-color: var(--amp-gold-light);
             font-weight: 600;
-            color: #334155;
+            color: var(--amp-navy-dark);
             text-transform: uppercase;
             font-size: 0.875rem;
         }
         .results-table tr:nth-child(even) {
-            background-color: #f8fafc; /* Alternate row color */
+            background-color: #fafaf9;
         }
         .results-table tr:last-child td {
             border-bottom: none;
@@ -113,9 +158,8 @@
         }
         .results-table td:last-child {
             font-weight: 700;
-            color: #1d4ed8; /* Highlight key numbers */
+            color: var(--amp-navy);
         }
-
     </style>
     
     <!-- Meta Pixel Code -->
@@ -141,14 +185,14 @@
 <body class="antialiased">
 
     <!-- Company Header -->
-    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Company Logo and Name -->
                 <a href="#" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
                     <div class="w-12 h-12 flex-none flex items-center justify-center" style="min-width: 3rem; min-height: 3rem;">
                         <!-- Canva logo embed - non-interactive (no expand) -->
-                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.12); overflow: hidden; border-radius: 8px; will-change: transform;">
                             <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; pointer-events: none;"
                                 src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed"
                                 allowfullscreen="allowfullscreen"
@@ -158,21 +202,21 @@
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <h1 class="text-xl font-bold text-gray-900">Alchemist Mind Pros</h1>
-                        <p class="text-sm text-gray-600">Digital Marketing Excellence</p>
+                        <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
+                        <p class="text-sm text-amp-navy/80">Digital Marketing Excellence</p>
                     </div>
                 </a>
                 
-                <!-- Navigation Links (Optional) -->
+                <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#meet-founder" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
+                    <a href="#meet-founder" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">About</a>
+                    <a href="#services" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Services</a>
+                    <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
                 </nav>
                 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
-                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
                         <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
                         Get Started
                     </a>
@@ -182,7 +226,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-700 to-indigo-800 text-white rounded-b-3xl shadow-xl relative overflow-hidden">
+    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
         <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
             <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                 <!-- Left: Copy -->
@@ -190,7 +234,7 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
                         Don't just get leads. Get qualified leads that convert.
                     </h1>
-                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 drop-shadow-lg text-blue-200">
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 drop-shadow-lg text-amp-gold-light/90">
                         We help attorneys, plumbers, and local service businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, and CRM automation.
                     </h2>
                     <p class="text-lg md:text-xl font-light mb-8 opacity-90 max-w-xl mx-auto lg:mx-0">
@@ -198,21 +242,21 @@
                     </p>
                     <!-- UVP: 45-day guarantee + no long-term contracts -->
                     <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
-                        <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-300 shrink-0"></i>
+                        <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold border border-amp-gold/30">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-amp-gold shrink-0"></i>
                             No lift in 45 days? Second month free.
                         </span>
-                        <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold">
-                            <i data-lucide="file-x" class="w-4 h-4 text-blue-200 shrink-0"></i>
+                        <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold border border-amp-gold/30">
+                            <i data-lucide="file-x" class="w-4 h-4 text-amp-gold shrink-0"></i>
                             No long-term contracts.
                         </span>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#case-studies" class="btn-primary inline-flex items-center justify-center bg-white text-blue-700 hover:bg-gray-100">
+                        <a href="#case-studies" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
                             <i data-lucide="trending-up" class="w-6 h-6 mr-2"></i>
                             See the Results We've Delivered
                         </a>
-                        <a href="#contact" id="cta-button-hero" class="btn-primary inline-flex items-center justify-center border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-700">
+                        <a href="#contact" id="cta-button-hero" class="btn-primary btn-outline inline-flex items-center justify-center">
                             <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
                             Schedule a Free Strategy Session
                         </a>
@@ -250,82 +294,82 @@
     </section>
 
     <!-- Client Logos / Social Proof (Trusted By) -->
-    <section class="py-12 md:py-16 bg-white border-b border-gray-100" aria-label="Brands we've run ads for">
+    <section class="py-12 md:py-16 bg-white border-b border-amp-gold-light/60" aria-label="Brands we've run ads for">
         <div class="container mx-auto px-6">
-            <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
+            <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-amp-navy-dark mb-3">
                 We've run ads for brands like
             </h2>
-            <p class="text-center text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+            <p class="text-center text-lg md:text-xl text-amp-navy/80 max-w-2xl mx-auto mb-10">
                 From B2B and D2C to e‑commerce, lead gen, and local services—we help brands that want <strong>measurable growth</strong> without wasting ad spend.
             </p>
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
-                <!-- Client logos - full color, brand-accent cards; replace src with your own logo URLs if preferred -->
-                <a href="https://sweetjames.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(234, 179, 8, 0.08) 100%); border: 1px solid rgba(30, 64, 175, 0.25);" title="Sweet James Accident Attorneys">
+                <!-- Client logos - unified brand styling -->
+                <a href="https://sweetjames.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Sweet James Accident Attorneys">
                     <img src="https://logo.clearbit.com/sweetjames.com" alt="Sweet James Accident Attorneys" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Sweet James</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Sweet James</span>
                 </a>
-                <a href="https://siegellawgroup.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background-color: rgba(30, 64, 175, 0.08); border: 1px solid rgba(30, 64, 175, 0.25);" title="The Siegel Law Group">
+                <a href="https://siegellawgroup.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="The Siegel Law Group">
                     <img src="https://logo.clearbit.com/siegellawgroup.com" alt="The Siegel Law Group" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Siegel Law Group</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Siegel Law Group</span>
                 </a>
-                <a href="https://askchapter.org" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background-color: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25);" title="Chapter Medicare">
+                <a href="https://askchapter.org" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Chapter Medicare">
                     <img src="https://logo.clearbit.com/askchapter.org" alt="Chapter Medicare" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Chapter Medicare</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Chapter Medicare</span>
                 </a>
-                <a href="https://softr.io" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(99, 102, 241, 0.3);" title="Softr">
+                <a href="https://softr.io" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Softr">
                     <img src="https://logo.clearbit.com/softr.io" alt="Softr" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Softr</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Softr</span>
                 </a>
-                <a href="https://giggster.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background-color: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.25);" title="Giggster">
+                <a href="https://giggster.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Giggster">
                     <img src="https://logo.clearbit.com/giggster.com" alt="Giggster" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Giggster</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Giggster</span>
                 </a>
-                <a href="https://app.boldermoney.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(234, 179, 8, 0.08) 100%); border: 1px solid rgba(34, 197, 94, 0.25);" title="Bolder Money">
+                <a href="https://app.boldermoney.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Bolder Money">
                     <img src="https://logo.clearbit.com/boldermoney.com" alt="Bolder Money" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="logo-fallback font-bold text-gray-700 text-base md:text-lg whitespace-nowrap" style="display:none;">Bolder Money</span>
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Bolder Money</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Ad Platforms We Run -->
-    <section class="py-8 md:py-10 bg-white border-b border-gray-100" aria-label="Ad platforms we manage">
+    <section class="py-8 md:py-10 bg-white border-b border-amp-gold-light/60" aria-label="Ad platforms we manage">
         <div class="container mx-auto px-6">
-            <p class="text-center text-sm md:text-base font-semibold text-gray-600 mb-6 uppercase tracking-wider">We run campaigns on</p>
+            <p class="text-center text-sm md:text-base font-semibold text-amp-navy/80 mb-6 uppercase tracking-wider">We run campaigns on</p>
             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Google Ads">
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-amp-gold-light/30 hover:bg-amp-gold-light/50 transition-colors" title="Google Ads">
                     <img src="https://logo.clearbit.com/google.com" alt="Google Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Google Ads</span>
+                    <span class="font-bold text-amp-navy text-sm" style="display:none;">Google Ads</span>
                 </div>
-                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Meta (Facebook) Ads">
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-amp-gold-light/30 hover:bg-amp-gold-light/50 transition-colors" title="Meta (Facebook) Ads">
                     <img src="https://logo.clearbit.com/facebook.com" alt="Meta / Facebook Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Meta Ads</span>
+                    <span class="font-bold text-amp-navy text-sm" style="display:none;">Meta Ads</span>
                 </div>
-                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="Microsoft Ads">
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-amp-gold-light/30 hover:bg-amp-gold-light/50 transition-colors" title="Microsoft Ads">
                     <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="font-bold text-gray-700 text-sm" style="display:none;">Microsoft Ads</span>
+                    <span class="font-bold text-amp-navy text-sm" style="display:none;">Microsoft Ads</span>
                 </div>
-                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors" title="LinkedIn Ads">
+                <div class="flex items-center justify-center h-12 md:h-14 px-4 py-2 rounded-xl bg-amp-gold-light/30 hover:bg-amp-gold-light/50 transition-colors" title="LinkedIn Ads">
                     <img src="https://logo.clearbit.com/linkedin.com" alt="LinkedIn Ads" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span class="font-bold text-gray-700 text-sm" style="display:none;">LinkedIn Ads</span>
+                    <span class="font-bold text-amp-navy text-sm" style="display:none;">LinkedIn Ads</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Credibility Statement / Social Proof -->
-    <section class="py-12 md:py-16 bg-gradient-to-r from-blue-50 to-indigo-50 border-b-4 border-blue-200">
+    <section class="py-12 md:py-16 bg-gradient-to-r from-amp-gold-light/50 to-amp-gold-light/30 border-b-4 border-amp-gold/40">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-5xl mx-auto">
-                <p class="text-2xl md:text-3xl lg:text-4xl font-black text-blue-900 leading-tight mb-4 drop-shadow-sm">
-                    We've managed over <span class="text-blue-700">$20M in ad spend</span> across multiple industries —
-                    <span class="text-blue-700">proven results, not promises.</span>
+                <p class="text-2xl md:text-3xl lg:text-4xl font-black text-amp-navy-dark leading-tight mb-4 drop-shadow-sm">
+                    We've managed over <span class="text-amp-navy">$20M in ad spend</span> across multiple industries —
+                    <span class="text-amp-navy">proven results, not promises.</span>
                 </p>
-                <p class="text-xl md:text-2xl font-bold text-blue-800 leading-relaxed">
-                    The result: <span class="text-blue-600">significant cost reduction</span> on customer acquisition and
-                    <span class="text-blue-600 font-extrabold">scalable systems that work while you sleep.</span>
+                <p class="text-xl md:text-2xl font-bold text-amp-navy leading-relaxed">
+                    The result: <span class="text-amp-gold-dark">significant cost reduction</span> on customer acquisition and
+                    <span class="text-amp-gold-dark font-extrabold">scalable systems that work while you sleep.</span>
                 </p>
-                <p class="text-sm text-gray-600 mt-4 max-w-3xl mx-auto"><em>Percentage improvements cited on this site are estimates based on results we've achieved for other clients; your results may vary.</em></p>
+                <p class="text-sm text-amp-navy/70 mt-4 max-w-3xl mx-auto"><em>Percentage improvements cited on this site are estimates based on results we've achieved for other clients; your results may vary.</em></p>
             </div>
         </div>
     </section>
@@ -334,36 +378,36 @@
     <section class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto mt-[-2rem] relative z-10 max-w-6xl">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading">Are You Leaving Money on the Table?</h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-gray-600">
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-amp-navy/80">
                 Most business owners are hemorrhaging revenue through inefficient marketing and manual processes. You might be experiencing:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card flex flex-col items-center text-center p-6 bg-blue-50">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
                     <div class="icon-feature mb-4">
-                        <i data-lucide="dollar-sign" class="w-8 h-8 text-blue-700"></i>
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900">Sky-High Ad Costs?</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Sky-High Ad Costs?</h3>
                     <p class="text-gray-700">Paying 2-3x more for leads than your competitors due to poor optimization.</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-blue-50">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
                     <div class="icon-feature mb-4">
-                        <i data-lucide="users" class="w-8 h-8 text-blue-700"></i>
+                        <i data-lucide="users" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900">Leads Slipping Away?</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Leads Slipping Away?</h3>
                     <p class="text-gray-700">No follow-up system means 70%+ of your leads never convert to customers.</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-blue-50">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
                     <div class="icon-feature mb-4">
-                        <i data-lucide="clock" class="w-8 h-8 text-blue-700"></i>
+                        <i data-lucide="clock" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900">Manual Everything?</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Manual Everything?</h3>
                     <p class="text-gray-700">Spending hours on repetitive tasks that should be automated.</p>
                 </div>
-                <div class="card flex flex-col items-center text-center p-6 bg-blue-50">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
                     <div class="icon-feature mb-4">
-                        <i data-lucide="trending-down" class="w-8 h-8 text-blue-700"></i>
+                        <i data-lucide="trending-down" class="w-8 h-8 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900">Inconsistent Results?</h3>
+                    <h3 class="sub-heading text-amp-navy-dark">Inconsistent Results?</h3>
                     <p class="text-gray-700">Marketing performance that's unpredictable and impossible to scale.</p>
                 </div>
             </div>
@@ -374,20 +418,20 @@
     </section>
 
     <!-- Solution & Methodology -->
-    <section class="py-16 md:py-24 bg-gray-50">
+    <section class="py-16 md:py-24 bg-amp-gold-light/20">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">The AMP Growth System: Scale, Automate, Dominate</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-10 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-10 text-amp-navy/80">
                 We don't just manage ads – we build complete revenue-generating ecosystems that work 24/7. Here's how we transform struggling businesses into market leaders:
             </p>
             <!-- Visual: analytics & growth -->
-            <div class="max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden shadow-xl ring-2 ring-blue-100">
+            <div class="max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden shadow-xl ring-2 ring-amp-gold/20">
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=90" alt="Analytics and dashboards we use to optimize your ad performance and growth" class="w-full h-48 md:h-56 object-cover" width="900" height="350">
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div class="card p-8 text-center flex flex-col items-center">
                     <div class="icon-feature mb-6">
-                        <i data-lucide="target" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="target" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
                     <h3 class="sub-heading">1. Precision Ad Management</h3>
                     <ul class="list-disc list-inside text-gray-700 text-left w-full">
@@ -399,7 +443,7 @@
                 </div>
                 <div class="card p-8 text-center flex flex-col items-center">
                     <div class="icon-feature mb-6">
-                        <i data-lucide="monitor" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="monitor" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
                     <h3 class="sub-heading">2. High-Converting Landing Pages</h3>
                     <ul class="list-disc list-inside text-gray-700 text-left w-full">
@@ -411,7 +455,7 @@
                 </div>
                 <div class="card p-8 text-center flex flex-col items-center">
                     <div class="icon-feature mb-6">
-                        <i data-lucide="database" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="database" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
                     <h3 class="sub-heading">3. Custom CRM Build-Out & Lead Nurture Automation</h3>
                     <ul class="list-disc list-inside text-gray-700 text-left w-full">
@@ -423,7 +467,7 @@
                 </div>
                 <div class="card p-8 text-center flex flex-col items-center">
                     <div class="icon-feature mb-6">
-                        <i data-lucide="graduation-cap" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
                     <h3 class="sub-heading">4. Training Hub Development</h3>
                     <ul class="list-disc list-inside text-gray-700 text-left w-full">
@@ -441,7 +485,7 @@
     <section id="services" class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Our Services</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-6 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-6 text-amp-navy/80">
                 Choose from our individual services or combine them into powerful packages designed to transform your marketing and accelerate your growth.
             </p>
             <!-- Ad platforms reminder: we run Google, Meta, Microsoft, LinkedIn -->
@@ -456,9 +500,9 @@
                 <!-- Paid Ads Management Service -->
                 <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="ad-management">
                     <div class="icon-feature mb-4 p-2">
-                        <i data-lucide="trending-up" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="trending-up" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Paid Ads Management</h3>
+                    <h3 class="sub-heading text-amp-navy-dark mb-3 text-center text-lg">Paid Ads Management</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
                     <p class="text-gray-700 text-sm mb-4 leading-relaxed">
                         <strong>Stop guessing.</strong> We manage Google & Meta with proven, industry-specific strategies that lower cost per lead and improve lead quality.
@@ -471,27 +515,27 @@
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-amp-gold-light/50 to-amp-gold-light/30 rounded-xl border-2 border-amp-gold/30">
                         <div class="text-center mb-3">
-                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $2,000</div>
-                            <div class="text-xs text-blue-700 font-medium">per month</div>
+                            <div class="text-2xl font-bold text-amp-navy-dark mb-1">Starting at $2,000</div>
+                            <div class="text-xs text-amp-gold-dark font-medium">per month</div>
                         </div>
                         <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
-                                <span><strong>Setup & Onboarding</strong> <span class="text-blue-600 text-xs">(one-time)</span></span>
-                                <span class="font-semibold text-blue-700">$1,500</span>
+                                <span><strong>Setup & Onboarding</strong> <span class="text-amp-navy text-xs">(one-time)</span></span>
+                                <span class="font-semibold text-amp-gold-dark">$1,500</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Monthly Management</span>
-                                <span class="font-semibold text-blue-700">$2,000</span>
+                                <span class="font-semibold text-amp-gold-dark">$2,000</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Ad Spend Minimum</span>
-                                <span class="font-semibold text-blue-700">$5,000</span>
+                                <span class="font-semibold text-amp-gold-dark">$5,000</span>
                             </div>
                         </div>
                         <div class="mt-3 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/paid-ads-management/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        <a href="https://alchemistmind.pro/paid-ads-management/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-amp-navy hover:bg-amp-navy-light text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
                             Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
@@ -499,7 +543,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -509,9 +553,9 @@
                 <!-- Landing Page Development Service -->
                 <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="landing-pages">
                     <div class="icon-feature mb-4 p-2">
-                        <i data-lucide="monitor" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="monitor" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Landing Page Development</h3>
+                    <h3 class="sub-heading text-amp-navy-dark mb-3 text-center text-lg">Landing Page Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
                     <p class="text-gray-700 text-sm mb-4 leading-relaxed">
                         <strong>High-converting pages in 48 hours.</strong> No weeks of back-and-forth—you get a page built for leads, not aesthetics.
@@ -524,31 +568,31 @@
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-amp-gold-light/50 to-amp-gold-light/30 rounded-xl border-2 border-amp-gold/30">
                         <div class="text-center mb-3">
-                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $699</div>
-                            <div class="text-xs text-blue-700 font-medium">for your first landing page</div>
+                            <div class="text-2xl font-bold text-amp-navy-dark mb-1">Starting at $699</div>
+                            <div class="text-xs text-amp-gold-dark font-medium">for your first landing page</div>
                         </div>
                         <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>First Landing Page</span>
-                                <span class="font-semibold text-blue-700">$699</span>
+                                <span class="font-semibold text-amp-gold-dark">$699</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Additional Landing Pages</span>
-                                <span class="font-semibold text-blue-700">$499 each</span>
+                                <span class="font-semibold text-amp-gold-dark">$499 each</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>3-Page Package</span>
-                                <span class="font-semibold text-blue-700">$1,497</span>
+                                <span class="font-semibold text-amp-gold-dark">$1,497</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>5-Page Package</span>
-                                <span class="font-semibold text-blue-700">$2,297</span>
+                                <span class="font-semibold text-amp-gold-dark">$2,297</span>
                             </div>
                         </div>
                         <div class="mt-3 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/lp-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        <a href="https://alchemistmind.pro/lp-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-amp-navy hover:bg-amp-navy-light text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
                             Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
@@ -556,7 +600,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -566,9 +610,9 @@
                 <!-- Simple CRM Development Service -->
                 <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="crm-development">
                     <div class="icon-feature mb-4 p-2">
-                        <i data-lucide="database" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="database" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Simple CRM Development</h3>
+                    <h3 class="sub-heading text-amp-navy-dark mb-3 text-center text-lg">Simple CRM Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
                     <p class="text-gray-700 text-sm mb-4 leading-relaxed">
                         <strong>Never lose a lead again.</strong> Custom CRM that automates nurturing so every prospect gets followed up—no more manual chaos.
@@ -581,27 +625,27 @@
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-amp-gold-light/50 to-amp-gold-light/30 rounded-xl border-2 border-amp-gold/30">
                         <div class="text-center mb-3">
-                            <div class="text-2xl font-bold text-blue-900 mb-1">Starting at $2,997</div>
-                            <div class="text-xs text-blue-700 font-medium">setup + $197/month</div>
+                            <div class="text-2xl font-bold text-amp-navy-dark mb-1">Starting at $2,997</div>
+                            <div class="text-xs text-amp-gold-dark font-medium">setup + $197/month</div>
                         </div>
                         <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>Custom CRM Setup</span>
-                                <span class="font-semibold text-blue-700">$2,997</span>
+                                <span class="font-semibold text-amp-gold-dark">$2,997</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Monthly Maintenance & Updates</span>
-                                <span class="font-semibold text-blue-700">$197</span>
+                                <span class="font-semibold text-amp-gold-dark">$197</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Unlimited Users & Leads</span>
-                                <span class="font-semibold text-blue-700">Included</span>
+                                <span class="font-semibold text-amp-gold-dark">Included</span>
                             </div>
                         </div>
                         <div class="mt-3 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/crm-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        <a href="https://alchemistmind.pro/crm-development/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-amp-navy hover:bg-amp-navy-light text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
                             Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
@@ -609,7 +653,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -619,9 +663,9 @@
                 <!-- Training Hub Development Service -->
                 <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="training-hub">
                     <div class="icon-feature mb-4 p-2">
-                        <i data-lucide="graduation-cap" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Training Hub Development</h3>
+                    <h3 class="sub-heading text-amp-navy-dark mb-3 text-center text-lg">Training Hub Development</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
                     <p class="text-gray-700 text-sm mb-4 leading-relaxed">
                         <strong>Scale your team without the chaos.</strong> Custom training hub—your SOPs, videos, and onboarding in one branded app.
@@ -634,27 +678,27 @@
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-amp-gold-light/50 to-amp-gold-light/30 rounded-xl border-2 border-amp-gold/30">
                         <div class="text-center mb-3">
-                            <div class="text-2xl font-bold text-blue-900 mb-1">$1,750</div>
-                            <div class="text-xs text-blue-700 font-medium">setup + $75/month</div>
+                            <div class="text-2xl font-bold text-amp-navy-dark mb-1">$1,750</div>
+                            <div class="text-xs text-amp-gold-dark font-medium">setup + $75/month</div>
                         </div>
                         <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
                             <div class="flex items-center justify-between">
                                 <span>One-Time Setup Fee</span>
-                                <span class="font-semibold text-blue-700">$1,750</span>
+                                <span class="font-semibold text-amp-gold-dark">$1,750</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Monthly Maintenance & Support</span>
-                                <span class="font-semibold text-blue-700">$75</span>
+                                <span class="font-semibold text-amp-gold-dark">$75</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span>Ongoing Functionality Updates</span>
-                                <span class="font-semibold text-blue-700">Included</span>
+                                <span class="font-semibold text-amp-gold-dark">Included</span>
                             </div>
                         </div>
                         <div class="mt-3 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/training-hub/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        <a href="https://alchemistmind.pro/training-hub/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-amp-navy hover:bg-amp-navy-light text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
                             Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
@@ -662,7 +706,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -672,9 +716,9 @@
                 <!-- Fractional CMO Coaching Service -->
                 <div class="service-card card p-6 flex flex-col items-center hover:shadow-xl transition-all duration-500 h-full" data-service="fractional-cmo">
                     <div class="icon-feature mb-4 p-2">
-                        <i data-lucide="users" class="w-10 h-10 text-blue-700"></i>
+                        <i data-lucide="users" class="w-10 h-10 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="sub-heading text-blue-900 mb-3 text-center text-lg">Fractional CMO Coaching</h3>
+                    <h3 class="sub-heading text-amp-navy-dark mb-3 text-center text-lg">Fractional CMO Coaching</h3>
                     <div class="flex-1 min-h-0 w-full text-center">
                     <p class="text-gray-700 text-sm mb-4 leading-relaxed">
                         <strong>CMO-level strategy without the $200K+ salary.</strong> Get the direction you need to scale—ads, CRM, positioning—without a full-time hire.
@@ -687,28 +731,28 @@
                     </ul>
                     </div>
                     <!-- Pricing Reveal Section -->
-                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200">
+                    <div class="pricing-reveal hidden w-full mt-3 p-4 bg-gradient-to-br from-amp-gold-light/50 to-amp-gold-light/30 rounded-xl border-2 border-amp-gold/30">
                         <div class="text-center mb-3">
-                            <div class="text-2xl font-bold text-blue-900 mb-1">3 Tiers Available</div>
-                            <div class="text-xs text-blue-700 font-medium">choose your coaching frequency</div>
+                            <div class="text-2xl font-bold text-amp-navy-dark mb-1">3 Tiers Available</div>
+                            <div class="text-xs text-amp-gold-dark font-medium">choose your coaching frequency</div>
                         </div>
                         <div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
-                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
+                            <div class="flex items-center justify-between p-1.5 bg-amp-gold-light/40 rounded-lg">
                                 <span><strong>Tier 1:</strong> Monthly</span>
-                                <span class="font-semibold text-blue-700">$1,500</span>
+                                <span class="font-semibold text-amp-gold-dark">$1,500</span>
                             </div>
-                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
+                            <div class="flex items-center justify-between p-1.5 bg-amp-gold-light/40 rounded-lg">
                                 <span><strong>Tier 2:</strong> Twice Monthly</span>
-                                <span class="font-semibold text-blue-700">$2,850</span>
+                                <span class="font-semibold text-amp-gold-dark">$2,850</span>
                             </div>
-                            <div class="flex items-center justify-between p-1.5 bg-blue-50 rounded-lg">
+                            <div class="flex items-center justify-between p-1.5 bg-amp-gold-light/40 rounded-lg">
                                 <span><strong>Tier 3:</strong> Weekly</span>
-                                <span class="font-semibold text-blue-700">$4,000</span>
+                                <span class="font-semibold text-amp-gold-dark">$4,000</span>
                             </div>
                         </div>
-                        <p class="mt-1.5 text-xs text-blue-600 font-medium">All tiers include strategy analysis & support</p>
+                        <p class="mt-1.5 text-xs text-amp-navy font-medium">All tiers include strategy analysis & support</p>
                         <div class="mt-3 text-center learn-more-cta">
-                        <a href="https://alchemistmind.pro/fractional-cmo/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        <a href="https://alchemistmind.pro/fractional-cmo/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm bg-amp-navy hover:bg-amp-navy-light text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
                             Learn more <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
                         </a>
                         </div>
@@ -716,7 +760,7 @@
                     
                     <!-- Click to Reveal Button -->
                     <div class="reveal-button mt-3">
-                        <button class="px-5 py-2.5 text-sm bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
+                        <button class="px-5 py-2.5 text-sm bg-amp-gold-light/60 hover:bg-amp-gold-light text-amp-gold-dark font-semibold rounded-full transition-all duration-300 transform hover:scale-105" type="button">
                             <i data-lucide="eye" class="w-4 h-4 inline mr-2"></i>
                             Click to Reveal Pricing
                         </button>
@@ -726,8 +770,8 @@
 
             <!-- Package Options -->
             <div class="mt-12 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Package Options</h3>
-                <p class="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                <h3 class="text-2xl md:text-3xl font-bold text-amp-navy-dark mb-4">Package Options</h3>
+                <p class="text-lg text-amp-navy/80 mb-6 max-w-3xl mx-auto">
                     Combine any of our services into custom packages tailored to your specific needs and goals. Let's discuss how we can create the perfect combination for your business.
                 </p>
                 <a href="#" id="cta-discuss-packages" class="btn-primary inline-flex items-center">
@@ -739,10 +783,10 @@
     </section>
 
     <!-- Industry Showcase Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section class="py-16 md:py-24 bg-gradient-to-br from-amp-gold-light/40 to-amp-gold-light/20">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">Proven Success Across Every Industry</h2>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-gray-600">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-amp-navy/80">
                 From local service providers to professional services, we've delivered consistent results across diverse industries. Here's what business owners are saying:
             </p>
             
@@ -750,9 +794,9 @@
                 <!-- Legal Services -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="scale" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="scale" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Legal Services</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Legal Services</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">43%</div>
                     <p class="text-gray-600 text-sm mb-4">Cost Per Lead Reduction</p>
                     <p class="text-gray-700 text-sm">"Tre cut our lead costs in half while doubling our seminar fills. The ROI was immediate."</p>
@@ -762,9 +806,9 @@
                 <!-- Home Services -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="home" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="home" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Home Services</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Home Services</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">306%</div>
                     <p class="text-gray-600 text-sm mb-4">Increase in Qualified Leads</p>
                     <p class="text-gray-700 text-sm">"The CRM system Tre built automated our entire sales process. We went from manual chaos to systematic growth."</p>
@@ -774,9 +818,9 @@
                 <!-- Insurance -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="shield" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="shield" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Insurance</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Insurance</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">72%</div>
                     <p class="text-gray-600 text-sm mb-4">Faster Lead Response Time</p>
                     <p class="text-gray-700 text-sm">"The automated follow-up sequences ensure we never miss a lead. Our conversion rate doubled."</p>
@@ -786,9 +830,9 @@
                 <!-- Healthcare -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="heart" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="heart" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Healthcare</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Healthcare</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">2.7x</div>
                     <p class="text-gray-600 text-sm mb-4">More Patient Appointments</p>
                     <p class="text-gray-700 text-sm">"The training hub streamlined our onboarding. New staff are productive in days, not weeks."</p>
@@ -798,9 +842,9 @@
                 <!-- Professional Services -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="briefcase" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="briefcase" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">Professional Services</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Professional Services</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">40%</div>
                     <p class="text-gray-600 text-sm mb-4">Lower Customer Acquisition Cost</p>
                     <p class="text-gray-700 text-sm">"Tre's fractional CMO approach gave us the strategic direction we needed to scale efficiently."</p>
@@ -810,9 +854,9 @@
                 <!-- E-commerce -->
                 <div class="card p-8 text-center bg-white">
                     <div class="icon-feature mb-6 mx-auto">
-                        <i data-lucide="shopping-cart" class="w-12 h-12 text-blue-700"></i>
+                        <i data-lucide="shopping-cart" class="w-12 h-12 text-amp-gold-dark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-4">E-commerce</h3>
+                    <h3 class="text-xl font-bold text-amp-navy-dark mb-4">E-commerce</h3>
                     <div class="text-4xl font-bold text-green-600 mb-2">5.1x</div>
                     <p class="text-gray-600 text-sm mb-4">ROAS Improvement</p>
                     <p class="text-gray-700 text-sm">"The landing pages Tre built converted at 3x our previous rate. Game-changer for our business."</p>
@@ -821,7 +865,7 @@
             </div>
             <p class="text-center text-xs text-gray-500 mb-8"><em>Results and metrics shown are from past client engagements; outcomes depend on many factors and your results may vary.</em></p>
             <div class="text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Ready to Join These Success Stories?</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-amp-navy-dark mb-6">Ready to Join These Success Stories?</h3>
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
                     No matter your industry, we have the proven frameworks and systems to transform your business growth. Let's discuss how we can deliver similar results for you.
                 </p>
@@ -844,12 +888,12 @@
             <!-- Case Study 1: Legal Services -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="lg:pr-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Case Study 1: Estate Planning Law Firm</h3>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">The Challenge: High Lead Costs & Slow Seminar Fills</h4>
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study 1: Estate Planning Law Firm</h3>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">The Challenge: High Lead Costs & Slow Seminar Fills</h4>
                     <p class="text-gray-700 mb-4">
                         A successful law firm was spending $41.62 per lead and taking two weeks to fill seminars. They were unaware they could achieve dramatically better results.
                     </p>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">Our Solution & Results</h4>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">Our Solution & Results</h4>
                     <p class="text-gray-700 mb-6">
                         We built their entire digital infrastructure from scratch: new Facebook Pixel, conversion tracking, and high-converting landing pages. The results were immediate and dramatic.
                     </p>
@@ -867,17 +911,17 @@
                             <tr>
                                 <td>Time to Fill Seminars</td>
                                 <td>2 Weeks</td>
-                                <td><span class="font-bold text-blue-700">4 Days</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">4 Days</span></td>
                             </tr>
                             <tr>
                                 <td>Cost Per Lead</td>
                                 <td>$41.62</td>
-                                <td><span class="font-bold text-blue-700">$20.90</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">$20.90</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Quality</td>
                                 <td>Generic Leads</td>
-                                <td><span class="font-bold text-blue-700">Qualified Prospects</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">Qualified Prospects</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -887,12 +931,12 @@
             <!-- Case Study 2: Home Services -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="lg:order-2 lg:pl-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Case Study 2: HVAC Company</h3>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">The Challenge: Manual Chaos & Lost Leads</h4>
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study 2: HVAC Company</h3>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">The Challenge: Manual Chaos & Lost Leads</h4>
                     <p class="text-gray-700 mb-4">
                         An HVAC company was losing 70% of their leads due to poor follow-up systems and manual processes. They needed automation and better lead management.
                     </p>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">Our Solution & Results</h4>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">Our Solution & Results</h4>
                     <p class="text-gray-700 mb-6">
                         We built a custom CRM with automated lead nurturing sequences, visual sales funnel mapping, and automated follow-up systems. The transformation was immediate.
                     </p>
@@ -910,17 +954,17 @@
                             <tr>
                                 <td>Lead Follow-up Time</td>
                                 <td>24+ Hours</td>
-                                <td><span class="font-bold text-blue-700">< 5 Minutes</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">< 5 Minutes</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Conversion Rate</td>
                                 <td>15%</td>
-                                <td><span class="font-bold text-blue-700">45%</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">45%</span></td>
                             </tr>
                             <tr>
                                 <td>Manual Work Hours</td>
                                 <td>40 hrs/week</td>
-                                <td><span class="font-bold text-blue-700">10 hrs/week</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">10 hrs/week</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -930,12 +974,12 @@
             <!-- Case Study 3: E-commerce -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="lg:pr-8">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Case Study 3: E-commerce Store</h3>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">The Challenge: Poor Landing Page Performance</h4>
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study 3: E-commerce Store</h3>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">The Challenge: Poor Landing Page Performance</h4>
                     <p class="text-gray-700 mb-4">
                         An e-commerce store was getting traffic but poor conversions. Their landing pages weren't optimized and they lacked proper tracking and attribution.
                     </p>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-4">Our Solution & Results</h4>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">Our Solution & Results</h4>
                     <p class="text-gray-700 mb-6">
                         We built high-converting landing pages with best-practice design, copy, and optimization. Added proper conversion tracking and automated follow-up sequences.
                     </p>
@@ -953,17 +997,17 @@
                             <tr>
                                 <td>Landing Page Conversion</td>
                                 <td>2.1%</td>
-                                <td><span class="font-bold text-blue-700">6.8%</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">6.8%</span></td>
                             </tr>
                             <tr>
                                 <td>Cost Per Acquisition</td>
                                 <td>$85</td>
-                                <td><span class="font-bold text-blue-700">$32</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">$32</span></td>
                             </tr>
                             <tr>
                                 <td>ROAS</td>
                                 <td>2.1x</td>
-                                <td><span class="font-bold text-blue-700">5.4x</span></td>
+                                <td><span class="font-bold text-amp-gold-dark">5.4x</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -971,7 +1015,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Ready for Similar Results?</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-amp-navy-dark mb-6">Ready for Similar Results?</h3>
                 <p class="text-lg md:text-xl max-w-4xl mx-auto mb-8 text-gray-600">
                     These aren't isolated success stories. We deliver consistent, measurable results across every industry by combining proven strategies with cutting-edge technology and automation.
                 </p>
@@ -992,11 +1036,11 @@
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <!-- AMP Column (highlighted) -->
-                <div class="relative rounded-2xl bg-white p-6 shadow-lg border-2 border-blue-500 ring-2 ring-blue-200">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-600 text-white text-sm font-bold rounded-full">Best fit for growth</div>
+                <div class="relative rounded-2xl bg-white p-6 shadow-lg border-2 border-amp-gold ring-2 ring-amp-gold/30">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amp-navy text-white text-sm font-bold rounded-full">Best fit for growth</div>
                     <div class="text-center mb-6 pt-2">
-                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-100 mb-3">
-                            <span class="text-xl font-bold text-blue-700">AMP</span>
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amp-gold-light/60 mb-3">
+                            <span class="text-xl font-bold text-amp-gold-dark">AMP</span>
                         </div>
                         <h3 class="font-bold text-gray-900 text-lg">Alchemist Mind Pros</h3>
                         <p class="text-sm text-gray-500 mt-1">All-in-one partner</p>
@@ -1013,7 +1057,7 @@
                     </ul>
                     <div class="mt-6 pt-4 border-t border-gray-200">
                         <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual investment</p>
-                        <p class="text-lg font-bold text-blue-700">$24K – $60K</p>
+                        <p class="text-lg font-bold text-amp-gold-dark">$24K – $60K</p>
                     </div>
                 </div>
                 <!-- Typical Agency -->
@@ -1073,54 +1117,54 @@
     </section>
 
     <!-- Unique Value Proposition -->
-    <section class="py-16 md:py-24 bg-blue-700 text-white">
+    <section class="py-16 md:py-24 text-white" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 100%);">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-heading text-white">We've Cracked the Code for Business Growth Across Every Industry.</h2>
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 opacity-90">
                 What makes our approach different? It's a specialized blend of technical mastery, multi-industry expertise, and a relentless focus on your business's profitability and scalability.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">Multi-Industry Expertise</h3>
-                    <p class="text-blue-200">Proven success across legal, home services, healthcare, insurance, and e-commerce.</p>
+                    <p class="text-amp-gold-light/90">Proven success across legal, home services, healthcare, insurance, and e-commerce.</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="tool" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">Complete Business Solutions</h3>
-                    <p class="text-blue-200">From ads to automation, CRM to training hubs – we build complete growth ecosystems.</p>
+                    <p class="text-amp-gold-light/90">From ads to automation, CRM to training hubs – we build complete growth ecosystems.</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">Unparalleled Efficiency</h3>
-                    <p class="text-blue-200">More leads for less money, faster – consistently proven results.</p>
+                    <p class="text-amp-gold-light/90">More leads for less money, faster – consistently proven results.</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="award" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">Proven Track Record</h3>
-                    <p class="text-blue-200">Tangible, data-backed results that speak for themselves.</p>
+                    <p class="text-amp-gold-light/90">Tangible, data-backed results that speak for themselves.</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="line-chart" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">Predictable Growth</h3>
-                    <p class="text-blue-200">Transforming ad spend into a reliable client acquisition channel.</p>
+                    <p class="text-amp-gold-light/90">Transforming ad spend into a reliable client acquisition channel.</p>
                 </div>
-                <div class="card p-6 flex flex-col items-center text-center bg-blue-600 text-white">
-                    <div class="icon-feature mb-4 bg-blue-500">
+                <div class="card p-6 flex flex-col items-center text-center bg-amp-navy text-white">
+                    <div class="icon-feature mb-4 bg-amp-gold/30">
                         <i data-lucide="key" class="w-8 h-8 text-white"></i>
                     </div>
                     <h3 class="sub-heading text-white">The "Code" Unlocked</h3>
-                    <p class="text-blue-200">Exclusive strategies tailored to your unique business and market.</p>
+                    <p class="text-amp-gold-light/90">Exclusive strategies tailored to your unique business and market.</p>
                 </div>
             </div>
             <p class="text-xl md:text-2xl max-w-3xl mx-auto mt-12 opacity-90 font-semibold">
@@ -1130,7 +1174,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50/80 to-amp-gold-light/30">
         <div class="container mx-auto px-6">
             <h2 class="section-heading text-center">What Business Owners Are Saying</h2>
             <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-16 text-gray-600">
@@ -1153,8 +1197,8 @@
                         "Tre transformed our law firm's marketing in just 30 days. We went from spending $41 per lead to $20, and our seminars fill in days instead of weeks. The ROI was immediate and incredible."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">JS</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">JS</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">Jennifer Simon</div>
@@ -1178,8 +1222,8 @@
                         "The CRM system Tre built for our HVAC company was a game-changer. We went from losing 70% of our leads to converting 45% of them. The automation saves us 30 hours per week."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">MR</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">MR</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">Mike Rodriguez</div>
@@ -1203,8 +1247,8 @@
                         "Tre's fractional CMO approach gave us the strategic direction we needed. Our customer acquisition costs dropped 40% while our lead quality doubled. Worth every penny."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">SC</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">SC</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">Sarah Chen</div>
@@ -1228,8 +1272,8 @@
                         "The landing pages Tre built for our e-commerce store converted at 3x our previous rate. Our ROAS went from 2.1x to 5.4x. Absolutely incredible results."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">DK</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">DK</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">David Kim</div>
@@ -1253,8 +1297,8 @@
                         "The training hub Tre developed streamlined our onboarding process. New staff are productive in days, not weeks. It's been a complete game-changer for our operations."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">AL</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">AL</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">Amanda Lopez</div>
@@ -1278,8 +1322,8 @@
                         "Working with Tre as our fractional CMO has been transformative. His strategic insights and execution capabilities helped us scale efficiently while maintaining profitability."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 font-bold text-lg">TW</span>
+                        <div class="w-12 h-12 bg-amp-gold-light/60 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-amp-navy font-bold text-lg">TW</span>
                         </div>
                         <div>
                             <div class="font-semibold text-gray-900">Tom Wilson</div>
@@ -1290,7 +1334,7 @@
             </div>
 
             <div class="text-center mt-16">
-                <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Ready to Join These Success Stories?</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-amp-navy-dark mb-6">Ready to Join These Success Stories?</h3>
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
                     These results aren't outliers – they're the standard we deliver for every client. Let's discuss how we can help you achieve similar transformation for your business.
                 </p>
@@ -1307,12 +1351,12 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="section-heading mb-2">Meet the Founder</h2>
-                <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-8">Tre Forte</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-amp-navy-dark mb-8">Tre Forte</h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <!-- Profile Image (Canva embed) -->
                     <div class="lg:col-span-1 flex justify-center">
                         <div class="relative">
-                            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-blue-600 shadow-2xl">
+                            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-amp-gold shadow-2xl">
                                 <iframe
                                     title="Tre Forte - Founder, Alchemist Mind Pros - Marketing Strategist"
                                     class="w-full h-full border-0"
@@ -1332,16 +1376,16 @@
                     <div class="lg:col-span-1 text-left">
                         <p class="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
                             I help businesses scale revenue and lower customer acquisition costs with high-ROI paid media strategies. 
-                            <span class="font-semibold text-blue-700">Let me prove it.</span>
+                            <span class="font-semibold text-amp-gold-dark">Let me prove it.</span>
                         </p>
                         <p class="text-gray-700 mb-6 leading-relaxed">
-                            As a Chief Marketing Strategist, I've helped businesses generate <span class="font-bold text-blue-700">$20M+ in revenue</span> through paid media while optimizing CAC and ROAS at scale. I've built and executed marketing strategies for Fortune 500 companies and developed custom CRM & client portals to streamline operations.
+                            As a Chief Marketing Strategist, I've helped businesses generate <span class="font-bold text-amp-gold-dark">$20M+ in revenue</span> through paid media while optimizing CAC and ROAS at scale. I've built and executed marketing strategies for Fortune 500 companies and developed custom CRM & client portals to streamline operations.
                         </p>
                         <p class="text-gray-700 mb-6 leading-relaxed">
                             I specialize in Google & Meta Ads, with experience across LinkedIn, TikTok, Reddit, and more. Beyond managing campaigns, I focus on process optimization—building SOPs, improving workflows, and leveraging data analysis to diagnose, refine, and scale ad performance.
                         </p>
                         <p class="text-gray-700 leading-relaxed">
-                            Before marketing, I played collegiate football at Ohio State, where I developed the mental toughness, grit, and relentless competitive drive that fuels my approach today. <span class="font-semibold text-blue-700">In sports and business, the details separate the good from the great.</span> That same discipline, strategic execution, and ability to perform under pressure now drives how I help businesses outcompete, optimize, and scale.
+                            Before marketing, I played collegiate football at Ohio State, where I developed the mental toughness, grit, and relentless competitive drive that fuels my approach today. <span class="font-semibold text-amp-gold-dark">In sports and business, the details separate the good from the great.</span> That same discipline, strategic execution, and ability to perform under pressure now drives how I help businesses outcompete, optimize, and scale.
                         </p>
                     </div>
                 </div>
@@ -1357,7 +1401,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">How much does paid ads management cost?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">Paid ads management starts at $2,000/month with a one-time setup fee of $1,500 and a minimum ad spend of $5,000/month. That investment buys you dedicated management of your Google and Meta campaigns—audience strategy, creative testing, conversion tracking, and ongoing optimization—so you're not guessing or leaving performance on the table.</p>
@@ -1367,7 +1411,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">How long until I see results from Google Ads or Meta Ads?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">Most clients see measurable improvements within 30–45 days: better cost per lead, higher conversion rates, or more qualified traffic. We focus on quick wins (tracking, audiences, creative) while building toward long-term scale.</p>
@@ -1377,7 +1421,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">What is fractional CMO coaching and who is it for?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">Fractional CMO coaching is strategic marketing leadership without a full-time CMO salary. You get an experienced strategist who audits your marketing, identifies growth opportunities, and gives you actionable plans—ads, CRM, landing pages, positioning—so you can scale without the cost and commitment of a senior hire.</p>
@@ -1387,7 +1431,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">Does Alchemist Mind Pros work with law firms and attorneys?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">Yes. We've run paid ads and built marketing systems for Sweet James Accident Attorneys, The Siegel Law Group, and other law firms. We understand compliance, audience targeting for legal (estate planning, personal injury, family law), and how to fill seminars and consultation calendars efficiently.</p>
@@ -1397,7 +1441,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">What industries does Alchemist Mind Pros serve?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">We serve B2B, D2C, e-commerce, lead generation, and local service businesses. That includes legal, home services (HVAC, plumbing, roofing), healthcare and medical practices, insurance and Medicare (e.g. Chapter), professional services, and e-commerce brands.</p>
@@ -1407,7 +1451,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">What is included in a complimentary growth strategy session?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">Your free strategy session is a real working call: we review your current marketing (ads, site, follow-up), identify the biggest gaps and opportunities, and outline a clear roadmap—what we'd do first, what it would cost, and what outcomes you can realistically expect. You leave with a direction, not a sales pitch.</p>
@@ -1417,7 +1461,7 @@
                 <details class="group card p-6 bg-white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
                         <span itemprop="name">Are there long-term contracts or commitments?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-blue-600 group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
                     </summary>
                     <div class="mt-4 text-gray-700 leading-relaxed space-y-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p itemprop="text">No. We don't use long-term contracts. You can pause or stop with notice, and we don't lock you into annual agreements. We'd rather earn your business every month with performance.</p>
@@ -1446,7 +1490,7 @@
     </script>
 
     <!-- Final Call to Action -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-blue-800 to-indigo-900 text-white rounded-t-3xl shadow-xl">
+    <section id="contact" class="py-16 md:py-24 text-white rounded-t-3xl shadow-xl" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 100%);">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg">
                 Ready to Transform Your Business Growth?
@@ -1456,50 +1500,50 @@
             </p>
             <!-- What Happens Next -->
             <div class="mb-12 max-w-4xl mx-auto">
-                <h3 class="text-lg font-semibold text-blue-200 mb-6">What happens next:</h3>
+                <h3 class="text-lg font-semibold text-amp-gold-light/90 mb-6">What happens next:</h3>
                 <div class="flex flex-wrap justify-center gap-4 md:gap-6">
                     <div class="flex items-center">
                         <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">1</div>
                         <span class="ml-2 text-left text-sm md:text-base font-medium">Book your free strategy session</span>
                     </div>
-                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-amp-gold-light/80 shrink-0 hidden md:block"></i>
                     <div class="flex items-center">
                         <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">2</div>
                         <span class="ml-2 text-left text-sm md:text-base font-medium">Discovery call & audit</span>
                     </div>
-                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-amp-gold-light/80 shrink-0 hidden md:block"></i>
                     <div class="flex items-center">
                         <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">3</div>
                         <span class="ml-2 text-left text-sm md:text-base font-medium">Custom proposal</span>
                     </div>
-                    <i data-lucide="arrow-right" class="w-5 h-5 text-blue-300 shrink-0 hidden md:block"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-amp-gold-light/80 shrink-0 hidden md:block"></i>
                     <div class="flex items-center">
                         <div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white font-bold text-sm shrink-0">4</div>
                         <span class="ml-2 text-left text-sm md:text-base font-medium">Onboarding & results</span>
                     </div>
                 </div>
             </div>
-            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-blue-700 hover:bg-gray-100">
+            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-amp-gold-light">
                 <i data-lucide="calendar-plus" class="w-6 h-6 mr-2"></i> Schedule Your Complimentary Growth Strategy Session Now!
             </a>
             <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> Uncover your hidden opportunities for growth and automation.</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> Get a clear, custom roadmap for predictable business growth.</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-blue-200"></i> See how your marketing can finally work 24/7 for you.</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light/90"></i> Uncover your hidden opportunities for growth and automation.</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light/90"></i> Get a clear, custom roadmap for predictable business growth.</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light/90"></i> See how your marketing can finally work 24/7 for you.</li>
             </ul>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-10">
+    <footer class="py-10 text-amp-gold-light/80" style="background-color: var(--amp-navy-dark);">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-sm">&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
                 <nav class="flex flex-wrap justify-center gap-6 text-sm">
-                    <a href="#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
-                    <a href="#" id="cta-footer-contact" class="hover:text-white transition-colors duration-200">Contact</a>
-                    <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-white transition-colors duration-200">Privacy Policy</a>
-                    <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+                    <a href="#faq" class="hover:text-amp-gold transition-colors duration-200">FAQ</a>
+                    <a href="#" id="cta-footer-contact" class="hover:text-amp-gold transition-colors duration-200">Contact</a>
+                    <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-amp-gold transition-colors duration-200">Privacy Policy</a>
+                    <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-amp-gold transition-colors duration-200">Terms of Service</a>
                 </nav>
             </div>
         </div>
@@ -1520,11 +1564,11 @@
             <div class="px-6 pt-4">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold" id="step1-indicator">1</div>
+                        <div class="w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold" id="step1-indicator">1</div>
                         <div class="ml-2 text-sm font-medium text-gray-900">The Basics</div>
                     </div>
                     <div class="flex-1 mx-4 h-1 bg-gray-200 rounded-full">
-                        <div class="h-1 bg-blue-600 rounded-full transition-all duration-300" id="progress-bar" style="width: 33%"></div>
+                        <div class="h-1 bg-amp-navy rounded-full transition-all duration-300" id="progress-bar" style="width: 33%"></div>
                     </div>
                     <div class="flex items-center">
                         <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold" id="step2-indicator">2</div>
@@ -1549,22 +1593,22 @@
                     <form id="step1-form" class="space-y-6">
                         <div>
                             <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
                         </div>
                         
                         <div>
                             <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                            <input type="text" id="companyName" name="companyName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            <input type="text" id="companyName" name="companyName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
                         </div>
                         
                         <div>
                             <label for="workEmail" class="block text-sm font-medium text-gray-700 mb-2">Work Email *</label>
-                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors">
                         </div>
                         
                         <div>
                             <label for="companyWebsite" class="block text-sm font-medium text-gray-700 mb-2">Company Website *</label>
-                            <input type="url" id="companyWebsite" name="companyWebsite" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="https://yourcompany.com">
+                            <input type="url" id="companyWebsite" name="companyWebsite" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors" placeholder="https://yourcompany.com">
                         </div>
                         
                         <div class="flex justify-end pt-4">
@@ -1588,19 +1632,19 @@
                             <label class="block text-sm font-medium text-gray-700 mb-4">What is your current approximate monthly budget for digital advertising? *</label>
                             <div class="space-y-3">
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$0 - $1,500" required class="mr-3 text-blue-600">
+                                    <input type="radio" name="adBudget" value="$0 - $1,500" required class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">$0 - $1,500 (We're just getting started or experimenting)</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$1,500 - $5,000" required class="mr-3 text-blue-600">
+                                    <input type="radio" name="adBudget" value="$1,500 - $5,000" required class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">$1,500 - $5,000 (We're investing consistently)</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$5,000 - $15,000" required class="mr-3 text-blue-600">
+                                    <input type="radio" name="adBudget" value="$5,000 - $15,000" required class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">$5,000 - $15,000 (We're looking to scale our efforts)</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="radio" name="adBudget" value="$15,000+" required class="mr-3 text-blue-600">
+                                    <input type="radio" name="adBudget" value="$15,000+" required class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">$15,000+</span>
                                 </label>
                             </div>
@@ -1610,19 +1654,19 @@
                             <label class="block text-sm font-medium text-gray-700 mb-4">What is your biggest marketing challenge right now? *</label>
                             <div class="space-y-3">
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="Our cost per lead is too high / we're not seeing ROI" class="mr-3 text-blue-600">
+                                    <input type="checkbox" name="biggestChallenge" value="Our cost per lead is too high / we're not seeing ROI" class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">Our cost per lead is too high / we're not seeing ROI</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We're losing leads due to poor follow-up systems" class="mr-3 text-blue-600">
+                                    <input type="checkbox" name="biggestChallenge" value="We're losing leads due to poor follow-up systems" class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">We're losing leads due to poor follow-up systems</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We need better automation and systems" class="mr-3 text-blue-600">
+                                    <input type="checkbox" name="biggestChallenge" value="We need better automation and systems" class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">We need better automation and systems</span>
                                 </label>
                                 <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                                    <input type="checkbox" name="biggestChallenge" value="We're unsure if our marketing is set up correctly" class="mr-3 text-blue-600">
+                                    <input type="checkbox" name="biggestChallenge" value="We're unsure if our marketing is set up correctly" class="mr-3 text-amp-navy">
                                     <span class="text-gray-700">We're unsure if our marketing is set up correctly</span>
                                 </label>
                             </div>
@@ -1630,7 +1674,7 @@
                         
                         <div>
                             <label for="additionalInfo" class="block text-sm font-medium text-gray-700 mb-2">Is there anything else you'd like us to know before our session? (Optional)</label>
-                            <textarea id="additionalInfo" name="additionalInfo" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Tell us more about your situation..."></textarea>
+                            <textarea id="additionalInfo" name="additionalInfo" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amp-gold focus:border-amp-gold transition-colors" placeholder="Tell us more about your situation..."></textarea>
                         </div>
                         
                         <div class="flex justify-between pt-4">
@@ -1691,18 +1735,18 @@
                 <div class="w-full mb-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-3 text-center">While You Wait: See the Blueprint in Action</h3>
                     <div class="flex flex-col items-center bg-gray-50 rounded-xl shadow p-4 hover:shadow-lg transition cursor-pointer">
-                        <div class="w-20 h-20 mb-3 rounded-lg bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center">
+                        <div class="w-20 h-20 mb-3 rounded-lg bg-gradient-to-br from-amp-gold-light to-amp-gold/50 flex items-center justify-center">
                             <!-- AI-generated image placeholder -->
-                            <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <svg class="w-12 h-12 text-amp-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <rect x="3" y="3" width="18" height="18" rx="4" fill="#e0e7ff"/>
                                 <path d="M7 17l4-4 3 3 4-6" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="text-center mb-2">
                             <div class="font-bold text-gray-900">Case Study: The Siegel Law Group, P.A.</div>
-                            <div class="text-blue-700 font-semibold">From $41 to $20 Per Lead in Just 4 Days</div>
+                            <div class="text-amp-gold-dark font-semibold">From $41 to $20 Per Lead in Just 4 Days</div>
                         </div>
-                        <a href="https://docs.google.com/document/d/1PanGF5iIe5BIVluPLwj-Yse9GZN5A8nBUkfnpWBvh84/edit?tab=t.0" target="_blank" class="mt-2 btn-primary bg-blue-700 text-white hover:bg-blue-800 px-6 py-2 rounded-full font-bold inline-block">Read the Full Case Study &rarr;</a>
+                        <a href="https://docs.google.com/document/d/1PanGF5iIe5BIVluPLwj-Yse9GZN5A8nBUkfnpWBvh84/edit?tab=t.0" target="_blank" class="mt-2 btn-primary bg-amp-navy text-white hover:bg-amp-navy-light px-6 py-2 rounded-full font-bold inline-block">Read the Full Case Study &rarr;</a>
                     </div>
                 </div>
                 <div class="text-gray-500 text-center text-sm mb-2">You can now close this window. We'll see you at your scheduled time!</div>
@@ -1893,8 +1937,8 @@
                         // Update button
                         revealButtonText.setAttribute('data-lucide', 'eye-off');
                         revealButtonSpan.textContent = 'Hide Pricing';
-                        revealButton.classList.remove('bg-blue-100', 'hover:bg-blue-200');
-                        revealButton.classList.add('bg-blue-200', 'hover:bg-blue-300');
+                        revealButton.classList.remove('bg-amp-gold-light/60', 'hover:bg-amp-gold-light');
+                        revealButton.classList.add('bg-amp-gold-light', 'hover:bg-amp-gold/20');
                         
                         // Track pricing reveal
                         trackGA4Event('pricing_reveal', {
@@ -1915,8 +1959,8 @@
                         // Update button
                         revealButtonText.setAttribute('data-lucide', 'eye');
                         revealButtonSpan.textContent = 'Click to Reveal Pricing';
-                        revealButton.classList.remove('bg-blue-200', 'hover:bg-blue-300');
-                        revealButton.classList.add('bg-blue-100', 'hover:bg-blue-200');
+                        revealButton.classList.remove('bg-amp-gold-light', 'hover:bg-amp-gold/20');
+                        revealButton.classList.add('bg-amp-gold-light/60', 'hover:bg-amp-gold-light');
                         
                         // Track pricing hide
                         trackGA4Event('pricing_reveal', {
@@ -2033,21 +2077,21 @@
                 if (stepNumber === 1) {
                     step1.classList.remove('hidden');
                     progressBar.style.width = '33%';
-                    step1Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
+                    step1Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
                     step2Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
                     step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
                 } else if (stepNumber === 2) {
                     step2.classList.remove('hidden');
                     progressBar.style.width = '66%';
                     step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step2Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
+                    step2Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
                     step3Indicator.className = 'w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-bold';
                 } else if (stepNumber === 3) {
                     step3Confirmation.classList.remove('hidden');
                     progressBar.style.width = '100%';
                     step1Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
                     step2Indicator.className = 'w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold';
-                    step3Indicator.className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold';
+                    step3Indicator.className = 'w-8 h-8 rounded-full bg-amp-navy text-white flex items-center justify-center text-sm font-bold';
                     
                     // Load Calendly widget when Step 3 becomes visible
                     loadCalendlyWidget();
