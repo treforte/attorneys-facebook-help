@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="6ombaksl8jtequrlx9x242563c7uuq" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com https://calendly.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Custom CRM Development - Never Lose a Lead Again | Alchemist Mind Pros</title>
+    <meta name="description" content="Custom CRM that automates lead nurturing 24/7. Automated follow-up sequences, visual sales funnel, and lead capture—built for law firms, HVAC, insurance, and lead-reliant businesses.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amp': {
+                'navy': '#1e3a5f',
+                'navy-dark': '#152a47',
+                'navy-light': '#2d4a6f',
+                'gold': '#c9a227',
+                'gold-light': '#fef3c7',
+                'gold-dark': '#b8860b',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --amp-navy: #1e3a5f;
+            --amp-navy-dark: #152a47;
+            --amp-navy-light: #2d4a6f;
+            --amp-gold: #c9a227;
+            --amp-gold-light: #fef3c7;
+            --amp-gold-dark: #b8860b;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fafaf9; color: #334155; }
+        .container { max-width: 1200px; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4);
+        }
+        .btn-primary.bg-white {
+            background: white !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.bg-white:hover {
+            background: var(--amp-gold-light) !important;
+            color: var(--amp-navy-dark) !important;
+        }
+        .btn-primary.btn-outline {
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline:hover {
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important;
+            color: white !important;
+        }
+        .section-heading { font-size: 2.5rem; font-weight: 800; color: var(--amp-navy-dark); margin-bottom: 1.5rem; line-height: 1.2; }
+        @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
+        .sub-heading { font-size: 1.25rem; font-weight: 600; color: var(--amp-navy); margin-bottom: 1rem; }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04);
+            padding: 2rem;
+        }
+        .icon-feature {
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%);
+            color: var(--amp-gold-dark);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .results-table {
+            width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden;
+            border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        }
+        .results-table th, .results-table td { padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .results-table th {
+            background-color: var(--amp-gold-light);
+            font-weight: 600; color: var(--amp-navy-dark);
+            text-transform: uppercase; font-size: 0.875rem;
+        }
+        .results-table tr:nth-child(even) { background-color: #fafaf9; }
+        .results-table tr:last-child td { border-bottom: none; }
+        #calendlyModal { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+        #calendlyModal.is-open { opacity: 1; visibility: visible; }
+        #calendly-widget-container { flex-shrink: 0; }
+        #calendly-widget-container iframe { width: 100% !important; height: 100% !important; }
+        .sticky-cta-mobile {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            transform: translateY(100%); transition: transform 0.3s ease;
+        }
+        .sticky-cta-mobile.is-visible { transform: translateY(0); }
+        @media (min-width: 768px) { .sticky-cta-mobile { display: none !important; } }
+    </style>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1286982329618450');fbq('track','PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1286982329618450&ev=PageView&noscript=1"/></noscript>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky mobile CTA -->
+    <div class="sticky-cta-mobile md:hidden" id="stickyCtaMobile" aria-hidden="true">
+        <a href="#" id="cta-sticky-mobile" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-amp-gold hover:bg-amp-gold-light text-amp-navy-dark font-bold text-base rounded-lg transition-colors shadow-lg">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Book Strategy Session
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+                    <div class="w-12 h-12 flex-none flex items-center justify-center" style="min-width: 3rem; min-height: 3rem;">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.12); overflow: hidden; border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; pointer-events: none;"
+                                src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed"
+                                allowfullscreen="allowfullscreen" allow="fullscreen" title="Alchemist Mind Pros logo"></iframe>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
+                        <p class="text-sm text-amp-navy/80">Paid Ads Excellence & Marketing Automation</p>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="https://alchemistmind.pro" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Home</a>
+                    <div class="relative group">
+                        <button type="button" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium inline-flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+                            Services <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="bg-white rounded-lg shadow-lg border border-amp-gold-light/60 py-2 min-w-[200px]">
+                                <a href="https://alchemistmind.pro/lp-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">LP Development</a>
+                                <a href="https://alchemistmind.pro/crm-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 font-semibold">CRM</a>
+                                <a href="https://alchemistmind.pro/training-hub/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Training Hub</a>
+                                <a href="https://alchemistmind.pro/paid-ads-management/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Paid Ads Management</a>
+                                <a href="https://alchemistmind.pro/fractional-cmo/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Fractional CMO</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#services" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Pricing</a>
+                    <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <div class="relative z-10 text-center lg:text-left order-2 lg:order-1">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                        Never Lose a Lead Again.
+                    </h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                        Custom CRM that automates nurturing so every prospect gets followed up—24/7.
+                    </h2>
+                    <p class="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-xl mx-auto lg:mx-0">
+                        We build custom CRM systems that eliminate manual chaos. Automated follow-up sequences, visual sales funnel mapping, and lead capture—designed for lead-reliant businesses that can't afford to drop the ball.
+                    </p>
+                    <ul class="space-y-3 mb-6 max-w-xl mx-auto lg:mx-0">
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="zap" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Automated Nurturing:</strong> Contacts are followed up while they're hot—no manual delays.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="workflow" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Visual Sales Funnel:</strong> See where leads drop off and why.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="workflow" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Custom-Built:</strong> Built for your process—not a generic template.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="layers" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>One System:</strong> Capture, nurture & pipeline—no juggling tools.</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="scale" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Law Firms</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="thermometer" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>HVAC</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="shield" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Insurance</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="dollar-sign" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Finance</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>more</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#case-studies" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                            <i data-lucide="trending-up" class="w-6 h-6 mr-2"></i>
+                            See the Results We've Delivered
+                        </a>
+                        <a href="#" id="cta-hero-audit" class="btn-primary btn-outline inline-flex items-center justify-center">
+                            <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                            Schedule a Free Strategy Session
+                        </a>
+                    </div>
+                </div>
+                <div class="relative z-10 order-1 lg:order-2 flex items-center justify-center">
+                    <div class="w-full max-w-xl lg:max-w-2xl rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 bg-white">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; overflow: hidden;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="AMP hero - Before vs After"></iframe>
+                        </div>
+                        <p class="sr-only">Hero graphic by Tre Forte. <a href="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view" target="_blank" rel="noopener">View on Canva</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
+            <svg class="w-full h-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="pattern-circles-crm" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)"></circle>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles-crm)"></rect>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="py-12 md:py-16 bg-white border-b border-amp-gold-light/60">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-amp-navy-dark mb-3">Brands We've Built Systems For</h2>
+            <p class="text-center text-lg md:text-xl text-amp-navy/80 max-w-2xl mx-auto mb-6">From law firms to HVAC, e‑commerce to local services—we build CRMs that convert.</p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-10">
+                <span class="inline-flex items-center gap-2 bg-amp-navy text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                    <i data-lucide="award" class="w-5 h-5 text-amp-gold"></i>
+                    Top 1% Advertiser
+                </span>
+                <span class="inline-flex items-center gap-2 bg-amp-navy text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-amp-gold"></i>
+                    $20M+ Managed in Ad Spend
+                </span>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
+                <a href="https://sweetjames.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Sweet James">
+                    <img src="https://logo.clearbit.com/sweetjames.com" alt="Sweet James" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Sweet James</span>
+                </a>
+                <a href="https://siegellawgroup.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Siegel Law Group">
+                    <img src="https://logo.clearbit.com/siegellawgroup.com" alt="Siegel Law Group" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Siegel Law</span>
+                </a>
+                <a href="https://softr.io" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Softr">
+                    <img src="https://logo.clearbit.com/softr.io" alt="Softr" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Softr</span>
+                </a>
+                <a href="https://giggster.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Giggster">
+                    <img src="https://logo.clearbit.com/giggster.com" alt="Giggster" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Giggster</span>
+                </a>
+            </div>
+            <p class="text-center text-2xl md:text-3xl font-bold text-amp-navy-dark mt-8">We've built CRMs that <span class="text-amp-gold-dark">3x conversion rates</span>—proven results.</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto mt-[-2rem] relative z-10 max-w-6xl">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading">Are You Losing 70%+ of Your Leads?</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-amp-navy/80">Most lead-reliant businesses hemorrhage revenue through poor follow-up and manual chaos. Sound familiar?</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="clock" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">24+ Hour Follow-up</h3>
+                    <p class="text-gray-700">Leads go cold before anyone calls—you lose the hot ones.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="file-x" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">No Follow-up System</h3>
+                    <p class="text-gray-700">Spreadsheets, sticky notes, or nothing—leads slip through cracks.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="users" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Blind to the Funnel</h3>
+                    <p class="text-gray-700">Can't see where leads drop off or why conversion is low.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="activity" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Manual Everything</h3>
+                    <p class="text-gray-700">40+ hours/week on tasks that should be automated.</p>
+                </div>
+            </div>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mt-12 text-gray-700 font-semibold">The truth? 70%+ of leads never convert when follow-up is manual—we fix that.</p>
+        </div>
+    </section>
+
+    <!-- What We Build -->
+    <section class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">What We Build For You</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-amp-navy/80">Custom CRM that automates lead capture, nurturing, and pipeline visibility.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="zap" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Automated Follow-up Sequences</h3>
+                    <p class="text-gray-700">Contacts are nurtured while they're hot. No manual delays—emails, SMS, and tasks fire automatically.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="workflow" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Visual Sales Funnel</h3>
+                    <p class="text-gray-700">See exactly where leads drop off. Identify bottlenecks and optimize conversion at every stage.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="settings" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Custom for Your Process</h3>
+                    <p class="text-gray-700">Built around your workflow—not a generic template. Captures what you need, when you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section id="case-studies" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Real Results: HVAC Company</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-gray-600">We built a custom CRM that transformed manual chaos into systematic growth.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="lg:pr-8">
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">The Challenge: Manual Chaos & Lost Leads</h3>
+                    <p class="text-gray-700 mb-4">An HVAC company was losing 70% of their leads due to poor follow-up systems and manual processes. They needed automation and better lead management.</p>
+                    <h4 class="text-lg font-semibold text-amp-gold-dark mb-4">Our Solution & Results</h4>
+                    <p class="text-gray-700 mb-6">We built a custom CRM with automated lead nurturing sequences, visual sales funnel mapping, and automated follow-up systems. The transformation was immediate.</p>
+                </div>
+                <div class="w-full">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th class="text-red-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="x-circle" class="w-5 h-5"></i>Before</span></th>
+                                <th class="text-green-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-5 h-5"></i>After</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lead Follow-up Time</td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>24+ Hours</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>< 5 Minutes</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lead Conversion Rate</td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>15%</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>45%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Manual Work Hours</td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>40 hrs/week</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>10 hrs/week</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="#" id="cta-case-study" class="btn-primary inline-flex items-center">
+                    <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                    Get Your Custom CRM Strategy
+                </a>
+            </div>
+            <p class="text-center text-sm text-amp-navy/60 mt-4">Results may vary; typical among our clients.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="services" class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">CRM Development Investment</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-gray-600">Custom-built CRM with automated nurturing—transparent pricing.</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="card p-8 text-center">
+                    <div class="text-4xl font-bold text-amp-navy-dark mb-2">Starting at $2,997</div>
+                    <div class="text-lg text-amp-gold-dark font-medium mb-6">setup + $197/month</div>
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Custom CRM Setup</span><span class="font-semibold text-amp-navy">$2,997</span></div>
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Monthly Maintenance &amp; Updates</span><span class="font-semibold text-amp-navy">$197</span></div>
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Unlimited Users &amp; Leads</span><span class="font-semibold text-amp-navy">Included</span></div>
+                    </div>
+                    <ul class="text-left space-y-2 mb-8 text-gray-700">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Automated follow-up sequences</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Visual sales funnel mapping</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Custom-built for your process</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Integrates with your ads &amp; landing pages</li>
+                    </ul>
+                    <a href="#" id="cta-services-audit" class="btn-primary inline-flex w-full sm:w-auto justify-center">
+                        <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                        Schedule a Free Strategy Session
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-heading text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>How long does CRM setup take?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Most custom CRM builds are delivered within 2–4 weeks, depending on complexity. We start with a discovery call to map your process, then build and test before go-live. You'll have full training and support.</p>
+                </details>
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>Will it integrate with my ads and landing pages?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Yes. Our CRMs are built to integrate with Google Ads, Meta Ads, landing pages, and common form providers. Leads flow in automatically and trigger your nurturing sequences—no manual entry.</p>
+                </details>
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>What industries do you build CRMs for?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">We've built CRMs for law firms, HVAC, insurance brokers, home services, e‑commerce, SaaS, and more. Any business that relies on leads and needs automation—we've done it. Our free strategy session confirms we can deliver for your specific workflow.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 text-white rounded-t-3xl shadow-xl" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg">Ready to Stop Losing Leads?</h2>
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">Let's discuss your process and show you exactly how a custom CRM would transform your conversion rate.</p>
+            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                Schedule a Free Strategy Session
+            </a>
+            <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Free 30-minute strategy call</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Process mapping and recommendations</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Transparent pricing—no surprises</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="https://alchemistmind.pro" class="hover:text-amp-gold transition-colors duration-200">Home</a> |
+                <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-amp-gold transition-colors duration-200">Privacy Policy</a> |
+                <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-amp-gold transition-colors duration-200">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
+                <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your Free Strategy Session</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
+        </div>
+    </div>
+
+    <script>
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
+            const modal = document.getElementById('calendlyModal');
+            const closeBtn = document.getElementById('closeCalendlyModal');
+            const container = document.getElementById('calendly-widget-container');
+            
+            const ctaIds = [
+                'cta-header-get-started', 'cta-hero-audit', 'cta-case-study',
+                'cta-services-audit', 'cta-button-final', 'cta-sticky-mobile'
+            ];
+            
+            function openCalendlyModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.add('is-open');
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => setTimeout(() => loadCalendlyWidget(), 150));
+                setTimeout(() => closeBtn && closeBtn.focus(), 200);
+            }
+            
+            function closeCalendlyModal() {
+                modal.classList.remove('is-open');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            function loadCalendlyWidget() {
+                if (typeof Calendly === 'undefined') {
+                    const script = document.createElement('script');
+                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    script.onload = initCalendly;
+                } else initCalendly();
+            }
+            
+            function initCalendly() {
+                if (!window.Calendly || !container || container.children.length > 0) return;
+                window.Calendly.initInlineWidget({
+                    url: CALENDLY_URL,
+                    parentElement: container,
+                    prefill: {},
+                    utm: {},
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false
+                });
+            }
+            
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', openCalendlyModal);
+            });
+            
+            if (closeBtn) closeBtn.addEventListener('click', closeCalendlyModal);
+            modal.addEventListener('click', e => { if (e.target === modal) closeCalendlyModal(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCalendlyModal(); });
+            
+            window.openCalendlyModal = openCalendlyModal;
+            window.closeCalendlyModal = closeCalendlyModal;
+            
+            // Sticky mobile CTA
+            const stickyCta = document.getElementById('stickyCtaMobile');
+            if (stickyCta) {
+                const hero = document.querySelector('section.bg-gradient-to-br');
+                const showAfter = hero ? hero.offsetHeight * 0.6 : 400;
+                function updateStickyCta() {
+                    if (window.innerWidth >= 768) return;
+                    if (window.scrollY > showAfter) {
+                        stickyCta.classList.add('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'false');
+                    } else {
+                        stickyCta.classList.remove('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'true');
+                    }
+                }
+                window.addEventListener('scroll', updateStickyCta, { passive: true });
+                window.addEventListener('resize', updateStickyCta);
+                updateStickyCta();
+            }
+            
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
