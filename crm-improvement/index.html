@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="6ombaksl8jtequrlx9x242563c7uuq" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com https://calendly.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>CRM Audit & Optimization - HubSpot-Certified Specialist | Alchemist Mind Pros</title>
+    <meta name="description" content="Already have a CRM? Our HubSpot-certified specialist audits your setup, optimizes pipelines, improves speed to lead, and leverages unused features. We also optimize Salesforce, Pipedrive, and more.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amp': {
+                'navy': '#1e3a5f',
+                'navy-dark': '#152a47',
+                'navy-light': '#2d4a6f',
+                'gold': '#c9a227',
+                'gold-light': '#fef3c7',
+                'gold-dark': '#b8860b',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --amp-navy: #1e3a5f;
+            --amp-navy-dark: #152a47;
+            --amp-navy-light: #2d4a6f;
+            --amp-gold: #c9a227;
+            --amp-gold-light: #fef3c7;
+            --amp-gold-dark: #b8860b;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fafaf9; color: #334155; }
+        .container { max-width: 1200px; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4);
+        }
+        .btn-primary.bg-white {
+            background: white !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.bg-white:hover {
+            background: var(--amp-gold-light) !important;
+            color: var(--amp-navy-dark) !important;
+        }
+        .btn-primary.btn-outline {
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline:hover {
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important;
+            color: white !important;
+        }
+        .section-heading { font-size: 2.5rem; font-weight: 800; color: var(--amp-navy-dark); margin-bottom: 1.5rem; line-height: 1.2; }
+        @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
+        .sub-heading { font-size: 1.25rem; font-weight: 600; color: var(--amp-navy); margin-bottom: 1rem; }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04);
+            padding: 2rem;
+        }
+        .icon-feature {
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%);
+            color: var(--amp-gold-dark);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #calendlyModal { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+        #calendlyModal.is-open { opacity: 1; visibility: visible; }
+        #calendly-widget-container { flex-shrink: 0; }
+        #calendly-widget-container iframe { width: 100% !important; height: 100% !important; }
+        .sticky-cta-mobile {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            transform: translateY(100%); transition: transform 0.3s ease;
+        }
+        .sticky-cta-mobile.is-visible { transform: translateY(0); }
+        @media (min-width: 768px) { .sticky-cta-mobile { display: none !important; } }
+    </style>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1286982329618450');fbq('track','PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1286982329618450&ev=PageView&noscript=1"/></noscript>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky mobile CTA -->
+    <div class="sticky-cta-mobile md:hidden" id="stickyCtaMobile" aria-hidden="true">
+        <a href="#" id="cta-sticky-mobile" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-amp-gold hover:bg-amp-gold-light text-amp-navy-dark font-bold text-base rounded-lg transition-colors shadow-lg">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Book CRM Audit
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+                    <div class="w-12 h-12 flex-none flex items-center justify-center" style="min-width: 3rem; min-height: 3rem;">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.12); overflow: hidden; border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; pointer-events: none;"
+                                src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed"
+                                allowfullscreen="allowfullscreen" allow="fullscreen" title="Alchemist Mind Pros logo"></iframe>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
+                        <p class="text-sm text-amp-navy/80">Paid Ads Excellence & Marketing Automation</p>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="https://alchemistmind.pro" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Home</a>
+                    <div class="relative group">
+                        <button type="button" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium inline-flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+                            Services <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="bg-white rounded-lg shadow-lg border border-amp-gold-light/60 py-2 min-w-[220px]">
+                                <a href="https://alchemistmind.pro/lp-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">LP Development</a>
+                                <a href="https://alchemistmind.pro/crm-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Custom CRM Building</a>
+                                <a href="https://alchemistmind.pro/crm-audit/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 font-semibold">CRM Audit & Optimization</a>
+                                <a href="https://alchemistmind.pro/training-hub/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Training Hub</a>
+                                <a href="https://alchemistmind.pro/paid-ads-management/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Paid Ads Management</a>
+                                <a href="https://alchemistmind.pro/fractional-cmo/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40">Fractional CMO</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#services" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Pricing</a>
+                    <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <div class="relative z-10 text-center lg:text-left order-2 lg:order-1">
+                    <!-- Clear differentiator: Already have a CRM -->
+                    <p class="inline-flex items-center gap-2 bg-amp-gold/20 border border-amp-gold/40 px-4 py-2 rounded-full text-sm font-bold text-amp-gold-light mb-6">
+                        <i data-lucide="search-check" class="w-4 h-4"></i>
+                        Already have a CRM? We optimize what you've got.
+                    </p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                        Get More From Your Existing CRM.
+                    </h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                        HubSpot-certified specialist audits your CRM and provides optimization recommendations—faster speed to lead, better pipelines, unused features leveraged.
+                    </h2>
+                    <p class="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-xl mx-auto lg:mx-0">
+                        <strong>We're HubSpot certified</strong>—but many CRMs share commonalities. We can audit and optimize HubSpot, Salesforce, Pipedrive, and more. Turn your underperforming CRM into a revenue engine.
+                    </p>
+                    <ul class="space-y-3 mb-6 max-w-xl mx-auto lg:mx-0">
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="award" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>HubSpot Certified:</strong> Deep expertise in HubSpot CRMs—and transferable skills for others.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="zap" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Speed to Lead:</strong> Improve response time and conversion with optimized workflows.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="layers" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Unused Features:</strong> Leverage automation, sequences, and integrations you're not using.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="workflow" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Pipeline Optimization:</strong> Enhance your existing systems—no rip-and-replace.</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25">HubSpot</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25">Salesforce</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25">Pipedrive</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25">Zoho CRM</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>more</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#what-we-audit" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                            <i data-lucide="search" class="w-6 h-6 mr-2"></i>
+                            What We Audit
+                        </a>
+                        <a href="#" id="cta-hero-audit" class="btn-primary btn-outline inline-flex items-center justify-center">
+                            <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                            Book Your CRM Audit
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-amp-gold-light/80">
+                        <a href="https://alchemistmind.pro/crm-development/" class="hover:text-white underline">Don't have a CRM yet? We build custom systems from scratch →</a>
+                    </p>
+                </div>
+                <div class="relative z-10 order-1 lg:order-2 flex items-center justify-center">
+                    <div class="w-full max-w-xl lg:max-w-2xl rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 bg-white">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; overflow: hidden;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="AMP hero - Before vs After"></iframe>
+                        </div>
+                        <p class="sr-only">Hero graphic by Tre Forte. <a href="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view" target="_blank" rel="noopener">View on Canva</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
+            <svg class="w-full h-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="pattern-circles-audit" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)"></circle>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles-audit)"></rect>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Differentiator: Which service is right? -->
+    <section class="py-8 bg-amp-gold-light/40 border-b border-amp-gold/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-lg font-bold text-amp-navy-dark mb-4">Which CRM Service Is Right for You?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-white rounded-xl p-6 border-2 border-amp-gold/40 shadow-md">
+                        <p class="font-bold text-amp-navy-dark mb-2">Already have a CRM?</p>
+                        <p class="text-gray-700 text-sm mb-4">You're in the right place. We audit and optimize your existing setup—HubSpot, Salesforce, Pipedrive, and more.</p>
+                        <a href="#what-we-audit" class="text-amp-gold-dark font-semibold text-sm hover:underline">Learn about our audit →</a>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-amp-navy/20">
+                        <p class="font-bold text-amp-navy-dark mb-2">Don't have a CRM yet?</p>
+                        <p class="text-gray-700 text-sm mb-4">We build custom CRMs from scratch. Automated nurturing, visual funnel, lead capture—built for your process.</p>
+                        <a href="https://alchemistmind.pro/crm-development/" class="text-amp-navy font-semibold text-sm hover:underline">Custom CRM Building →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Audit -->
+    <section id="what-we-audit" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">What We Audit & Optimize</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-amp-navy/80">Our HubSpot-certified specialist reviews your CRM and delivers actionable recommendations.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="clock" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Speed to Lead</h3>
+                    <p class="text-gray-700">Reduce response time. Identify bottlenecks in lead routing, notifications, and follow-up—so hot leads get contacted in minutes, not hours.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="git-branch" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Pipeline & Stages</h3>
+                    <p class="text-gray-700">Optimize your deal stages, automation rules, and handoff points. Fix leaks and improve visibility so nothing falls through the cracks.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="sparkles" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Unused Features</h3>
+                    <p class="text-gray-700">Most teams use a fraction of their CRM. We surface automation, sequences, integrations, and workflows you're paying for but not using.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="zap" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Automation & Workflows</h3>
+                    <p class="text-gray-700">Review and enhance your automation. Lead scoring, nurture sequences, task creation—ensure they're configured correctly and aligned with your process.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="link" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Integrations & Data</h3>
+                    <p class="text-gray-700">Ads, landing pages, forms, email—are they connected? We audit data flow and recommend improvements so leads and activity sync reliably.</p>
+                </div>
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="icon-feature mb-6"><i data-lucide="file-check" class="w-10 h-10 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading">Reporting & Visibility</h3>
+                    <p class="text-gray-700">Dashboards, reports, and attribution. We ensure you're tracking the right metrics and that leadership has clear visibility into pipeline health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HubSpot + Other CRMs -->
+    <section class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">HubSpot Certified—But We Optimize Other CRMs Too</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 text-amp-navy/80">Our specialist is certified in HubSpot. Many CRMs share commonalities—pipeline stages, automation, lead routing, integrations. We apply the same optimization principles to Salesforce, Pipedrive, Zoho, and more.</p>
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8 flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-24 h-24 rounded-2xl bg-amp-navy flex items-center justify-center">
+                            <i data-lucide="award" class="w-12 h-12 text-amp-gold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-amp-navy-dark mb-4">Best for HubSpot—Flexible for Others</h3>
+                        <p class="text-gray-700 mb-4">We deliver the deepest optimization for HubSpot users. For Salesforce, Pipedrive, Zoho, or other platforms, we focus on pipeline optimization, speed to lead, automation improvements, and integration audits—many of which translate across platforms.</p>
+                        <p class="text-gray-700"><strong>Not sure if we can help?</strong> Our free strategy call confirms we can deliver value for your specific CRM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto mt-[-2rem] relative z-10 max-w-6xl">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading">Is Your CRM Underperforming?</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-amp-navy/80">You're paying for a CRM—but are you getting your money's worth? Here's what we typically find:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="clock" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Slow Speed to Lead</h3>
+                    <p class="text-gray-700">Leads sit for hours before anyone follows up—you're losing the hottest ones.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="layers" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Unused Features</h3>
+                    <p class="text-gray-700">Paying for automation and integrations you're not using—or using wrong.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="git-branch" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Broken Pipelines</h3>
+                    <p class="text-gray-700">Deals get stuck, stages are misconfigured, and visibility is poor.</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4"><i data-lucide="link" class="w-8 h-8 text-amp-gold-dark"></i></div>
+                    <h3 class="sub-heading text-amp-navy-dark">Integration Gaps</h3>
+                    <p class="text-gray-700">Ads and forms aren't connected—or data isn't flowing correctly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / CTA Section -->
+    <section id="services" class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Get Your CRM Audit</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-12 text-gray-600">Our HubSpot-certified specialist audits your CRM and delivers a detailed report with prioritized recommendations.</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="card p-8 text-center">
+                    <p class="text-2xl font-bold text-amp-navy-dark mb-4">Custom pricing based on your CRM and scope</p>
+                    <p class="text-gray-700 mb-6">We tailor the audit to your needs—HubSpot, Salesforce, Pipedrive, or others. Book a free strategy call and we'll outline exactly what we'll audit and deliver.</p>
+                    <ul class="text-left space-y-2 mb-8 text-gray-700 max-w-md mx-auto">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Deep-dive CRM audit by certified specialist</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Prioritized optimization recommendations</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Speed to lead, pipeline, and automation improvements</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Strategy call to discuss findings</li>
+                    </ul>
+                    <a href="#" id="cta-services-audit" class="btn-primary inline-flex w-full sm:w-auto justify-center">
+                        <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                        Book Your Free Strategy Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-heading text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>Do you only work with HubSpot?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">We're HubSpot certified and deliver the deepest optimization for HubSpot. However, many CRMs share commonalities—pipeline stages, automation, lead routing, integrations. We can audit and provide optimization recommendations for Salesforce, Pipedrive, Zoho, and others. Our free strategy call confirms we can help with your specific CRM.</p>
+                </details>
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>What's included in the audit?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">We review speed to lead, pipeline configuration, automation and workflows, unused features, integrations, and reporting. You receive a detailed report with prioritized recommendations and a strategy call to discuss implementation. Scope is tailored to your CRM and goals.</p>
+                </details>
+                <details class="group card p-6 bg-white">
+                    <summary class="cursor-pointer font-semibold text-lg text-gray-900 list-none flex justify-between items-center">
+                        <span>I don't have a CRM yet—can you help?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-amp-navy group-open:rotate-180 transition-transform shrink-0 ml-2"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-700">Yes—but that's a different service. We build custom CRMs from scratch with automated nurturing, visual funnel mapping, and lead capture. <a href="https://alchemistmind.pro/crm-development/" class="text-amp-gold-dark font-semibold hover:underline">Visit our Custom CRM Building page →</a></p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 text-white rounded-t-3xl shadow-xl" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg">Ready to Optimize Your CRM?</h2>
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">Book a free strategy call. We'll review your setup and outline exactly how we can improve speed to lead, pipelines, and more.</p>
+            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                Book Your CRM Audit
+            </a>
+            <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Free 30-minute strategy call</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> CRM-specific audit scope</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Prioritized recommendations—no fluff</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="https://alchemistmind.pro" class="hover:text-amp-gold transition-colors duration-200">Home</a> |
+                <a href="https://alchemistmind.pro/crm-development/" class="hover:text-amp-gold transition-colors duration-200">Custom CRM Building</a> |
+                <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-amp-gold transition-colors duration-200">Privacy Policy</a> |
+                <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-amp-gold transition-colors duration-200">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
+                <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your CRM Audit</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
+        </div>
+    </div>
+
+    <script>
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
+            const modal = document.getElementById('calendlyModal');
+            const closeBtn = document.getElementById('closeCalendlyModal');
+            const container = document.getElementById('calendly-widget-container');
+            
+            const ctaIds = [
+                'cta-header-get-started', 'cta-hero-audit', 'cta-services-audit',
+                'cta-button-final', 'cta-sticky-mobile'
+            ];
+            
+            function openCalendlyModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.add('is-open');
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => setTimeout(() => loadCalendlyWidget(), 150));
+                setTimeout(() => closeBtn && closeBtn.focus(), 200);
+            }
+            
+            function closeCalendlyModal() {
+                modal.classList.remove('is-open');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            function loadCalendlyWidget() {
+                if (typeof Calendly === 'undefined') {
+                    const script = document.createElement('script');
+                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    script.onload = initCalendly;
+                } else initCalendly();
+            }
+            
+            function initCalendly() {
+                if (!window.Calendly || !container || container.children.length > 0) return;
+                window.Calendly.initInlineWidget({
+                    url: CALENDLY_URL,
+                    parentElement: container,
+                    prefill: {},
+                    utm: {},
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false
+                });
+            }
+            
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', openCalendlyModal);
+            });
+            
+            if (closeBtn) closeBtn.addEventListener('click', closeCalendlyModal);
+            modal.addEventListener('click', e => { if (e.target === modal) closeCalendlyModal(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCalendlyModal(); });
+            
+            window.openCalendlyModal = openCalendlyModal;
+            window.closeCalendlyModal = closeCalendlyModal;
+            
+            const stickyCta = document.getElementById('stickyCtaMobile');
+            if (stickyCta) {
+                const hero = document.querySelector('section.bg-gradient-to-br');
+                const showAfter = hero ? hero.offsetHeight * 0.6 : 400;
+                function updateStickyCta() {
+                    if (window.innerWidth >= 768) return;
+                    if (window.scrollY > showAfter) {
+                        stickyCta.classList.add('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'false');
+                    } else {
+                        stickyCta.classList.remove('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'true');
+                    }
+                }
+                window.addEventListener('scroll', updateStickyCta, { passive: true });
+                window.addEventListener('resize', updateStickyCta);
+                updateStickyCta();
+            }
+            
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
