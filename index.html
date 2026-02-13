@@ -195,6 +195,27 @@
             width: 100% !important;
             height: 100% !important;
         }
+        /* Sticky mobile CTA - visible on small screens only */
+        .sticky-cta-mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .sticky-cta-mobile.is-visible {
+            transform: translateY(0);
+        }
+        @media (min-width: 768px) {
+            .sticky-cta-mobile {
+                display: none !important;
+            }
+        }
     </style>
     
     <!-- Meta Pixel Code -->
@@ -218,6 +239,13 @@
 
 </head>
 <body class="antialiased">
+    <!-- Sticky mobile CTA - appears on scroll, hidden on desktop -->
+    <div class="sticky-cta-mobile md:hidden" id="stickyCtaMobile" aria-hidden="true">
+        <a href="#" id="cta-sticky-mobile" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-amp-gold hover:bg-amp-gold-light text-amp-navy-dark font-bold text-base rounded-lg transition-colors shadow-lg">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Book Strategy Session
+        </a>
+    </div>
 
     <!-- Company Header -->
     <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
@@ -267,11 +295,17 @@
                 <!-- Left: Copy -->
                 <div class="relative z-10 text-center lg:text-left order-2 lg:order-1">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                        Don't just get leads. Get qualified leads that convert.
+                        We Build Scalable Lead Engines.
                     </h1>
-                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 drop-shadow-lg text-amp-gold-light/90">
-                        We help attorneys and other lead-generation reliant businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, CRM automation and more.
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                        Don't just get leads. Get qualified leads that convert.
                     </h2>
+                    <p class="text-lg md:text-xl font-semibold mb-3 opacity-90 max-w-xl mx-auto lg:mx-0">
+                        We help lead-generation reliant businesses cut customer acquisition costs with a proven system for Google Ads, Facebook Ads, CRM automation and more.
+                    </p>
+                    <p class="text-base md:text-lg text-amp-gold-light/90 mb-6 font-medium">
+                        Law Firms, SaaS, Cybersecurity, Finance, HVAC, E-com, and more.
+                    </p>
                     <p class="text-lg md:text-xl font-light mb-8 opacity-90 max-w-xl mx-auto lg:mx-0">
                         Tired of wasting money on marketing that doesn't work? We've developed a system that focuses on what truly matters: <strong>a consistent pipeline of high-quality leads who are ready to buy.</strong>
                     </p>
@@ -334,9 +368,20 @@
             <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-amp-navy-dark mb-3">
                 We've run ads for brands like
             </h2>
-            <p class="text-center text-lg md:text-xl text-amp-navy/80 max-w-2xl mx-auto mb-10">
+            <p class="text-center text-lg md:text-xl text-amp-navy/80 max-w-2xl mx-auto mb-6">
                 From B2B and D2C to e‑commerce, lead gen, and local services—we help brands that want <strong>measurable growth</strong> without wasting ad spend.
             </p>
+            <!-- Founder credibility stats - front-loaded for ICP who buys expertise -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-10">
+                <span class="inline-flex items-center gap-2 bg-amp-navy text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                    <i data-lucide="award" class="w-5 h-5 text-amp-gold"></i>
+                    Top 1% Advertiser
+                </span>
+                <span class="inline-flex items-center gap-2 bg-amp-navy text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-amp-gold"></i>
+                    $20M+ Managed in Ad Spend
+                </span>
+            </div>
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
                 <!-- Client logos - unified brand styling -->
                 <a href="https://sweetjames.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Sweet James Accident Attorneys">
@@ -938,25 +983,25 @@
                         <thead>
                             <tr>
                                 <th>Metric</th>
-                                <th>Before</th>
-                                <th>After</th>
+                                <th class="text-red-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="x-circle" class="w-5 h-5"></i>Before</span></th>
+                                <th class="text-green-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-5 h-5"></i>After</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Time to Fill Seminars</td>
-                                <td>2 Weeks</td>
-                                <td><span class="font-bold text-amp-gold-dark">4 Days</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>2 Weeks</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>4 Days</span></td>
                             </tr>
                             <tr>
                                 <td>Cost Per Lead</td>
-                                <td>$41.62</td>
-                                <td><span class="font-bold text-amp-gold-dark">$20.90</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>$41.62</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>$20.90</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Quality</td>
-                                <td>Generic Leads</td>
-                                <td><span class="font-bold text-amp-gold-dark">Qualified Prospects</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>Generic Leads</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>Qualified Prospects</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -981,25 +1026,25 @@
                         <thead>
                             <tr>
                                 <th>Metric</th>
-                                <th>Before</th>
-                                <th>After</th>
+                                <th class="text-red-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="x-circle" class="w-5 h-5"></i>Before</span></th>
+                                <th class="text-green-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-5 h-5"></i>After</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Lead Follow-up Time</td>
-                                <td>24+ Hours</td>
-                                <td><span class="font-bold text-amp-gold-dark">< 5 Minutes</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>24+ Hours</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>< 5 Minutes</span></td>
                             </tr>
                             <tr>
                                 <td>Lead Conversion Rate</td>
-                                <td>15%</td>
-                                <td><span class="font-bold text-amp-gold-dark">45%</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>15%</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>45%</span></td>
                             </tr>
                             <tr>
                                 <td>Manual Work Hours</td>
-                                <td>40 hrs/week</td>
-                                <td><span class="font-bold text-amp-gold-dark">10 hrs/week</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>40 hrs/week</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>10 hrs/week</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1024,25 +1069,25 @@
                         <thead>
                             <tr>
                                 <th>Metric</th>
-                                <th>Before</th>
-                                <th>After</th>
+                                <th class="text-red-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="x-circle" class="w-5 h-5"></i>Before</span></th>
+                                <th class="text-green-600"><span class="inline-flex items-center gap-1.5"><i data-lucide="check-circle" class="w-5 h-5"></i>After</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Landing Page Conversion</td>
-                                <td>2.1%</td>
-                                <td><span class="font-bold text-amp-gold-dark">6.8%</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>2.1%</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>6.8%</span></td>
                             </tr>
                             <tr>
                                 <td>Cost Per Acquisition</td>
-                                <td>$85</td>
-                                <td><span class="font-bold text-amp-gold-dark">$32</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>$85</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>$32</span></td>
                             </tr>
                             <tr>
                                 <td>ROAS</td>
-                                <td>2.1x</td>
-                                <td><span class="font-bold text-amp-gold-dark">5.4x</span></td>
+                                <td><span class="inline-flex items-center gap-2 text-red-600/90"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i>2.1x</span></td>
+                                <td><span class="inline-flex items-center gap-2 font-bold text-amp-gold-dark"><i data-lucide="check-circle" class="w-4 h-4 text-green-600 shrink-0"></i>5.4x</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1784,7 +1829,7 @@
             const ctaIds = [
                 'cta-button-hero', 'cta-button-final', 'cta-button-custom-strategy',
                 'cta-button-success-story', 'cta-discuss-packages', 'cta-book-strategy',
-                'cta-header-get-started', 'cta-footer-contact'
+                'cta-header-get-started', 'cta-footer-contact', 'cta-sticky-mobile'
             ];
             
             function openCalendlyModal(e) {
@@ -1866,6 +1911,26 @@
                     el.addEventListener('focus', preloadCalendly, { once: true });
                 }
             });
+            
+            // Sticky mobile CTA - show after scrolling past hero
+            const stickyCta = document.getElementById('stickyCtaMobile');
+            if (stickyCta) {
+                const hero = document.querySelector('section.bg-gradient-to-br');
+                const showAfter = hero ? hero.offsetHeight * 0.6 : 400;
+                function updateStickyCta() {
+                    if (window.innerWidth >= 768) return;
+                    if (window.scrollY > showAfter) {
+                        stickyCta.classList.add('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'false');
+                    } else {
+                        stickyCta.classList.remove('is-visible');
+                        stickyCta.setAttribute('aria-hidden', 'true');
+                    }
+                }
+                window.addEventListener('scroll', updateStickyCta, { passive: true });
+                window.addEventListener('resize', updateStickyCta);
+                updateStickyCta();
+            }
             
             // Service Card Pricing Reveal Functionality
             const serviceCards = document.querySelectorAll('.service-card');
