@@ -198,14 +198,19 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
-                    <div class="w-12 h-12 flex items-center justify-center">
-                        <div class="border-2 border-amp-gold px-1 py-0.5 rounded-lg">
-                            <div class="text-lg font-bold text-amp-gold-dark tracking-wide">AMP</div>
+                    <div class="w-12 h-12 flex-none flex items-center justify-center" style="min-width: 3rem; min-height: 3rem;">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.12); overflow: hidden; border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; pointer-events: none;"
+                                src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed"
+                                allowfullscreen="allowfullscreen"
+                                allow="fullscreen"
+                                title="Alchemist Mind Pros logo">
+                            </iframe>
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
-                        <p class="text-sm text-amp-navy/80">Digital Marketing Excellence</p>
+                        <p class="text-sm text-amp-navy/80">Paid Ads Excellence & Marketing Automation</p>
                     </div>
                 </a>
                 
@@ -241,53 +246,111 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative rounded-b-3xl shadow-xl overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=85" alt="Professional reviewing paid ad analytics and campaign performance" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy" style="opacity: 0.92;"></div>
-        </div>
-        <div class="relative z-10 py-16 md:py-24 text-white">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                            Tired of Paying Too Much for Leads That Go Nowhere?
-                        </h1>
-                        <h2 class="text-xl md:text-2xl font-bold leading-tight mb-6 drop-shadow-lg text-amp-gold-light/90">
-                            Get More Qualified Leads — and Lower Cost Per Lead — with Data-Driven Google & Facebook Ads
-                        </h2>
-                        <p class="text-lg md:text-xl font-light mb-8 opacity-90">
-                            We help <strong>law firms, HVAC companies, insurance brokers, and local service businesses</strong> stop guessing and start growing. Our clients get a consistent pipeline of high-intent leads, predictable ROI, and real transparency into where every dollar goes.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#" id="cta-hero-audit" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
-                                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
-                                Get Your Free Audit
-                            </a>
-                            <a href="#roi-calculator" class="btn-primary btn-outline inline-flex items-center justify-center">
-                                <i data-lucide="calculator" class="w-6 h-6 mr-2"></i>
-                                Calculate Your Savings
-                            </a>
-                        </div>
-                        <p class="mt-4 text-amp-gold-light/80 text-sm"><a href="#case-studies" class="hover:text-white underline">See real case study results →</a></p>
+    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <!-- Left: Copy -->
+                <div class="relative z-10 text-center lg:text-left order-2 lg:order-1">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                        We Build Scalable Lead Engines with Paid Ads.
+                    </h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                        Don't just get leads—get qualified prospects that convert.
+                    </h2>
+                    <p class="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-xl mx-auto lg:mx-0">
+                        We help lead-reliant businesses slash customer acquisition costs using a proven system that integrates high-performance ads with seamless CRM automation.
+                    </p>
+                    <!-- UVP Bullets with icons -->
+                    <ul class="space-y-3 mb-6 max-w-xl mx-auto lg:mx-0">
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="target" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Precision Ads:</strong> Top 1% management for Google, Meta, Microsoft, LinkedIn, and more.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="zap" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Lead Automation:</strong> Custom CRM builds that nurture 24/7.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="rocket" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Rapid Deployment:</strong> High-converting landing pages in 48 hours.</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-amp-gold"></i>
+                            </span>
+                            <span><strong>Zero Risk:</strong> No lift in 45 days? Your second month is free.</span>
+                        </li>
+                    </ul>
+                    <!-- Industries as small icon pills -->
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="Law Firms">
+                            <i data-lucide="scale" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            Law Firms
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="SaaS">
+                            <i data-lucide="layers" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            SaaS
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="Cybersecurity">
+                            <i data-lucide="shield" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            Cybersecurity
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="Finance">
+                            <i data-lucide="dollar-sign" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            Finance
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="HVAC">
+                            <i data-lucide="thermometer" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            HVAC
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25" title="E-commerce">
+                            <i data-lucide="shopping-cart" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            E-com
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25">
+                            <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>
+                            more
+                        </span>
                     </div>
-                    <div class="hidden lg:block relative">
-                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-white/10 rounded-xl p-4 text-center">
-                                    <div class="text-2xl font-bold text-amp-gold">43%</div>
-                                    <div class="text-sm text-amp-gold-light/90">Avg. Cost Reduction*</div>
-                                </div>
-                                <div class="bg-white/10 rounded-xl p-4 text-center">
-                                    <div class="text-2xl font-bold text-amp-gold">$20M+</div>
-                                    <div class="text-sm text-amp-gold-light/90">Ad Spend Managed*</div>
-                                </div>
-                            </div>
-                            <p class="text-xs text-amp-gold-light/70 mt-3 text-center">*Results may vary; typical among our clients.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#case-studies" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                            <i data-lucide="trending-up" class="w-6 h-6 mr-2"></i>
+                            See the Results We've Delivered
+                        </a>
+                        <a href="#" id="cta-hero-audit" class="btn-primary btn-outline inline-flex items-center justify-center">
+                            <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                            Schedule a Free Strategy Session
+                        </a>
+                    </div>
+                    <p class="mt-4 text-amp-gold-light/80 text-sm"><a href="#roi-calculator" class="hover:text-white underline">Calculate your savings →</a></p>
+                </div>
+                <!-- Right: Hero – Canva design embed -->
+                <div class="relative z-10 order-1 lg:order-2 flex items-center justify-center">
+                    <div class="w-full max-w-xl lg:max-w-2xl rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 bg-white">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; padding-bottom: 0; overflow: hidden;">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="AMP hero - Before vs After with Alchemist Mind Pros"></iframe>
                         </div>
+                        <p class="sr-only">Hero graphic by Tre Forte. <a href="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view" target="_blank" rel="noopener">View on Canva</a></p>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Decorative background elements (subtle) -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
+            <svg class="w-full h-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="pattern-circles-pa" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="5" cy="5" r="1" fill="rgba(255,255,255,0.2)"></circle>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles-pa)"></rect>
+            </svg>
         </div>
     </section>
 
