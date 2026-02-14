@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="6ombaksl8jtequrlx9x242563c7uuq" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://assets.calendly.com https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-src 'self' https: https://www.canva.com https://calendly.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Training Hub Development - Custom Branded Training & Onboarding Apps | Alchemist Mind Pros</title>
+    <meta name="description" content="Custom training hub development. Branded training apps, SOPs, onboarding—scale your team without chaos. New hires productive in days. $1,750 setup + $75/month.">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amp': { 'navy': '#1e3a5f', 'navy-dark': '#152a47', 'navy-light': '#2d4a6f', 'gold': '#c9a227', 'gold-light': '#fef3c7', 'gold-dark': '#b8860b' }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root { --amp-navy: #1e3a5f; --amp-navy-dark: #152a47; --amp-navy-light: #2d4a6f; --amp-gold: #c9a227; --amp-gold-light: #fef3c7; --amp-gold-dark: #b8860b; }
+        body { font-family: 'Inter', sans-serif; background-color: #fafaf9; color: #334155; }
+        .container { max-width: 1200px; }
+        .btn-primary { background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%); color: white; padding: 1rem 2.5rem; border-radius: 9999px; font-weight: 700; font-size: 1.125rem; transition: all 0.3s ease; box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .btn-primary:hover { background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%); transform: translateY(-2px); box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4); }
+        .btn-primary.bg-white { background: white !important; color: var(--amp-navy-dark) !important; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
+        .btn-primary.bg-white:hover { background: var(--amp-gold-light) !important; color: var(--amp-navy-dark) !important; }
+        .btn-primary.btn-outline { background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important; border: 2px solid rgba(255, 255, 255, 0.9); color: white !important; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
+        .btn-primary.btn-outline:hover { background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important; color: white !important; }
+        .section-heading { font-size: 2.5rem; font-weight: 800; color: var(--amp-navy-dark); margin-bottom: 1.5rem; line-height: 1.2; }
+        @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
+        .sub-heading { font-size: 1.25rem; font-weight: 600; color: var(--amp-navy); margin-bottom: 1rem; }
+        .card { background-color: white; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04); padding: 2rem; }
+        .icon-feature { background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%); color: var(--amp-gold-dark); padding: 0.75rem; border-radius: 0.75rem; display: inline-flex; align-items: center; justify-content: center; }
+        #calendlyModal { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+        #calendlyModal.is-open { opacity: 1; visibility: visible; }
+        #calendly-widget-container { flex-shrink: 0; }
+        #calendly-widget-container iframe { width: 100% !important; height: 100% !important; }
+        .sticky-cta-mobile { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; padding: 0.75rem 1rem; background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%); box-shadow: 0 -4px 20px rgba(0,0,0,0.2); transform: translateY(100%); transition: transform 0.3s ease; }
+        .sticky-cta-mobile.is-visible { transform: translateY(0); }
+        @media (min-width: 768px) { .sticky-cta-mobile { display: none !important; } }
+    </style>
+    
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1286982329618450');fbq('track','PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1286982329618450&ev=PageView&noscript=1"/></noscript>
+</head>
+<body class="antialiased">
+
+    <div class="sticky-cta-mobile md:hidden" id="stickyCtaMobile" aria-hidden="true">
+        <a href="#" id="cta-sticky-mobile" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-amp-gold hover:bg-amp-gold-light text-amp-navy-dark font-bold text-base rounded-lg transition-colors shadow-lg">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i> Build Your Training Hub
+        </a>
+    </div>
+
+    <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+                    <div class="w-12 h-12 flex-none" style="min-width: 3rem; min-height: 3rem;">
+                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(30, 58, 95, 0.12);">
+                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed" allowfullscreen title="Alchemist Mind Pros logo"></iframe>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
+                        <p class="text-sm text-amp-navy/80">Paid Ads Excellence & Marketing Automation</p>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="https://alchemistmind.pro" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Home</a>
+                    <div class="relative group">
+                        <button type="button" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium inline-flex items-center gap-1">
+                            Services <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="bg-white rounded-lg shadow-lg border border-amp-gold-light/60 py-2 min-w-[220px]">
+                                <a href="https://alchemistmind.pro/lp-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">LP Development</a>
+                                <a href="https://alchemistmind.pro/crm/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Custom CRM Building</a>
+                                <a href="https://alchemistmind.pro/crm-improvement/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">CRM Audit & Improvement</a>
+                                <a href="https://alchemistmind.pro/training-hub/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors font-semibold">Training Hub</a>
+                                <a href="https://alchemistmind.pro/paid-ads-management/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Paid Ads Management</a>
+                                <a href="https://alchemistmind.pro/fractional-cmo/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Fractional CMO</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#pricing" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Pricing</a>
+                    <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 transform hover:scale-105 shadow-md">
+                        <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i> Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Keyword-rich for SEO & paid ads -->
+    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
+        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                        Scale Your Team Without the Chaos.
+                    </h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                        Custom training hub—your SOPs, videos, and onboarding in one branded app.
+                    </h2>
+                    <p class="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-xl mx-auto lg:mx-0">
+                        We build <strong>custom training and onboarding systems</strong> for growing businesses. New hires productive in days—consistent onboarding every time. Your brand, your content—no generic training platform.
+                    </p>
+                    <ul class="space-y-3 mb-6 max-w-xl mx-auto lg:mx-0">
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="zap" class="w-4 h-4 text-amp-gold"></i></span>
+                            <span><strong>New hires productive in days</strong>—consistent onboarding every time</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="palette" class="w-4 h-4 text-amp-gold"></i></span>
+                            <span><strong>Your brand, your content</strong>—no generic training platform</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="bar-chart-2" class="w-4 h-4 text-amp-gold"></i></span>
+                            <span><strong>Team performance tracking</strong>—see who's trained and who needs support</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-left">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="user-check" class="w-4 h-4 text-amp-gold"></i></span>
+                            <span><strong>Expert onboarding included</strong>—so your team actually uses it</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="heart" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Healthcare</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="thermometer" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Home Services</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="scale" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Legal</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Professional Services</span>
+                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>more</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#pricing" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                            <i data-lucide="tag" class="w-6 h-6 mr-2"></i> See Pricing
+                        </a>
+                        <a href="#" id="cta-hero" class="btn-primary btn-outline inline-flex items-center justify-center">
+                            <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Build Your Training Hub
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 flex items-center justify-center">
+                    <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center">
+                        <i data-lucide="graduation-cap" class="w-12 h-12 text-amp-gold"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us vs Alternatives -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Why Choose Us Over Generic Platforms?</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 text-amp-navy/80">Custom-built for your processes—not a one-size-fits-all template.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="relative rounded-2xl bg-white p-6 shadow-lg border-2 border-amp-gold ring-2 ring-amp-gold/30">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amp-navy text-white text-sm font-bold rounded-full">Best choice</div>
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amp-gold-light/60 mb-3"><span class="text-xl font-bold text-amp-gold-dark">AMP</span></div>
+                        <h3 class="font-bold text-gray-900 text-lg">Alchemist Mind Pros</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Custom branded app</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Your SOPs & content</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Team performance tracking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Expert onboarding</li>
+                    </ul>
+                    <p class="mt-4 text-lg font-bold text-amp-gold-dark">$1,750 + $75/mo</p>
+                </div>
+                <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3"><i data-lucide="box" class="w-7 h-7 text-gray-500"></i></div>
+                        <h3 class="font-bold text-gray-900 text-lg">Generic LMS</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> One-size-fits-all</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Limited customization</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Steep learning curve</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Per-user fees add up</li>
+                    </ul>
+                    <p class="mt-4 text-lg font-bold text-gray-600">$50–$500+/user/yr</p>
+                </div>
+                <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
+                    <div class="text-center mb-6 pt-2">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3"><i data-lucide="folder" class="w-7 h-7 text-gray-500"></i></div>
+                        <h3 class="font-bold text-gray-900 text-lg">Google Drive / Dropbox</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> No structure</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> No completion tracking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> No onboarding flow</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Inconsistent training</li>
+                    </ul>
+                    <p class="mt-4 text-lg font-bold text-gray-600">$0–$50/mo (chaos)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Training Hub Development Pricing</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 text-amp-navy/80">One-time setup, affordable monthly—no per-user nickel-and-diming.</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="card p-8">
+                    <div class="text-center mb-8">
+                        <div class="text-4xl font-bold text-amp-navy-dark mb-2">$1,750</div>
+                        <div class="text-amp-gold-dark font-medium">setup + $75/month</div>
+                    </div>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>One-Time Setup Fee</span><span class="font-semibold text-amp-navy">$1,750</span></div>
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Monthly Maintenance & Support</span><span class="font-semibold text-amp-navy">$75</span></div>
+                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Ongoing Functionality Updates</span><span class="font-semibold text-amp-navy">Included</span></div>
+                    </div>
+                    <ul class="space-y-2 mb-8 text-gray-700">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Custom branded training app</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>SOPs, videos & onboarding content</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Team performance tracking</li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Expert onboarding included</li>
+                    </ul>
+                    <a href="#" id="cta-pricing" class="btn-primary w-full inline-flex justify-center">
+                        <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Build Your Training Hub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 md:py-24 text-white rounded-t-3xl shadow-xl" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Ready to Scale Your Team?</h2>
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">Get a custom training hub that actually gets used. Book a free strategy call.</p>
+            <a href="#" id="cta-contact" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Build Your Training Hub
+            </a>
+            <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Free 30-minute strategy call</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Custom branded for your business</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Expert onboarding included</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="https://alchemistmind.pro" class="hover:text-amp-gold transition-colors duration-200">Home</a> |
+                <a href="https://alchemistmind.pro/privacy-policy/" class="hover:text-amp-gold transition-colors duration-200">Privacy Policy</a> |
+                <a href="https://alchemistmind.pro/terms-of-service/" class="hover:text-amp-gold transition-colors duration-200">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
+                <h2 class="text-xl font-bold text-amp-navy-dark">Build Your Training Hub</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg" aria-label="Close"><i data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
+            <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
+        </div>
+    </div>
+
+    <script>
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', function() {
+            const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
+            const modal = document.getElementById('calendlyModal');
+            const closeBtn = document.getElementById('closeCalendlyModal');
+            const container = document.getElementById('calendly-widget-container');
+            const ctaIds = ['cta-header-get-started', 'cta-hero', 'cta-pricing', 'cta-contact', 'cta-sticky-mobile'];
+            function openModal(e) { if (e) e.preventDefault(); modal.classList.add('is-open'); modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; setTimeout(function() { if (typeof Calendly === 'undefined') { var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true; document.head.appendChild(s); s.onload = init; } else init(); }, 150); }
+            function init() { if (window.Calendly && container && container.children.length === 0) Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: container, prefill: {}, utm: {} }); }
+            function closeModal() { modal.classList.remove('is-open'); modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+            ctaIds.forEach(function(id) { var el = document.getElementById(id); if (el) el.addEventListener('click', openModal); });
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+            window.addEventListener('scroll', function() { var sc = window.scrollY; var sticky = document.getElementById('stickyCtaMobile'); if (sticky && window.innerWidth < 768) { if (sc > 400) sticky.classList.add('is-visible'); else sticky.classList.remove('is-visible'); } });
+        });
+    </script>
+</body>
+</html>
