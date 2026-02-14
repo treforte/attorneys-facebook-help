@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,21 +9,30 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <title>Landing Page Development - High-Converting Pages in 48 Hours | Alchemist Mind Pros</title>
-    <meta name="description" content="Custom landing page development for paid ads. High-converting, mobile-optimized pages delivered in 48 hours. Built for lead gen—law firms, HVAC, insurance, SaaS. $699 first page.">
+    <title>Paid Ads Management Services - Google & Facebook Ads for Small Business</title>
+    <meta name="description" content="Cut your customer acquisition costs by 50%+ with our proven Google Ads & Facebook Ads management. Top 1% performance for law firms, HVAC, insurance brokers & local businesses.">
     
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'amp': { 'navy': '#1e3a5f', 'navy-dark': '#152a47', 'navy-light': '#2d4a6f', 'gold': '#c9a227', 'gold-light': '#fef3c7', 'gold-dark': '#b8860b' }
+              'amp': {
+                'navy': '#1e3a5f',
+                'navy-dark': '#152a47',
+                'navy-light': '#2d4a6f',
+                'gold': '#c9a227',
+                'gold-light': '#fef3c7',
+                'gold-dark': '#b8860b',
+              }
             }
           }
         }
@@ -30,250 +40,889 @@
     </script>
     <link rel="preconnect" href="https://assets.calendly.com">
     <link rel="preconnect" href="https://calendly.com">
+    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
-        :root { --amp-navy: #1e3a5f; --amp-navy-dark: #152a47; --amp-navy-light: #2d4a6f; --amp-gold: #c9a227; --amp-gold-light: #fef3c7; --amp-gold-dark: #b8860b; }
-        body { font-family: 'Inter', sans-serif; background-color: #fafaf9; color: #334155; }
+        :root {
+            --amp-navy: #1e3a5f;
+            --amp-navy-dark: #152a47;
+            --amp-navy-light: #2d4a6f;
+            --amp-gold: #c9a227;
+            --amp-gold-light: #fef3c7;
+            --amp-gold-dark: #b8860b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9;
+            color: #334155;
+        }
         .container { max-width: 1200px; }
-        .btn-primary { background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%); color: white; padding: 1rem 2.5rem; border-radius: 9999px; font-weight: 700; font-size: 1.125rem; transition: all 0.3s ease; box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
-        .btn-primary:hover { background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%); transform: translateY(-2px); box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4); }
-        .btn-primary.bg-white { background: white !important; color: var(--amp-navy-dark) !important; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
-        .btn-primary.bg-white:hover { background: var(--amp-gold-light) !important; color: var(--amp-navy-dark) !important; }
-        .btn-primary.btn-outline { background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important; border: 2px solid rgba(255, 255, 255, 0.9); color: white !important; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
-        .btn-primary.btn-outline:hover { background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important; color: white !important; }
-        .section-heading { font-size: 2.5rem; font-weight: 800; color: var(--amp-navy-dark); margin-bottom: 1.5rem; line-height: 1.2; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(30, 58, 95, 0.35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--amp-navy-light) 0%, var(--amp-navy) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(30, 58, 95, 0.4);
+        }
+        .btn-primary.bg-white {
+            background: white !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary.bg-white:hover {
+            background: var(--amp-gold-light) !important;
+            color: var(--amp-navy-dark) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline {
+            background: linear-gradient(135deg, var(--amp-gold) 0%, var(--amp-gold-dark) 100%) !important;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary.btn-outline:hover {
+            background: linear-gradient(135deg, #d4af37 0%, var(--amp-gold) 100%) !important;
+            color: white !important;
+            border-color: white;
+            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
+        }
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--amp-navy-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
         @media (min-width: 768px) { .section-heading { font-size: 3rem; } }
-        .sub-heading { font-size: 1.25rem; font-weight: 600; color: var(--amp-navy); margin-bottom: 1rem; }
-        .card { background-color: white; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04); padding: 2rem; }
-        .icon-feature { background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%); color: var(--amp-gold-dark); padding: 0.75rem; border-radius: 0.75rem; display: inline-flex; align-items: center; justify-content: center; }
+        .sub-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--amp-navy);
+            margin-bottom: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 95, 0.06), 0 2px 4px -1px rgba(30, 58, 95, 0.04);
+            padding: 2rem;
+        }
+        .icon-feature {
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.6) 100%);
+            color: var(--amp-gold-dark);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        }
+        .results-table th, .results-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .results-table th {
+            background-color: var(--amp-gold-light);
+            font-weight: 600;
+            color: var(--amp-navy-dark);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+        }
+        .results-table tr:nth-child(even) { background-color: #fafaf9; }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table td:first-child { font-weight: 500; }
+        .results-table td:last-child { font-weight: 700; color: var(--amp-navy); }
+        .roi-calculator {
+            background: linear-gradient(135deg, var(--amp-gold-light) 0%, rgba(254, 243, 199, 0.5) 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 2px solid rgba(201, 162, 39, 0.2);
+        }
+        .calculator-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--amp-gold);
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            text-align: center;
+        }
         #calendlyModal { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
         #calendlyModal.is-open { opacity: 1; visibility: visible; }
         #calendly-widget-container { flex-shrink: 0; }
         #calendly-widget-container iframe { width: 100% !important; height: 100% !important; }
-        .sticky-cta-mobile { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; padding: 0.75rem 1rem; background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%); box-shadow: 0 -4px 20px rgba(0,0,0,0.2); transform: translateY(100%); transition: transform 0.3s ease; }
-        .sticky-cta-mobile.is-visible { transform: translateY(0); }
-        @media (min-width: 768px) { .sticky-cta-mobile { display: none !important; } }
     </style>
     
+    <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1286982329618450');fbq('track','PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1286982329618450');
+    fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1286982329618450&ev=PageView&noscript=1"/></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1286982329618450&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body class="antialiased">
 
-    <div class="sticky-cta-mobile md:hidden" id="stickyCtaMobile" aria-hidden="true">
-        <a href="#" id="cta-sticky-mobile" class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-amp-gold hover:bg-amp-gold-light text-amp-navy-dark font-bold text-base rounded-lg transition-colors shadow-lg">
-            <i data-lucide="calendar-check" class="w-5 h-5"></i> Get Your Landing Page
-        </a>
-    </div>
-
+    <!-- Company Header -->
     <header class="bg-white shadow-sm border-b border-amp-gold-light/50 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="https://alchemistmind.pro" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
-                    <div class="w-12 h-12 flex-none" style="min-width: 3rem; min-height: 3rem;">
-                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(30, 58, 95, 0.12);">
-                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAHBIC4bojQ/hdFo-yj7IVUgTLOBKedg-w/view?embed" allowfullscreen title="Alchemist Mind Pros logo"></iframe>
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <div class="border-2 border-amp-gold px-1 py-0.5 rounded-lg">
+                            <div class="text-lg font-bold text-amp-gold-dark tracking-wide">AMP</div>
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <h1 class="text-xl font-bold text-amp-navy-dark">Alchemist Mind Pros</h1>
-                        <p class="text-sm text-amp-navy/80">Paid Ads Excellence & Marketing Automation</p>
+                        <p class="text-sm text-amp-navy/80">Digital Marketing Excellence</p>
                     </div>
                 </a>
+                
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="https://alchemistmind.pro" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Home</a>
                     <div class="relative group">
-                        <button type="button" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium inline-flex items-center gap-1">
-                            Services <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        <button type="button" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium inline-flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+                            Services
+                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
                         </button>
                         <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="bg-white rounded-lg shadow-lg border border-amp-gold-light/60 py-2 min-w-[220px]">
-                                <a href="https://alchemistmind.pro/lp-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors font-semibold">LP Development</a>
-                                <a href="https://alchemistmind.pro/crm/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Custom CRM Building</a>
-                                <a href="https://alchemistmind.pro/crm-improvement/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">CRM Audit & Improvement</a>
+                            <div class="bg-white rounded-lg shadow-lg border border-amp-gold-light/60 py-2 min-w-[200px]">
+                                <a href="https://alchemistmind.pro/lp-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">LP Development</a>
+                                <a href="https://alchemistmind.pro/crm-development/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">CRM</a>
                                 <a href="https://alchemistmind.pro/training-hub/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Training Hub</a>
                                 <a href="https://alchemistmind.pro/paid-ads-management/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Paid Ads Management</a>
                                 <a href="https://alchemistmind.pro/fractional-cmo/" class="block px-4 py-2 text-sm text-amp-navy hover:bg-amp-gold-light/40 hover:text-amp-gold-dark transition-colors">Fractional CMO</a>
                             </div>
                         </div>
                     </div>
-                    <a href="#pricing" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Pricing</a>
+                    <a href="#services" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Pricing</a>
                     <a href="#contact" class="text-amp-navy hover:text-amp-gold transition-colors duration-200 font-medium">Contact</a>
                 </nav>
+                
                 <div class="hidden md:block">
-                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 transform hover:scale-105 shadow-md">
-                        <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i> Get Started
+                    <a href="#" id="cta-header-get-started" class="inline-flex items-center px-4 py-2 bg-amp-navy hover:bg-amp-navy-light text-white text-sm font-medium rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i>
+                        Get Started
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section - Keyword-rich for SEO & paid ads -->
-    <section class="bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy text-white rounded-b-3xl shadow-xl relative overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #152a47 50%, #1e3a5f 100%);">
-        <div class="container mx-auto px-6 py-12 md:py-16 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-                <div class="text-center lg:text-left order-2 lg:order-1">
-                    <p class="inline-flex items-center gap-2 bg-amp-gold/20 border border-amp-gold/40 px-4 py-2 rounded-full text-sm font-bold text-amp-gold-light mb-6">
-                        <i data-lucide="zap" class="w-4 h-4"></i>
-                        Landing pages for Google Ads, Meta Ads & LinkedIn Ads—48-hour delivery.
-                    </p>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                        High-Converting Landing Pages in 48 Hours.
-                    </h1>
-                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
-                        Custom landing page development for paid ads—built for leads & conversions, not aesthetics.
-                    </h2>
-                    <p class="text-lg md:text-xl font-medium mb-6 opacity-90 max-w-xl mx-auto lg:mx-0">
-                        <strong>What we do:</strong> Design and build <strong>lead generation landing pages</strong> for paid campaigns—mobile-optimized, with conversion tracking & CRM integration. <strong>How:</strong> Brief → build in 48 hours → deploy & connect. <strong>Who we help:</strong> Law firms, HVAC, insurance, SaaS, e-commerce, and any business running Google Ads, Meta Ads, or LinkedIn Ads.
-                    </p>
-                    <ul class="space-y-3 mb-6 max-w-xl mx-auto lg:mx-0">
-                        <li class="flex items-center gap-3 text-left">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="clock" class="w-4 h-4 text-amp-gold"></i></span>
-                            <span><strong>48-hour delivery</strong>—test campaigns faster, stop leaving money on the table</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-left">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="smartphone" class="w-4 h-4 text-amp-gold"></i></span>
-                            <span><strong>Mobile-optimized, conversion-focused</strong>—built for your industry</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-left">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="bar-chart-2" class="w-4 h-4 text-amp-gold"></i></span>
-                            <span><strong>Conversion tracking built in</strong>—know exactly what's working</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-left">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="plug" class="w-4 h-4 text-amp-gold"></i></span>
-                            <span><strong>Integrates with your ads & CRM</strong>—no tech headaches</span>
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="scale" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Law Firms</span>
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="thermometer" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>HVAC</span>
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="shield" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Insurance</span>
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="layers" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>SaaS</span>
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="shopping-cart" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>E-com</span>
-                        <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>more</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#pricing" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
-                            <i data-lucide="tag" class="w-6 h-6 mr-2"></i> See Pricing
-                        </a>
-                        <a href="#" id="cta-hero" class="btn-primary btn-outline inline-flex items-center justify-center">
-                            <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Get Your Landing Page
-                        </a>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2 flex items-center justify-center">
-                    <div class="w-full max-w-xl lg:max-w-2xl rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 bg-white">
-                        <div style="position: relative; width: 100%; height: 0; padding-top: 100%; overflow: hidden;">
-                            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view?embed" allowfullscreen title="AMP hero - Landing page development"></iframe>
+    <!-- Hero Section -->
+    <section class="relative rounded-b-3xl shadow-xl overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=85" alt="Professional reviewing paid ad analytics and campaign performance" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-amp-navy via-amp-navy-dark to-amp-navy" style="opacity: 0.92;"></div>
+        </div>
+        <div class="relative z-10 py-16 md:py-24 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <p class="inline-flex items-center gap-2 bg-amp-gold/20 border border-amp-gold/40 px-4 py-2 rounded-full text-sm font-bold text-amp-gold-light mb-6">
+                            <i data-lucide="target" class="w-4 h-4"></i>
+                            Google & Meta Ads · Top 1% · $20M+ managed
+                        </p>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                            Cut Cost Per Lead—Not Your Pipeline.
+                        </h1>
+                        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 drop-shadow-lg text-amp-gold-light/90">
+                            Full-funnel paid ads management—Google, Meta, LinkedIn, and more. We cut wasted spend, drive qualified leads, and give you complete visibility. No black boxes, no surprises.
+                        </h2>
+                        <p class="text-lg opacity-90 max-w-xl mx-auto lg:mx-0 mb-6">
+                            Stop guessing. We audit, optimize, and report—so you know exactly where every dollar goes. No black boxes, no surprise spend.
+                        </p>
+                        <ul class="space-y-2.5 mb-6 max-w-xl mx-auto lg:mx-0 text-left">
+                            <li class="flex items-center gap-3"><span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="trending-down" class="w-4 h-4 text-amp-gold"></i></span><span><strong>30–50% lower CPL</strong>—clients routinely cut cost per lead by half while increasing volume. That’s the norm here.</span></li>
+                            <li class="flex items-center gap-3"><span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="users" class="w-4 h-4 text-amp-gold"></i></span><span><strong>Leads that actually convert</strong>—tight targeting + conversion-built landing pages. Less junk, more closed deals.</span></li>
+                            <li class="flex items-center gap-3"><span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="bar-chart-2" class="w-4 h-4 text-amp-gold"></i></span><span><strong>Every metric, every report</strong>—no black boxes. You own your data and see exactly where every dollar goes.</span></li>
+                            <li class="flex items-center gap-3"><span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="award" class="w-4 h-4 text-amp-gold"></i></span><span><strong>Top 1% on Google & Meta</strong>—$20M+ managed, proven in legal, home services, healthcare. Why settle for less?</span></li>
+                            <li class="flex items-center gap-3"><span class="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center border border-amp-gold/30"><i data-lucide="user-check" class="w-4 h-4 text-amp-gold"></i></span><span><strong>Experienced US-based strategists only</strong>—no offshore teams, no junior handoffs. You work with the people running your campaigns.</span></li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="scale" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Law Firms</span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="thermometer" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>HVAC</span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="shield" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Insurance</span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="home" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>Home Services</span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="shopping-cart" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>E-commerce</span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur px-2.5 py-1.5 rounded-full text-xs font-medium border border-amp-gold/25"><i data-lucide="plus-circle" class="w-3.5 h-3.5 text-amp-gold shrink-0"></i>more</span>
                         </div>
-                        <p class="sr-only">Hero graphic. <a href="https://www.canva.com/design/DAHA-28k1PA/-Pq2vVQGOThIYc8zqHygog/view" target="_blank" rel="noopener">View on Canva</a></p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#" id="cta-hero-audit" class="btn-primary inline-flex items-center justify-center bg-white text-amp-navy hover:bg-amp-gold-light">
+                                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                                Get Your Free Audit
+                            </a>
+                            <a href="#roi-calculator" class="btn-primary btn-outline inline-flex items-center justify-center">
+                                <i data-lucide="calculator" class="w-6 h-6 mr-2"></i>
+                                Calculate Your Savings
+                            </a>
+                        </div>
+                        <p class="mt-4 text-amp-gold-light/90 text-sm font-medium">Free audit—no obligation. We'll review your setup and show you where you're leaving money on the table.</p>
+                        <p class="mt-2 flex items-center gap-2 text-amp-gold-light/90 text-sm font-medium"><i data-lucide="shield-check" class="w-4 h-4 text-amp-gold shrink-0"></i>No long-term contracts. No meaningful lift in 45 days? Second month free—our confidence guarantee.</p>
+                        <p class="mt-2 text-amp-gold-light/80 text-sm"><a href="#case-studies" class="hover:text-white underline">See real client results in our case studies →</a></p>
+                    </div>
+                    <div class="hidden lg:block relative">
+                        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-2xl font-bold text-amp-gold">43%</div>
+                                    <div class="text-sm text-amp-gold-light/90">Avg. Cost Reduction*</div>
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-4 text-center">
+                                    <div class="text-2xl font-bold text-amp-gold">$20M+</div>
+                                    <div class="text-sm text-amp-gold-light/90">Ad Spend Managed*</div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-amp-gold-light/70 mt-3 text-center">*Results may vary; typical among our clients.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us vs Alternatives -->
-    <section class="py-16 md:py-24 bg-white">
+    <!-- Client Logos / Social Proof (Trusted By) - matches Home Page -->
+    <section class="py-12 md:py-16 bg-white border-b border-amp-gold-light/60" aria-label="Brands we've run ads for">
         <div class="container mx-auto px-6">
-            <h2 class="section-heading text-center">Why Choose Us Over Agencies or DIY?</h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 text-amp-navy/80">We're built for speed and conversion—not endless revisions or generic templates.</p>
+            <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-amp-navy-dark mb-3">
+                We've run ads for brands like
+            </h2>
+            <p class="text-center text-lg md:text-xl text-amp-navy/80 max-w-2xl mx-auto mb-10">
+                From B2B and D2C to e‑commerce, lead gen, and local services—we help brands that want <strong>measurable growth</strong> without wasting ad spend.
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
+                <a href="https://sweetjames.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Sweet James Accident Attorneys">
+                    <img src="https://logo.clearbit.com/sweetjames.com" alt="Sweet James Accident Attorneys" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Sweet James</span>
+                </a>
+                <a href="https://siegellawgroup.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="The Siegel Law Group">
+                    <img src="https://logo.clearbit.com/siegellawgroup.com" alt="The Siegel Law Group" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Siegel Law Group</span>
+                </a>
+                <a href="https://askchapter.org" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Chapter Medicare">
+                    <img src="https://logo.clearbit.com/askchapter.org" alt="Chapter Medicare" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Chapter Medicare</span>
+                </a>
+                <a href="https://softr.io" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Softr">
+                    <img src="https://logo.clearbit.com/softr.io" alt="Softr" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Softr</span>
+                </a>
+                <a href="https://giggster.com" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Giggster">
+                    <img src="https://logo.clearbit.com/giggster.com" alt="Giggster" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Giggster</span>
+                </a>
+                <a href="https://app.boldermoney.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-card flex items-center justify-center h-14 md:h-16 px-5 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-amp-gold-light/40 border border-amp-navy/10 hover:border-amp-gold/40" title="Bolder Money">
+                    <img src="https://logo.clearbit.com/boldermoney.com" alt="Bolder Money" class="h-10 md:h-12 w-auto object-contain max-w-[140px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-fallback font-bold text-amp-navy text-base md:text-lg whitespace-nowrap" style="display:none;">Bolder Money</span>
+                </a>
+            </div>
+            <p class="text-center text-2xl md:text-3xl font-bold text-amp-navy-dark mt-8">
+                We've managed over <span class="text-amp-gold-dark">$20M in ad spend</span> — proven results, not promises.
+            </p>
+            <p class="text-center text-sm text-amp-navy/60 mt-2">Results may vary; typical among our clients.</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 md:py-24 bg-white rounded-3xl shadow-lg mx-4 md:mx-auto mt-[-2rem] relative z-10 max-w-6xl">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-heading">Are You Bleeding Money on Paid Ads?</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-amp-navy/80">
+                Most businesses are throwing away thousands of dollars on ads that don't convert. Here's what's probably happening to you:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-amp-gold-dark"></i>
+                    </div>
+                    <h3 class="sub-heading text-amp-navy-dark">Sky-High Ad Costs</h3>
+                    <p class="text-gray-700">Paying $50-100+ per lead when competitors are getting them for $15-25</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-amp-gold-dark"></i>
+                    </div>
+                    <h3 class="sub-heading text-amp-navy-dark">Unqualified Leads</h3>
+                    <p class="text-gray-700">Getting tons of clicks but no real prospects who are ready to buy</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-amp-gold-dark"></i>
+                    </div>
+                    <h3 class="sub-heading text-amp-navy-dark">Inconsistent Results</h3>
+                    <p class="text-gray-700">One month you get leads, the next month nothing — no predictability</p>
+                </div>
+                <div class="card flex flex-col items-center text-center p-6 bg-amp-gold-light/30">
+                    <div class="icon-feature mb-4">
+                        <i data-lucide="settings" class="w-8 h-8 text-amp-gold-dark"></i>
+                    </div>
+                    <h3 class="sub-heading text-amp-navy-dark">Poor Tracking</h3>
+                    <p class="text-gray-700">Can't tell which ads are working or where your money is actually going</p>
+                </div>
+            </div>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mt-12 text-gray-700 font-semibold">
+                The truth? You're probably losing $5,000-20,000+ per month on inefficient ad campaigns.
+            </p>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi-calculator" class="py-16 md:py-24 bg-gradient-to-br from-amp-gold-light/40 to-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Calculate Your Potential Savings</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-8 text-gray-600">
+                See exactly how much money you could save with our proven ad management approach.
+            </p>
+            
+            <!-- Instructions -->
+            <div class="max-w-3xl mx-auto mb-12">
+                <div class="bg-white rounded-lg p-6 text-center border border-amp-gold/20">
+                    <h3 class="text-lg font-semibold text-amp-navy-dark mb-3">How It Works</h3>
+                    <p class="text-gray-700 mb-4">Simply enter your current monthly ad spend and cost per lead below. We'll show you the potential savings based on our proven results:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+                        <div class="flex items-center justify-center">
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">1</span>
+                            </div>
+                            <span>Enter your current numbers</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">2</span>
+                            </div>
+                            <span>See instant calculations</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div class="w-8 h-8 bg-amp-gold-light rounded-full flex items-center justify-center mr-2">
+                                <span class="text-amp-navy font-bold">3</span>
+                            </div>
+                            <span>Discover your savings potential</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="roi-calculator">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">Your Current Situation</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Ad Spend *</label>
+                                    <div class="relative">
+                                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                                        <input type="number" id="monthly-spend" class="calculator-input pl-8" placeholder="5000" min="0" step="100">
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">Enter your total monthly ad spend across all platforms</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Current Cost Per Lead *</label>
+                                    <div class="relative">
+                                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                                        <input type="number" id="current-cpl" class="calculator-input pl-8" placeholder="50" min="0" step="1">
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">How much you currently pay for each lead</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Current Leads Per Month</label>
+                                    <div class="text-2xl font-bold text-gray-800" id="current-leads-display">0</div>
+                                    <p class="text-xs text-gray-500 mt-1">Calculated automatically</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">With Our Management</h3>
+                            <div class="space-y-6">
+                                <div class="bg-green-50 rounded-lg p-4 border-2 border-green-200">
+                                    <label class="block text-sm font-medium text-green-800 mb-2">Improved Cost Per Lead</label>
+                                    <div class="text-2xl font-bold text-green-600" id="improved-cpl-display">$0</div>
+                                    <p class="text-xs text-green-600 mt-1">Typical among our clients; results may vary</p>
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-4 border-2 border-green-200">
+                                    <label class="block text-sm font-medium text-green-800 mb-2">Improved Leads Per Month</label>
+                                    <div class="text-2xl font-bold text-green-600" id="improved-leads-display">0</div>
+                                    <p class="text-xs text-green-600 mt-1">Typical among our clients; results may vary</p>
+                                </div>
+                                <div class="bg-amp-gold-light/60 rounded-lg p-4 border-2 border-amp-gold/30">
+                                    <label class="block text-sm font-medium text-amp-navy-dark mb-2">Monthly Savings</label>
+                                    <div class="text-3xl font-bold text-amp-gold-dark" id="monthly-savings">$0</div>
+                                    <p class="text-xs text-amp-navy mt-1">Money back in your pocket</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <div class="bg-white rounded-lg p-8 border-2 border-amp-gold/30">
+                            <h4 class="text-2xl font-bold text-amp-navy-dark mb-4">Your Annual Savings Potential</h4>
+                            <div class="text-5xl font-bold text-amp-gold-dark mb-4" id="annual-savings">$0</div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                                <div class="bg-amp-gold-light/50 rounded-lg p-4">
+                                    <div class="font-semibold text-amp-navy-dark mb-1">Additional Benefits:</div>
+                                    <div class="text-amp-navy/90">• 20% more leads in month 1*</div>
+                                    <div class="text-amp-navy/90">• 2-5% month-over-month lead growth*</div>
+                                    <div class="text-amp-navy/90">• 20% cost per lead reduction*</div>
+                                    <div class="text-amp-navy/90">• Consistent monthly results</div>
+                                </div>
+                                <div class="bg-amp-gold-light/50 rounded-lg p-4">
+                                    <div class="font-semibold text-amp-navy-dark mb-1">ROI on Our Service:</div>
+                                    <div class="text-amp-navy/90">• Our fee: $2,000/month</div>
+                                    <div class="text-amp-navy/90">• Your savings: <span id="net-savings">$0</span>/month</div>
+                                    <div class="text-amp-navy/90">• Net profit: <span id="net-profit" class="font-bold">$0</span>/month</div>
+                                </div>
+                            </div>
+                            <p class="mt-6 text-xs text-amp-navy/70 italic max-w-2xl mx-auto">
+                                <strong>Disclaimer:</strong> These estimates are based on what other clients have experienced; results may vary but are typical among our clients. Individual outcomes depend on many factors including industry, ad spend, and current setup.
+                            </p>
+                            <a href="#" id="cta-calculator-audit" class="btn-primary inline-flex mt-6">
+                                <i data-lucide="calendar-check" class="w-5 h-5 mr-2"></i>
+                                Get Your Free Audit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Chart Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Why Choose AMP Over an Agency or In-House?</h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto text-center mb-12 text-gray-600">
+                One partner. Full-stack marketing. Results you can see—without the bloat or the guesswork.
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- AMP Column (highlighted) -->
                 <div class="relative rounded-2xl bg-white p-6 shadow-lg border-2 border-amp-gold ring-2 ring-amp-gold/30">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amp-navy text-white text-sm font-bold rounded-full">Best choice</div>
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amp-navy text-white text-sm font-bold rounded-full">Best fit for growth</div>
                     <div class="text-center mb-6 pt-2">
-                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amp-gold-light/60 mb-3"><span class="text-xl font-bold text-amp-gold-dark">AMP</span></div>
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amp-gold-light/60 mb-3">
+                            <span class="text-xl font-bold text-amp-gold-dark">AMP</span>
+                        </div>
                         <h3 class="font-bold text-gray-900 text-lg">Alchemist Mind Pros</h3>
+                        <p class="text-sm text-gray-500 mt-1">All-in-one partner</p>
                     </div>
-                    <ul class="space-y-3 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> 48-hour delivery</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Conversion-focused design</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Tracking & CRM integration</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Industry-specific</li>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Multi-industry expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Full infrastructure built from scratch</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Results in days, not months</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Lower cost per lead (proven)</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> CRM & automation included</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Training hubs & landing pages</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> 48-hour page delivery</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i> Fractional CMO option</li>
                     </ul>
-                    <p class="mt-4 text-lg font-bold text-amp-gold-dark">From $699</p>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual investment</p>
+                        <p class="text-lg font-bold text-amp-gold-dark">$24K – $60K</p>
+                    </div>
                 </div>
+                <!-- Typical Agency -->
                 <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
                     <div class="text-center mb-6 pt-2">
-                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3"><i data-lucide="building-2" class="w-7 h-7 text-gray-500"></i></div>
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3">
+                            <i data-lucide="building-2" class="w-7 h-7 text-gray-500"></i>
+                        </div>
                         <h3 class="font-bold text-gray-900 text-lg">Typical Agency</h3>
+                        <p class="text-sm text-gray-500 mt-1">Often single-focus</p>
                     </div>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> 2–4 weeks minimum</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Design-first, conversion-second</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Extra for tracking</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Endless revision loops</li>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Single-industry focus</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Basic or existing setup only</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> 3–6 months to ramp</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Often higher CPL</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> CRM = extra vendor</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Rarely offered</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Weeks to months</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Not usually included</li>
                     </ul>
-                    <p class="mt-4 text-lg font-bold text-gray-600">$2,500–$10K+</p>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual cost</p>
+                        <p class="text-lg font-bold text-gray-600">$50K – $150K+</p>
+                    </div>
                 </div>
+                <!-- In-House -->
                 <div class="rounded-2xl bg-white p-6 shadow border border-gray-200">
                     <div class="text-center mb-6 pt-2">
-                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3"><i data-lucide="code" class="w-7 h-7 text-gray-500"></i></div>
-                        <h3 class="font-bold text-gray-900 text-lg">DIY / Template</h3>
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 mb-3">
+                            <i data-lucide="users" class="w-7 h-7 text-gray-500"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">In-House Team</h3>
+                        <p class="text-sm text-gray-500 mt-1">Salaries + tools</p>
                     </div>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Generic, low conversion</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> No conversion optimization</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Tracking setup on you</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Time sink</li>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Limited breadth</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Needs dev expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Long learning curve</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Trial & error cost</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Dedicated hire needed</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Complex to build</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0"></i> Requires expertise</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-500"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i> Only if CMO exists</li>
                     </ul>
-                    <p class="mt-4 text-lg font-bold text-gray-600">$0–$200 + hours</p>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Typical annual cost</p>
+                        <p class="text-lg font-bold text-gray-600">$100K – $300K+</p>
+                    </div>
                 </div>
             </div>
+            <p class="text-center text-xl font-semibold text-gray-700 mt-10 max-w-2xl mx-auto">
+                One partner. Clear accountability. No juggling agencies or hiring blind.
+            </p>
+            <p class="text-center text-sm text-gray-500 mt-4"><em>Outcomes and cost comparisons are illustrative based on typical engagements; your situation may differ.</em></p>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="py-16 md:py-24 bg-amp-gold-light/20">
-        <div class="container mx-auto px-6">
-            <h2 class="section-heading text-center">Landing Page Development Pricing</h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 text-amp-navy/80">Transparent pricing—no surprises. Built for lead gen.</p>
-            <div class="max-w-2xl mx-auto">
-                <div class="card p-8">
-                    <div class="text-center mb-8">
-                        <div class="text-4xl font-bold text-amp-navy-dark mb-2">Starting at $699</div>
-                        <div class="text-amp-gold-dark font-medium">for your first landing page</div>
+        <!-- Free Audit Details Section -->
+        <section class="py-20 bg-gradient-to-br from-amp-gold-light/40 to-amp-gold-light/20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg text-amp-navy-dark">
+                        What You Get in Your <span class="text-amp-gold-dark">Free Ad Performance Audit</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl font-light mb-8 opacity-90">
+                        A comprehensive analysis of your current ad accounts with actionable insights and prioritized recommendations
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Audit Process -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-amp-gold/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amp-gold-light rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="search" class="w-6 h-6 text-amp-gold-dark"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark">Comprehensive Platform Analysis</h3>
+                        </div>
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>Google Ads Audit:</strong> Account structure, keyword strategy, ad copy performance, landing page experience, and conversion tracking</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>Meta Ads Audit:</strong> Campaign objectives, audience targeting, creative performance, pixel implementation, and attribution setup</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>LinkedIn Ads Audit:</strong> B2B targeting strategies, campaign structure, lead generation forms, and professional audience optimization</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>First Landing Page</span><span class="font-semibold text-amp-navy">$699</span></div>
-                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>Additional Landing Pages</span><span class="font-semibold text-amp-navy">$499 each</span></div>
-                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>3-Page Package</span><span class="font-semibold text-amp-navy">$1,497</span></div>
-                        <div class="flex justify-between p-3 bg-amp-gold-light/40 rounded-lg"><span>5-Page Package</span><span class="font-semibold text-amp-navy">$2,297</span></div>
+
+                    <!-- Scoring System -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-amp-gold/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amp-gold-light rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="target" class="w-6 h-6 text-amp-gold-dark"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark">Weighted Account Scoring</h3>
+                        </div>
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>Critical Issues (40% weight):</strong> Conversion tracking, account structure, and fundamental setup problems</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>Performance Optimizations (35% weight):</strong> Bid strategies, audience targeting, and ad creative effectiveness</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amp-gold rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p><strong>Advanced Features (25% weight):</strong> Automation, advanced tracking, and scaling opportunities</p>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="space-y-2 mb-8 text-gray-700">
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>48-hour delivery</li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Mobile-optimized, conversion-focused</li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Conversion tracking included</li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>Integrates with ads & CRM</li>
-                    </ul>
-                    <a href="#" id="cta-pricing" class="btn-primary w-full inline-flex justify-center">
-                        <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Get Your Landing Page
+                </div>
+
+                <!-- Deliverables -->
+                <div class="max-w-4xl mx-auto mt-16">
+                    <div class="rounded-2xl p-8 text-white" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
+                        <h3 class="text-3xl font-bold mb-6 text-center">Your Audit Deliverables</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="file-text" class="w-8 h-8"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Detailed Report</h4>
+                                <p class="text-amp-gold-light/90">Comprehensive score card with a 1-2 page analysis with screenshots, data insights, and prioritized recommendations</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="trending-up" class="w-8 h-8"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">ROI Projections</h4>
+                                <p class="text-amp-gold-light/90">Specific cost savings and lead generation improvements based on your current performance</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="calendar" class="w-8 h-8"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Strategy Call</h4>
+                                <p class="text-amp-gold-light/90">30-minute consultation to discuss findings and answer questions about implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-12">
+                    <p class="text-lg text-amp-navy/80 mb-6">
+                        <strong>Value:</strong> This audit typically costs $500-1,500 when done by agencies
+                    </p>
+                    <a href="#" id="cta-audit-section" class="btn-primary inline-flex text-lg px-8 py-4">
+                        <i data-lucide="gift" class="w-6 h-6 mr-2"></i>
+                        Get Your Free Audit Now
                     </a>
                 </div>
             </div>
+        </section>
+
+        <!-- Case Studies Section -->
+    <section id="case-studies" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Real Results from Real Businesses</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-gray-600">
+                See how we've transformed ad performance for businesses just like yours.
+            </p>
+            <p class="text-center text-sm text-amp-navy/60 mb-12 max-w-2xl mx-auto">Results may vary; individual outcomes depend on industry, ad spend, and setup. These case studies reflect typical results among our clients.</p>
+
+            <!-- Case Study 1: Law Firm -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="lg:pr-8">
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study: Estate Planning Law Firm</h3>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">The Challenge: $41 Per Lead & Slow Seminar Fills</h4>
+                    <p class="text-gray-700 mb-4">
+                        A successful law firm was spending $41.62 per lead and taking two weeks to fill seminars. They thought this was normal until we showed them what was possible.
+                    </p>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">Our Solution & Results</h4>
+                    <p class="text-gray-700 mb-6">
+                        We rebuilt their entire ad infrastructure from scratch: new Google Ads campaigns, Facebook Pixel setup, conversion tracking, and high-converting landing pages.
+                    </p>
+                </div>
+                <div class="w-full">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Before</th>
+                                <th>After</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Time to Fill Seminars</td>
+                                <td>2 Weeks</td>
+                                <td><span class="font-bold text-amp-navy">4 Days</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cost Per Lead</td>
+                                <td>$41.62</td>
+                                <td><span class="font-bold text-amp-navy">$20.90</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lead Quality</td>
+                                <td>Generic Leads</td>
+                                <td><span class="font-bold text-amp-navy">Qualified Prospects</span></td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Savings</td>
+                                <td>$0</td>
+                                <td><span class="font-bold text-amp-navy">$2,500+</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Case Study 2: HVAC Company -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="lg:order-2 lg:pl-8">
+                    <h3 class="text-2xl font-bold text-amp-navy-dark mb-4">Case Study: HVAC Company</h3>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">The Challenge: $85 Per Lead & Poor Quality</h4>
+                    <p class="text-gray-700 mb-4">
+                        An HVAC company was spending $85 per lead and getting mostly price shoppers who never converted. They needed qualified homeowners ready to buy.
+                    </p>
+                    <h4 class="text-lg font-semibold text-amp-navy mb-4">Our Solution & Results</h4>
+                    <p class="text-gray-700 mb-6">
+                        We implemented advanced audience targeting, improved ad copy focusing on urgency and expertise, and created landing pages that pre-qualified prospects.
+                    </p>
+                </div>
+                <div class="w-full lg:order-1">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Before</th>
+                                <th>After</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cost Per Lead</td>
+                                <td>$85</td>
+                                <td><span class="font-bold text-amp-navy">$28</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lead Quality Score</td>
+                                <td>3/10</td>
+                                <td><span class="font-bold text-amp-navy">8/10</span></td>
+                            </tr>
+                            <tr>
+                                <td>Conversion Rate</td>
+                                <td>12%</td>
+                                <td><span class="font-bold text-amp-navy">34%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Revenue Increase</td>
+                                <td>$0</td>
+                                <td><span class="font-bold text-amp-navy">+$45,000</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-16 md:py-24 text-white rounded-t-3xl shadow-xl" style="background: linear-gradient(135deg, var(--amp-navy) 0%, var(--amp-navy-dark) 100%);">
+    <!-- Services & Pricing Section -->
+    <section id="services" class="py-16 md:py-24 bg-amp-gold-light/20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-heading text-center">Our Paid Ads Management Services</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-center mb-16 text-gray-600">
+                Complete Google Ads and Facebook Ads management designed to maximize your ROI and minimize your costs.
+            </p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Service Details -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">What's Included</h3>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Google Ads Campaign Setup & Optimization</strong> - Search, Display, and Shopping campaigns</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Facebook & Instagram Ads Management</strong> - Advanced targeting and creative testing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Conversion Tracking Setup</strong> - Pixel installation and goal configuration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Landing Page Optimization</strong> - High-converting pages for your campaigns</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Weekly Performance Reports</strong> - Detailed insights and recommendations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong>Continuous Optimization</strong> - A/B testing and campaign improvements</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Pricing -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+                            <h3 class="text-2xl font-bold text-amp-navy-dark mb-6">Investment</h3>
+                            <div class="text-center mb-6">
+                                <div class="text-4xl font-bold text-amp-navy-dark mb-2">Starting at $2,000</div>
+                                <div class="text-lg text-amp-navy font-medium">per month</div>
+                            </div>
+                            
+                            <div class="space-y-3 text-gray-700 mb-6">
+                                <div class="flex items-center justify-between p-3 bg-white rounded-lg">
+                                    <span><strong>Setup & Onboarding</strong></span>
+                                    <span class="font-semibold text-amp-navy">$1,500</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white rounded-lg">
+                                    <span>Monthly Management</span>
+                                    <span class="font-semibold text-amp-navy">$2,000</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white rounded-lg">
+                                    <span>Minimum Ad Spend</span>
+                                    <span class="font-semibold text-amp-navy">$5,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p class="text-sm text-amp-navy mb-4">
+                                    <strong>ROI Promise:</strong> Most clients see 20%+ cost reduction within 90 days.*
+                                </p>
+                                <p class="text-xs text-amp-navy/70 italic mb-4">*Results may vary; typical among our clients.</p>
+                                <a href="#" id="cta-services-audit" class="btn-primary w-full">
+                                    <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i>
+                                    Start Your Free Audit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-blue-800 to-indigo-900 text-white rounded-t-3xl shadow-xl">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Ready for a Page That Converts?</h2>
-            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">Get your high-converting landing page in 48 hours. Book a free strategy call.</p>
-            <a href="#" id="cta-contact" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-amp-gold-light">
-                <i data-lucide="calendar-check" class="w-6 h-6 mr-2"></i> Get Your Landing Page
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                Ready to Cut Your Ad Costs?
+            </h2>
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-90">
+                Stop wasting money on ads that don't work. Let's audit your current campaigns and show you exactly how much you could be saving.
+            </p>
+            <a href="#" id="cta-button-final" class="btn-primary inline-flex items-center bg-white text-amp-navy hover:bg-gray-100">
+                <i data-lucide="calculator" class="w-6 h-6 mr-2"></i> 
+                Get Your Free Ad Audit
             </a>
             <ul class="mt-8 text-lg font-light opacity-90 space-y-2">
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Free 30-minute strategy call</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> 48-hour delivery guarantee</li>
-                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold"></i> Built for your ads & CRM</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Free analysis of your current ad performance</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Detailed report showing potential savings</li>
+                <li><i data-lucide="check" class="inline-block w-5 h-5 mr-2 text-amp-gold-light"></i> Custom strategy for your industry and goals</li>
             </ul>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-10 text-amp-gold-light" style="background-color: var(--amp-navy-dark);">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2025 Alchemist Mind Pros. All rights reserved.</p>
@@ -285,33 +934,231 @@
         </div>
     </footer>
 
-    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true">
+    <!-- Calendly Booking Modal (direct booking - no form friction) -->
+    <div id="calendlyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" style="background: rgba(0,0,0,0.5);" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col" style="max-height: 92vh;" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200 shrink-0">
-                <h2 class="text-xl font-bold text-amp-navy-dark">Get Your Landing Page</h2>
-                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg" aria-label="Close"><i data-lucide="x" class="w-6 h-6"></i></button>
+                <h2 id="calendly-modal-title" class="text-xl font-bold text-amp-navy-dark">Book Your Free Ad Performance Audit</h2>
+                <button id="closeCalendlyModal" type="button" class="p-2 -m-2 text-gray-400 hover:text-amp-navy rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amp-gold" aria-label="Close">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
             </div>
             <div id="calendly-widget-container" style="width: 100%; height: 630px; min-height: 630px;"></div>
         </div>
     </div>
 
+    <!-- Initialize Lucide Icons -->
     <script>
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+        
+        // ROI Calculator Functionality
+        function updateCalculator() {
+            const monthlySpend = parseFloat(document.getElementById('monthly-spend').value) || 0;
+            const currentCPL = parseFloat(document.getElementById('current-cpl').value) || 0;
+            
+            // Only calculate if both values are provided
+            if (monthlySpend > 0 && currentCPL > 0) {
+                const currentLeads = Math.round(monthlySpend / currentCPL);
+                const improvedCPL = currentCPL * 0.5; // 50% reduction (showing the CPL improvement)
+                
+                // Calculate lead improvements over 12 months
+                // Month 1: 20% more leads
+                // Months 2-12: Additional 2-5% month over month (using 3.5% average)
+                const month1Improvement = 0.20; // 20%
+                const monthlyImprovement = 0.035; // 3.5% average (between 2-5%)
+                
+                // Calculate total additional leads over 12 months
+                let totalAdditionalLeads = 0;
+                for (let month = 1; month <= 12; month++) {
+                    if (month === 1) {
+                        // Month 1: 20% more leads
+                        totalAdditionalLeads += currentLeads * month1Improvement;
+                    } else {
+                        // Months 2-12: Compound the improvements
+                        const cumulativeImprovement = month1Improvement + ((month - 1) * monthlyImprovement);
+                        const monthLeads = currentLeads * (1 + cumulativeImprovement);
+                        totalAdditionalLeads += monthLeads - currentLeads;
+                    }
+                }
+                
+                // Average additional leads per month
+                const avgAdditionalLeadsPerMonth = totalAdditionalLeads / 12;
+                const improvedLeads = Math.round(currentLeads + avgAdditionalLeadsPerMonth);
+                
+                // Calculate monthly savings from additional leads
+                // Formula: current CPL × (expected leads - current leads)
+                const additionalLeadsPerMonth = avgAdditionalLeadsPerMonth;
+                const monthlySavings = currentCPL * additionalLeadsPerMonth;
+                const annualSavings = monthlySavings * 12;
+                
+                // Calculate net profit (monthly savings minus our fee)
+                const ourMonthlyFee = 2000;
+                const netMonthlyProfit = monthlySavings - ourMonthlyFee;
+                const netAnnualProfit = annualSavings - (ourMonthlyFee * 12);
+                
+                // Update displays with proper formatting
+                document.getElementById('current-leads-display').textContent = currentLeads.toLocaleString();
+                document.getElementById('improved-cpl-display').textContent = `$${improvedCPL.toFixed(2)}`;
+                document.getElementById('improved-leads-display').textContent = improvedLeads.toLocaleString();
+                document.getElementById('monthly-savings').textContent = `$${monthlySavings.toLocaleString()}`;
+                document.getElementById('annual-savings').textContent = `$${annualSavings.toLocaleString()}`;
+                document.getElementById('net-savings').textContent = `$${monthlySavings.toLocaleString()}`;
+                
+                // Update net profit with color coding
+                const netProfitElement = document.getElementById('net-profit');
+                if (netMonthlyProfit > 0) {
+                    netProfitElement.textContent = `$${netMonthlyProfit.toLocaleString()}`;
+                    netProfitElement.className = 'font-bold text-green-600';
+                } else {
+                    netProfitElement.textContent = `-$${Math.abs(netMonthlyProfit).toLocaleString()}`;
+                    netProfitElement.className = 'font-bold text-red-600';
+                }
+            } else {
+                // Reset displays when inputs are empty or invalid
+                document.getElementById('current-leads-display').textContent = '0';
+                document.getElementById('improved-cpl-display').textContent = '$0';
+                document.getElementById('improved-leads-display').textContent = '0';
+                document.getElementById('monthly-savings').textContent = '$0';
+                document.getElementById('annual-savings').textContent = '$0';
+                document.getElementById('net-savings').textContent = '$0';
+                document.getElementById('net-profit').textContent = '$0';
+                document.getElementById('net-profit').className = 'font-bold text-gray-600';
+            }
+        }
+        
+        // Add input formatting and validation
+        function formatCurrencyInput(input) {
+            // Remove any non-numeric characters except decimal point
+            input.value = input.value.replace(/[^0-9.]/g, '');
+            
+            // Ensure only one decimal point
+            const parts = input.value.split('.');
+            if (parts.length > 2) {
+                input.value = parts[0] + '.' + parts.slice(1).join('');
+            }
+        }
+        
+        // Calendly Modal - direct booking (no form friction)
         document.addEventListener('DOMContentLoaded', function() {
             const CALENDLY_URL = 'https://calendly.com/team-alchemistmind/30min';
             const modal = document.getElementById('calendlyModal');
             const closeBtn = document.getElementById('closeCalendlyModal');
             const container = document.getElementById('calendly-widget-container');
-            const ctaIds = ['cta-header-get-started', 'cta-hero', 'cta-pricing', 'cta-contact', 'cta-sticky-mobile'];
-            function openModal(e) { if (e) e.preventDefault(); modal.classList.add('is-open'); modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; setTimeout(function() { if (typeof Calendly === 'undefined') { var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true; document.head.appendChild(s); s.onload = init; } else init(); }, 150); }
-            function init() { if (window.Calendly && container && container.children.length === 0) Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: container, prefill: {}, utm: {} }); }
-            function closeModal() { modal.classList.remove('is-open'); modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
-            ctaIds.forEach(function(id) { var el = document.getElementById(id); if (el) el.addEventListener('click', openModal); });
-            if (closeBtn) closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
-            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
-            var lastScroll = 0;
-            window.addEventListener('scroll', function() { var sc = window.scrollY; var sticky = document.getElementById('stickyCtaMobile'); if (sticky && window.innerWidth < 768) { if (sc > 400) sticky.classList.add('is-visible'); else sticky.classList.remove('is-visible'); } });
+            
+            const ctaIds = [
+                'cta-header-get-started', 'cta-hero-audit', 'cta-calculator-audit',
+                'cta-audit-section', 'cta-services-audit', 'cta-button-final'
+            ];
+            
+            function openCalendlyModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.add('is-open');
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => {
+                    setTimeout(() => loadCalendlyWidget(), 150);
+                });
+                setTimeout(() => closeBtn && closeBtn.focus(), 200);
+            }
+            
+            function closeCalendlyModal() {
+                modal.classList.remove('is-open');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            function loadCalendlyWidget() {
+                if (typeof Calendly === 'undefined') {
+                    const script = document.createElement('script');
+                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    script.onload = initCalendly;
+                } else {
+                    initCalendly();
+                }
+            }
+            
+            function initCalendly() {
+                if (!window.Calendly || !container || container.children.length > 0) return;
+                window.Calendly.initInlineWidget({
+                    url: CALENDLY_URL,
+                    parentElement: container,
+                    prefill: {},
+                    utm: {},
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false
+                });
+            }
+            
+            ctaIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', openCalendlyModal);
+            });
+            
+            if (closeBtn) closeBtn.addEventListener('click', closeCalendlyModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeCalendlyModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) closeCalendlyModal();
+            });
+            
+            window.openCalendlyModal = openCalendlyModal;
+            window.closeCalendlyModal = closeCalendlyModal;
+            
+            // Add event listeners to calculator inputs with formatting
+            const monthlySpendInput = document.getElementById('monthly-spend');
+            const currentCPLInput = document.getElementById('current-cpl');
+            
+            // Add formatting and validation to inputs
+            monthlySpendInput.addEventListener('input', function() {
+                formatCurrencyInput(this);
+                updateCalculator();
+            });
+            
+            currentCPLInput.addEventListener('input', function() {
+                formatCurrencyInput(this);
+                updateCalculator();
+            });
+            
+            // Add paste event listeners for better UX
+            monthlySpendInput.addEventListener('paste', function() {
+                setTimeout(() => {
+                    formatCurrencyInput(this);
+                    updateCalculator();
+                }, 10);
+            });
+            
+            currentCPLInput.addEventListener('paste', function() {
+                setTimeout(() => {
+                    formatCurrencyInput(this);
+                    updateCalculator();
+                }, 10);
+            });
+            
+            // Add focus/blur events for better visual feedback
+            monthlySpendInput.addEventListener('focus', function() {
+                this.parentElement.classList.add('ring-2', 'ring-amp-gold');
+            });
+            
+            monthlySpendInput.addEventListener('blur', function() {
+                this.parentElement.classList.remove('ring-2', 'ring-amp-gold');
+            });
+            
+            currentCPLInput.addEventListener('focus', function() {
+                this.parentElement.classList.add('ring-2', 'ring-amp-gold');
+            });
+            
+            currentCPLInput.addEventListener('blur', function() {
+                this.parentElement.classList.remove('ring-2', 'ring-amp-gold');
+            });
+            
+            // Initial calculation (will show zeros until inputs are filled)
+            updateCalculator();
         });
     </script>
 </body>
