@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Deletion Instructions — ClearSignal</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0d0f1a;
+    color: #e4e4e8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 680px;
+    width: 100%;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    background: #6366f1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+  .logo-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f4f4f6;
+    letter-spacing: -0.3px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f4f4f6;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: #8b8b9a;
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+  .card {
+    background: #16161d;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f4f4f6;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(99,102,241,0.15);
+    color: #818cf8;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+  p {
+    font-size: 15px;
+    color: #8b8b9a;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  p:last-child { margin-bottom: 0; }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #818cf8;
+    margin-top: 2px;
+  }
+  .step-text {
+    font-size: 15px;
+    color: #8b8b9a;
+    line-height: 1.6;
+  }
+  .step-text strong {
+    color: #e4e4e8;
+    font-weight: 500;
+  }
+  .email-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #6366f1;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: background 0.2s;
+  }
+  .email-button:hover { background: #4f46e5; }
+  .data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .data-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #8b8b9a;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    flex-shrink: 0;
+  }
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 24px 0;
+  }
+  .footer {
+    text-align: center;
+    font-size: 13px;
+    color: #4a4a5a;
+    margin-top: 48px;
+  }
+  .footer a { color: #6366f1; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo">
+    <div class="logo-mark">CS</div>
+    <div class="logo-name">ClearSignal</div>
+  </div>
+
+  <h1>Data Deletion Instructions</h1>
+  <p class="subtitle">
+    If you have connected your Facebook account or ad data to ClearSignal 
+    and would like your data removed, follow the steps below.
+  </p>
+
+  <div class="card">
+    <h2>How to Request Data Deletion <span class="badge">Required by Meta</span></h2>
+    <p>
+      ClearSignal uses your Meta ad account data solely to display performance 
+      metrics in your dashboard. We do not sell, share, or use your data for 
+      any other purpose.
+    </p>
+    <p>To request complete deletion of your data from our systems:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          Send an email to <strong>admin@alchemistmind.pro</strong> with the 
+          subject line: <strong>"Data Deletion Request"</strong>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          Include your <strong>Meta Ad Account ID</strong> and the 
+          <strong>email address</strong> associated with your ClearSignal account
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          We will confirm receipt within <strong>48 hours</strong> and complete 
+          deletion within <strong>30 days</strong>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          You will receive a <strong>confirmation email</strong> once all your 
+          data has been permanently deleted
+        </div>
+      </div>
+    </div>
+    <a class="email-button" href="mailto:admin@alchemistmind.pro?subject=Data Deletion Request">
+      Send Deletion Request
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>What Data We Delete</h2>
+    <p>Upon receiving your request, we will permanently delete:</p>
+    <div class="data-list">
+      <div class="data-item"><div class="dot"></div> Your Meta ad account performance data (spend, impressions, clicks, conversions)</div>
+      <div class="data-item"><div class="dot"></div> Campaign and ad set metrics stored in our database</div>
+      <div class="data-item"><div class="dot"></div> Your access tokens and authentication credentials</div>
+      <div class="data-item"><div class="dot"></div> Your ClearSignal account and profile information</div>
+      <div class="data-item"><div class="dot"></div> All sync logs and historical data associated with your account</div>
+    </div>
+    <div class="divider"></div>
+    <p>
+      Note: Deleting your data from ClearSignal does not affect your data 
+      within Meta's own systems. To manage data on Meta's platforms, visit 
+      your <a href="https://www.facebook.com/settings" style="color:#6366f1">Facebook Settings</a>.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Automatic Disconnection</h2>
+    <p>
+      You can also revoke ClearSignal's access to your Meta account at any time 
+      by visiting your Facebook app permissions settings:
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Go to <strong>Facebook Settings → Security and Login → Apps and Websites</strong></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Find <strong>ClearSignal Ads</strong> and click <strong>Remove</strong></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Then follow the email steps above to delete your stored data</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 AlchemistMind · 
+    <a href="mailto:admin@alchemistmind.pro">admin@alchemistmind.pro</a> · 
+    ClearSignal is operated by AlchemistMind
+  </div>
+
+</div>
+</body>
+</html>
