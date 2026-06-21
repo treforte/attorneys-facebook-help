@@ -152,14 +152,17 @@
       .standout-icon { font-size: 20px; flex-shrink: 0; }
       .standout-label-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
       .standout-label { font-family: 'Sora'; font-weight: 700; font-size: 12.5px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.04em; }
-      .standout-chevron { color: var(--gold); font-size: 16px; flex-shrink: 0; transition: transform 0.25s; }
-      .standout-card[open] .standout-chevron { transform: rotate(45deg); }
       .standout-summary-text { font-size: 13px; color: white; line-height: 1.55; }
       .standout-expanded { padding: 0 18px 18px 50px; }
       .standout-expanded-block { margin-bottom: 10px; }
       .standout-expanded-block:last-child { margin-bottom: 0; }
       .standout-expanded-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
       .standout-expanded-text { font-size: 12.5px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+      .standout-toggle-row { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+      .standout-toggle-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,162,39,0.18); border: 1px solid rgba(201,162,39,0.4); color: var(--gold); font-family: 'Sora'; font-weight: 700; font-size: 12px; padding: 6px 13px; border-radius: 100px; transition: all 0.15s; }
+      .standout-summary:hover .standout-toggle-pill { background: rgba(201,162,39,0.3); }
+      .standout-card[open] .standout-toggle-closed { display: none; }
+      .standout-card:not([open]) .standout-toggle-open { display: none; }
 
       /* Calculator */
       .calc-section { background: var(--navy-dark); padding: 80px 24px; position: relative; overflow: hidden; }
@@ -698,8 +701,12 @@
           <summary class="standout-summary">
             <div class="standout-icon">🔁</div>
             <div style="flex:1;">
-              <div class="standout-label-row"><span class="standout-label">Standout Feature</span><span class="standout-chevron">+</span></div>
+              <div class="standout-label-row"><span class="standout-label">Standout Feature</span></div>
               <div class="standout-summary-text"><strong>Offline conversion sync</strong> — ClearSignal sends signed-case outcomes back to Google and Meta automatically, training their bidding algorithms to find more clients like your best ones, not just more cheap leads.</div>
+              <div class="standout-toggle-row">
+                <span class="standout-toggle-pill standout-toggle-closed">+ See How This Helps</span>
+                <span class="standout-toggle-pill standout-toggle-open">− Hide Details</span>
+              </div>
             </div>
           </summary>
           <div class="standout-expanded">
@@ -744,8 +751,12 @@
           <summary class="standout-summary">
             <div class="standout-icon">💡</div>
             <div style="flex:1;">
-              <div class="standout-label-row"><span class="standout-label">Standout Feature</span><span class="standout-chevron">+</span></div>
+              <div class="standout-label-row"><span class="standout-label">Standout Feature</span></div>
               <div class="standout-summary-text"><strong>The coaching note</strong> — not just a score. Every call gets a plain-language note on exactly what a top closer would've said differently, at the exact moment it mattered.</div>
+              <div class="standout-toggle-row">
+                <span class="standout-toggle-pill standout-toggle-closed">+ See How This Helps</span>
+                <span class="standout-toggle-pill standout-toggle-open">− Hide Details</span>
+              </div>
             </div>
           </summary>
           <div class="standout-expanded">
@@ -789,8 +800,12 @@
           <summary class="standout-summary">
             <div class="standout-icon">🥇</div>
             <div style="flex:1;">
-              <div class="standout-label-row"><span class="standout-label">Standout Feature</span><span class="standout-chevron">+</span></div>
+              <div class="standout-label-row"><span class="standout-label">Standout Feature</span></div>
               <div class="standout-summary-text"><strong>First-mover edge</strong> — we haven't found another tool built specifically for in-office digital check-in in the legal space. Right now, this is a real differentiator over every firm still handing out a clipboard.</div>
+              <div class="standout-toggle-row">
+                <span class="standout-toggle-pill standout-toggle-closed">+ See How This Helps</span>
+                <span class="standout-toggle-pill standout-toggle-open">− Hide Details</span>
+              </div>
             </div>
           </summary>
           <div class="standout-expanded">
