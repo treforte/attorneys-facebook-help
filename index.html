@@ -164,6 +164,17 @@
       .standout-card[open] .standout-toggle-closed { display: none; }
       .standout-card:not([open]) .standout-toggle-open { display: none; }
 
+      /* Grids previously inline, now named for responsive control */
+      .hero-grid-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+      .compound-steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 48px; align-items: stretch; }
+      .compound-step:first-child { border-radius: 14px 0 0 14px; }
+      .compound-step:last-child { border-radius: 0 14px 14px 0; }
+      .compound-outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+      .bundle-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+      .integ-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; }
+      .suite-banner-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; }
+      .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
       /* Calculator */
       .calc-section { background: var(--navy-dark); padding: 80px 24px; position: relative; overflow: hidden; }
       .calc-section::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(27,169,140,0.1) 0%, transparent 70%); pointer-events:none; }
@@ -374,6 +385,9 @@
         .price-card.featured { transform: none; }
         .calc-grid { grid-template-columns: 1fr; }
         .stack-row { grid-template-columns: 1fr 30px 1fr; }
+        .hero-grid-row { grid-template-columns: 1fr; gap: 40px; }
+        .integ-grid { grid-template-columns: 1fr 1fr; }
+        .suite-banner-grid { grid-template-columns: 1fr; }
       }
       @media (max-width: 768px) {
         .nav-links { display: none; }
@@ -383,9 +397,15 @@
         .hero-stats { display: grid; grid-template-columns: 1fr 1fr; }
         .stack-row { grid-template-columns: 1fr; text-align: center; }
         .stack-arrow { transform: rotate(90deg); }
+        .compound-steps-grid { grid-template-columns: 1fr; gap: 10px; }
+        .compound-step:first-child, .compound-step:last-child { border-radius: 14px; }
+        .compound-outcomes-grid { grid-template-columns: 1fr; }
+        .bundle-cards-grid { grid-template-columns: 1fr; }
+        .support-grid { grid-template-columns: 1fr; }
       }
       @media (max-width: 480px) {
         .problem-grid, .positioning-grid { grid-template-columns: 1fr; }
+        .integ-grid { grid-template-columns: 1fr; }
       }
 
       @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -419,7 +439,7 @@
 <section class="hero">
   <div class="hero-grid-overlay"></div>
   <div class="hero-inner">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+    <div class="hero-grid-row">
       <div>
         <div class="builder-badge fade-in fade-in-1"><span class="dot"></span> Built By a Law Firm's Own Fractional CMO</div>
         <h1 class="hero-h1 fade-in fade-in-2">Stop Losing Signed Cases to Gaps in Your <span class="accent">Marketing, Intake, and Sales Process.</span></h1>
@@ -836,30 +856,30 @@
     <h2 class="section-h2" style="color: white; max-width: 800px;">Most Firms Train Google to Find More Leads. ClearSignal Trains It to Find More Clients.</h2>
     <p class="section-lead" style="color: rgba(255,255,255,0.7); max-width: 720px;">Google and Meta's bidding algorithms only optimize for what you tell them matters. If the only signal you're sending back is "form filled" or "call received," that's exactly what the algorithm will keep finding you more of — including plenty of people who were never going to become paying clients. And because the signed-case data ClearSignal sends back is pulled directly from your own CRM — not modeled, not estimated — what you're feeding the algorithm is as accurate as your own system of record.</p>
 
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 48px; align-items: stretch;">
-      <div style="background: rgba(255,255,255,0.05); border-radius: 14px 0 0 14px; padding: 26px 22px; text-align:center;">
+    <div class="compound-steps-grid">
+      <div class="compound-step" style="background: rgba(255,255,255,0.05); padding: 26px 22px; text-align:center;">
         <div style="font-family:'Sora'; font-weight:800; font-size:22px; color:var(--gold); margin-bottom:10px;">1</div>
         <div style="font-family:'Sora'; font-weight:700; font-size:14px; color:white; margin-bottom:8px;">Lead or Call Happens</div>
         <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.5;">The ad platform sees a click and a basic conversion event.</div>
       </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 26px 22px; text-align:center;">
+      <div class="compound-step" style="background: rgba(255,255,255,0.05); padding: 26px 22px; text-align:center;">
         <div style="font-family:'Sora'; font-weight:800; font-size:22px; color:var(--gold); margin-bottom:10px;">2</div>
         <div style="font-family:'Sora'; font-weight:700; font-size:14px; color:white; margin-bottom:8px;">Case Gets Signed (or Doesn't)</div>
         <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.5;">The real outcome lives in your CRM — your actual system of record, not a guess.</div>
       </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 26px 22px; text-align:center;">
+      <div class="compound-step" style="background: rgba(255,255,255,0.05); padding: 26px 22px; text-align:center;">
         <div style="font-family:'Sora'; font-weight:800; font-size:22px; color:var(--gold); margin-bottom:10px;">3</div>
         <div style="font-family:'Sora'; font-weight:700; font-size:14px; color:white; margin-bottom:8px;">ClearSignal Sends It Back</div>
         <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.5;">Signed-case outcomes flow automatically into Google's and Meta's offline conversion APIs.</div>
       </div>
-      <div style="background: rgba(201,162,39,0.15); border-radius: 0 14px 14px 0; padding: 26px 22px; text-align:center;">
+      <div class="compound-step" style="background: rgba(201,162,39,0.15); padding: 26px 22px; text-align:center;">
         <div style="font-family:'Sora'; font-weight:800; font-size:22px; color:var(--gold); margin-bottom:10px;">4</div>
         <div style="font-family:'Sora'; font-weight:700; font-size:14px; color:white; margin-bottom:8px;">The Algorithm Gets Smarter</div>
         <div style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.5;">It starts finding more people who look like your best clients — not just more cheap leads.</div>
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px;">
+    <div class="compound-outcomes-grid">
       <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 22px;">
         <div style="font-family:'Sora'; font-weight:800; font-size:20px; color: var(--gold); margin-bottom: 6px;">Higher CVR</div>
         <div style="font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.55;">More of your traffic converts into leads worth pursuing, not just more volume.</div>
@@ -883,7 +903,7 @@
     <h2 class="section-h2">Together as One Suite, or Separately — Your Call</h2>
     <p class="section-lead">Most firms get the most value running all three together, since they're built to feed each other. But none of it is locked behind a bundle — each tool stands on its own if that's a better fit for where your firm is today.</p>
 
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px;">
+    <div class="bundle-cards-grid">
       <div style="background: var(--navy-dark); border-radius: 18px; padding: 32px;">
         <div style="display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; background: rgba(201,162,39,0.2); color: var(--gold); padding: 4px 10px; border-radius: 6px; margin-bottom: 16px;">Most Firms Choose This</div>
         <div style="font-family:'Sora'; font-weight:800; font-size: 22px; color: white; margin-bottom: 10px;">The Complete Suite</div>
@@ -915,7 +935,7 @@
     <h2 class="section-h2" style="color: white;">Connects to Whatever You're Already Running</h2>
     <p class="section-lead" style="color: rgba(255,255,255,0.7);">ClearSignal isn't a closed system. It's built to plug into the CRM, call tracking, and intake tools your firm already uses — and if you're running something more obscure, our engineers build the connection.</p>
 
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px;">
+    <div class="integ-grid">
       <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 22px; text-align: center;">
         <div style="font-family:'Sora'; font-weight:700; font-size: 15px; color: white; margin-bottom: 4px;">HubSpot</div>
         <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Native two-way sync</div>
@@ -1080,7 +1100,7 @@
     <h2 class="section-h2">Pricing Built for Real Firms, Not Enterprise Bloat</h2>
     <p class="section-lead">Run all three tools together for the best combined value, or pick just the one your firm needs most right now. Every firm's integrations are a little different — we'll get you an exact number on a 15-minute call.</p>
 
-    <div style="background: var(--navy-dark); border-radius: 20px; padding: 40px; margin-top: 40px; display:grid; grid-template-columns: 1.6fr 1fr; gap: 36px; align-items: center;">
+    <div class="suite-banner-grid" style="background: var(--navy-dark); border-radius: 20px; padding: 40px; margin-top: 40px; align-items: center;">
       <div>
         <div style="display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; background: rgba(201,162,39,0.2); color: var(--gold); padding: 5px 12px; border-radius: 6px; margin-bottom: 16px;">Most Firms Choose This</div>
         <div style="font-family:'Sora'; font-weight:800; font-size: 26px; color: white; margin-bottom: 10px;">The Complete Suite</div>
@@ -1156,7 +1176,7 @@
     <div style="margin-top: 48px;">
       <div style="font-family:'Sora'; font-weight:700; font-size: 17px; color: var(--navy-dark); margin-bottom: 6px;">Ongoing Support & Maintenance</div>
       <p style="font-size: 13.5px; color: #64748b; margin-bottom: 22px;">Every plan includes a dedicated account manager. The difference is how proactive you want that relationship to be.</p>
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="support-grid">
         <div style="background: var(--cream); border: 1px solid #f0ece4; border-radius: 14px; padding: 24px;">
           <div style="font-family:'Sora'; font-weight:700; font-size: 15px; color: var(--navy-dark); margin-bottom: 8px;">Basic Support</div>
           <div style="font-size: 13px; color: #64748b; line-height: 1.6;">Ad hoc requests and access to office hours when something needs attention. Reactive, but always covered.</div>
