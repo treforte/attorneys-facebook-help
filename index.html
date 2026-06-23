@@ -46,7 +46,8 @@
       .hero-grid-overlay { position: absolute; inset: 0; pointer-events: none; opacity: 0.04; background-image: linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 40px 40px; }
       .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
       .hero-grid-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-
+      /* Mock card must never overflow its column */
+      .mock-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 22px; box-shadow: 0 30px 70px rgba(0,0,0,0.35); width: 100%; min-width: 0; overflow: hidden; }
       /* Builder badge */
       .builder-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(27,169,140,0.12); border: 1px solid rgba(27,169,140,0.4); border-radius: 100px; padding: 7px 16px; font-size: 12px; font-weight: 600; color: #6fe0c6; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
       .builder-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
@@ -86,7 +87,6 @@
       .urgency-bar-text strong { color: var(--gold); }
 
       /* Mock dashboard */
-      .mock-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 22px; box-shadow: 0 30px 70px rgba(0,0,0,0.35); }
       .mock-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
       .mock-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 12px; color: white; }
       .mock-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(27,169,140,0.18); color: #6fe0c6; padding: 4px 10px; border-radius: 100px; }
@@ -121,8 +121,10 @@
       .proof-inner { max-width: 1000px; margin: 0 auto; }
       .proof-label { text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 18px; }
       .proof-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px; }
-      .proof-logo-card { background: black; border-radius: 10px; padding: 14px 22px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.08); }
-      .proof-logo-card img { height: 36px; width: auto; display: block; }
+      .proof-logo-card { background: black; border-radius: 10px; padding: 10px 16px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.08); }
+      .proof-logo-embed { position: relative; width: 140px; height: 56px; overflow: hidden; flex-shrink: 0; }
+      .proof-logo-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; transform: scale(1.15); transform-origin: center center; }
+      .proof-logo-shield { position: absolute; inset: 0; z-index: 2; background: transparent; cursor: default; }
 
       /* Sections */
       .section { padding: 76px 24px; }
@@ -438,12 +440,16 @@
 
       /* Responsive */
       @media(max-width:1024px){
-        .product-row,.hero-grid-row,.suite-banner-grid,.founder-inner { grid-template-columns:1fr; gap:40px; }
+        .product-row,.suite-banner-grid,.founder-inner { grid-template-columns:1fr; gap:40px; }
         .positioning-grid,.pricing-grid { grid-template-columns:1fr 1fr; }
         .case-spotlight { grid-template-columns:1fr; }
         .price-card.featured { transform:none; }
         .calc-grid { grid-template-columns:1fr; }
         .integ-grid { grid-template-columns:1fr 1fr; }
+      }
+      /* Hero stacks earlier so the mock card never gets squeezed */
+      @media(max-width:900px){
+        .hero-grid-row { grid-template-columns:1fr; gap:36px; }
       }
       @media(max-width:768px){
         .nav-links { display:none; }
@@ -454,11 +460,29 @@
         .compound-steps-grid { grid-template-columns:1fr; gap:10px; }
         .compound-outcomes-grid { grid-template-columns:1fr; }
         .secondary-proof { grid-template-columns:1fr; }
+        /* Hero padding tighter on mobile */
+        .hero { padding: 48px 16px 64px; }
+        /* Rotating H1 can wrap on small screens */
+        .rotating-wrap { display: block; min-width: 0 !important; }
+        .rotating-line { white-space: normal; }
+        /* Mock bars: label shrinks so value doesn't get cut */
+        .mock-bar-label { width: 52px; font-size: 10px; }
+        .mock-bar-val { width: 44px; font-size: 10px; }
+        /* Ticker stays clipped */
+        .ticker-wrap { overflow: hidden; }
+        /* Proof logos stack */
+        .proof-logos { flex-direction: column; align-items: center; }
+        .proof-logo-embed { width: 160px; height: 64px; }
       }
       @media(max-width:480px){
         .problem-grid,.positioning-grid,.integ-grid { grid-template-columns:1fr; }
         .pricing-grid { grid-template-columns:1fr; }
         .hero-stats { grid-template-columns:1fr 1fr; }
+        .hero { padding: 36px 14px 52px; }
+        .mock-card { padding: 16px; }
+        .hero-h1 { font-size: 26px; }
+        .hero-h1-intro { font-size: 13px; }
+        .proof-logo-embed { width: 130px; height: 52px; }
       }
       @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
       .fade-in { animation:fadeUp 0.6s ease both; }
@@ -504,7 +528,7 @@
         <div class="builder-badge fade-in fade-in-1"><span class="dot"></span> Built By a Law Firm's Own Fractional CMO</div>
 
         <!-- Rotating H1 -->
-        <div class="hero-h1-intro fade-in fade-in-2">An AI-powered Reporting Dashboard That:</div>
+        <div class="hero-h1-intro fade-in fade-in-2">An AI-Powered Reporting Dashboard That:</div>
         <h1 class="hero-h1 fade-in fade-in-2">
           <span class="rotating-wrap" id="rotWrap">
             <span class="rotating-line" id="rotLine">Shows your true cost per signed case</span>
@@ -589,8 +613,18 @@
   <div class="proof-inner">
     <p class="proof-label">Powering marketing operations for</p>
     <div class="proof-logos">
-      <div class="proof-logo-card"><img src="assets/tslg-logo.jpg" alt="The Siegel Law Group"></div>
-      <div class="proof-logo-card"><img src="assets/abw-logo.jpg" alt="Attorney Brian White Injury Lawyer"></div>
+      <div class="proof-logo-card">
+        <div class="proof-logo-embed">
+          <iframe loading="lazy" src="https://www.canva.com/design/DAHBnDuEgOU/SDFtXK_NiZw5N3_yTuezKg/view?embed" allowfullscreen allow="fullscreen" title="The Siegel Law Group"></iframe>
+          <div class="proof-logo-shield"></div>
+        </div>
+      </div>
+      <div class="proof-logo-card">
+        <div class="proof-logo-embed">
+          <iframe loading="lazy" src="https://www.canva.com/design/DAHLc_hiDc4/UahGS05nuOVer_e0LXXy3w/view?embed" allowfullscreen allow="fullscreen" title="Attorney Brian White"></iframe>
+          <div class="proof-logo-shield"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
